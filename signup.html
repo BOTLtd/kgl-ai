@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>KGL AI – Create Account</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen flex items-center justify-center bg-[#313338] text-white">
+
+  <div class="bg-[#1e1f22] w-full max-w-md rounded-xl shadow-xl p-8">
+
+    <!-- Logo -->
+    <div class="flex flex-col items-center mb-6">
+      <div class="bg-black rounded-2xl w-16 h-16 flex items-center justify-center text-3xl font-bold">
+        K
+      </div>
+      <p class="mt-4 text-gray-400 text-sm">You’ve been invited to join</p>
+      <h1 class="text-2xl font-bold mt-1">KGL AI</h1>
+      <p class="text-xs text-gray-400 mt-1">
+        🌍 Africa • AI • Data
+      </p>
+    </div>
+
+    <!-- Display Name -->
+    <div class="mb-4">
+      <label class="text-xs text-gray-400 uppercase">Display Name</label>
+      <input
+        type="text"
+        placeholder="What should everyone call you?"
+        class="w-full mt-1 px-3 py-2 rounded bg-[#2b2d31] border border-[#1e1f22] focus:outline-none focus:ring-2 focus:ring-indigo-500"
+      />
+      <p class="text-xs text-gray-500 mt-1">
+        This is how others see you.
+      </p>
+    </div>
+
+    <!-- Date of Birth -->
+    <div class="mb-6">
+      <label class="text-xs text-gray-400 uppercase mb-1 block">
+        Date of Birth
+      </label>
+      <div class="grid grid-cols-3 gap-2">
+        <select class="bg-[#2b2d31] rounded px-2 py-2">
+          <option>Month</option>
+        </select>
+        <select class="bg-[#2b2d31] rounded px-2 py-2">
+          <option>Day</option>
+        </select>
+        <select class="bg-[#2b2d31] rounded px-2 py-2">
+          <option>Year</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Create Account Button -->
+    <a
+      href="https://docs.google.com/forms/d/e/1FAIpQLSco1yziJSpSwMgaWGDhU_Ad2Icv3PUtj3mr2EfV0_dvNLba2w/viewform"
+      target="_blank"
+      class="block w-full text-center bg-indigo-600 hover:bg-indigo-700 transition rounded py-3 font-semibold"
+    >
+      Create KGL AI Account
+    </a>
+
+    <!-- Footer -->
+    <p class="text-xs text-gray-400 mt-4 text-center">
+      By clicking “Create Account”, you agree to KGL AI Terms & Privacy.
+    </p>
+
+    <p class="text-sm text-center mt-4 text-indigo-400 hover:underline cursor-pointer">
+      Already have an account? Log in
+    </p>
+
+  </div>
+
+</body>
+</html>
