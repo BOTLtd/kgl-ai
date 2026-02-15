@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KGL AI Recruitment Portal</title>
+<title>KGL AI | Recruitment Portal</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -11,272 +11,163 @@
 <style>
 body { font-family: 'Inter', sans-serif; }
 
+/* Top Banner */
 .top-banner {
-  background: linear-gradient(90deg, #4f46e5, #9333ea);
+  background: linear-gradient(90deg, #4f46e5, #7c3aed);
   color: white;
   overflow: hidden;
   white-space: nowrap;
 }
-
 .banner-content {
   display: inline-block;
   padding: 10px 0;
-  animation: scrollBanner 20s linear infinite;
+  animation: scrollBanner 25s linear infinite;
+}
+@keyframes scrollBanner {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
 }
 
-@keyframes scrollBanner {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+/* Moving Testimonials */
+.testimonial-track {
+  display: flex;
+  gap: 2rem;
+  animation: scrollTestimonials 35s linear infinite;
+}
+@keyframes scrollTestimonials {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 </style>
 </head>
 
-<body class="bg-gray-100">
+<body class="bg-gray-50 text-gray-800">
 
-<!-- MOVING BANNER -->
-<!-- <div class="top-banner">
-  <div class="banner-content">
-    🚀 Remote Global Hiring · 💼 Paid Internships · 🤖 AI-Powered Screening · 🌍 Work From Anywhere
-  </div>
-</div> -->
-
+<!-- MOVING TOP BANNER -->
 <div class="top-banner">
   <div class="banner-content">
-    🚀 Join KGL AI Community · 🏥 Try AI Tools · 🤖 Explore Smart Spaces · 💼 Apply for remote jobs and Internships · 🌍 Rwanda & Africa’s Open AI Platform 
+    🚀 Remote Global Hiring · 🤖 AI-Powered Screening · 🌍 Rwanda & Africa’s Open AI Community · 💼 Paid Internships
   </div>
 </div>
 
 <!-- HEADER -->
 <header class="bg-white shadow-sm sticky top-0 z-50">
   <div class="max-w-7xl mx-auto p-4 flex justify-between items-center">
-
-    <!-- Logo -->
     <a href="index.html" class="flex items-center gap-3">
-      <img src="image/logo.png" alt="KGL AI Logo"
-        class="h-10 md:h-12 w-auto object-contain"
-        onerror="this.style.display='none'" />
-      <span class="text-2xl font-extrabold text-gray-800">
-        KGL AI
-      </span>
+      <img src="image/logo.png" class="h-10" onerror="this.style.display='none'">
+      <span class="text-2xl font-extrabold text-indigo-600">KGL AI</span>
     </a>
-
-    <!-- Navigation -->
-    <nav class="space-x-6 text-gray-700 font-medium">
-      <a href="index.html" class="hover:text-indigo-600 transition">Home</a>
-      <a href="solutions.html" class="hover:text-indigo-600 transition">Spaces</a>
-      <a href="career.html" class="hover:text-indigo-600 transition">Career</a>
-      <!-- <a href="contact.html" class="hover:text-indigo-600 transition">Contact</a> -->
+    <nav class="space-x-6 font-medium">
+      <a href="index.html" class="hover:text-indigo-600">Home</a>
+      <a href="solutions.html" class="hover:text-indigo-600">Spaces</a>
+      <a href="career.html" class="text-indigo-600 font-semibold">Careers</a>
     </nav>
   </div>
 </header>
 
-<!-- WHY JOIN SECTION -->
+<!-- HERO SECTION -->
+<section class="py-20 bg-gradient-to-r from-indigo-600 to-purple-700 text-white text-center">
+  <h1 class="text-5xl font-extrabold mb-6">Build Africa’s AI Future</h1>
+  <p class="max-w-3xl mx-auto text-lg opacity-90">
+    KGL AI is Rwanda and Africa’s open AI innovation platform.
+    Free to join. Remote-first. Community-driven.
+    We welcome developers, researchers, designers, entrepreneurs, and innovators across all industries.
+  </p>
+</section>
+
+<!-- WHY JOIN -->
 <section class="py-16 bg-white text-center">
-  <h2 class="text-4xl font-extrabold mb-6">Why Join KGL AI?</h2>
-  <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8 mt-8">
-    <div class="p-6 shadow rounded-xl">
-      <h3 class="font-bold text-lg">🌍 Remote First</h3>
-      <p class="text-gray-600 mt-2">Work from anywhere globally.</p>
+  <h2 class="text-4xl font-bold mb-12">Why Join KGL AI?</h2>
+  <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-10">
+    <div class="p-8 bg-gray-50 rounded-2xl shadow">
+      <h3 class="font-bold text-xl mb-3">🌍 Remote First</h3>
+      <p>Work from anywhere across Africa and globally.</p>
     </div>
-    <div class="p-6 shadow rounded-xl">
-      <h3 class="font-bold text-lg">🚀 Innovation Driven</h3>
-      <p class="text-gray-600 mt-2">Build AI products impacting Africa.</p>
+    <div class="p-8 bg-gray-50 rounded-2xl shadow">
+      <h3 class="font-bold text-xl mb-3">🚀 Real AI Projects</h3>
+      <p>Build products in Health, Agriculture, Education, Finance & more.</p>
     </div>
-    <div class="p-6 shadow rounded-xl">
-      <h3 class="font-bold text-lg">📈 Career Growth</h3>
-      <p class="text-gray-600 mt-2">Mentorship + real project ownership.</p>
+    <div class="p-8 bg-gray-50 rounded-2xl shadow">
+      <h3 class="font-bold text-xl mb-3">📈 Career Growth</h3>
+      <p>Mentorship, innovation labs, and startup incubation.</p>
     </div>
   </div>
 </section>
 
-<!-- KGL AI COMMUNITY SECTION -->
-<section class="py-20 bg-white">
-  <div class="max-w-6xl mx-auto px-6 text-center">
+<!-- AI ROLE QUIZ -->
+<section class="py-16 bg-indigo-50">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-6">🤖 Find Your Role with AI</h2>
 
-    <!-- Rwanda Accent Line -->
-    <div class="w-32 h-2 mx-auto rounded-full mb-6"
-         style="background: linear-gradient(90deg,#00A1DE,#FAD201,#20603D);">
-    </div>
+    <select id="quizSelect" class="w-full p-4 rounded-xl border mb-6">
+      <option value="">Select your main interest</option>
+      <option>AI Research & Machine Learning</option>
+      <option>Software Development</option>
+      <option>Design & Creativity</option>
+      <option>Business & Growth</option>
+      <option>Healthcare Innovation</option>
+      <option>Agriculture Technology</option>
+    </select>
 
-    <h2 class="text-4xl font-extrabold mb-6">
-      Join KGL AI – Build Africa’s AI Future 🇷🇼🌍
-    </h2>
+    <button onclick="askAI()" 
+      class="bg-indigo-600 text-white px-6 py-3 rounded-xl hover:bg-indigo-700 transition">
+      Get AI Recommendation
+    </button>
 
-    <!-- Language Toggle -->
-    <div class="mb-8">
-      <button onclick="setLanguage('en')" class="px-4 py-2 bg-indigo-600 text-white rounded-lg mr-2">English</button>
-      <button onclick="setLanguage('rw')" class="px-4 py-2 bg-gray-200 rounded-lg">Kinyarwanda</button>
-    </div>
-
-    <!-- English Content -->
-    <div id="content-en">
-      <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-        KGL AI is a community-driven artificial intelligence platform focused on Rwanda and Africa.
-        We welcome students, developers, researchers, designers, innovators and dreamers.
-        It is free to join and fully remote.
-      </p>
-    </div>
-
-    <!-- Kinyarwanda Content -->
-    <div id="content-rw" class="hidden">
-      <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-        KGL AI ni urubuga rwa Artificial Intelligence rwibanda ku Rwanda no muri Afurika.
-        Twakira abanyeshuri, abashakashatsi, abahanga mu ikoranabuhanga, n'abashaka guhanga udushya.
-        Ni ubuntu kwinjira kandi ushobora gukorera aho uri hose.
-      </p>
-    </div>
-
-    <!-- Animated Counters -->
-    <div class="grid md:grid-cols-4 gap-8 mt-16 text-center">
-
-      <div>
-        <h3 class="text-4xl font-bold text-indigo-600 counter" data-target="500">0</h3>
-        <p class="text-gray-600 mt-2">Community Members</p>
-      </div>
-
-      <div>
-        <h3 class="text-4xl font-bold text-indigo-600 counter" data-target="25">0</h3>
-        <p class="text-gray-600 mt-2">AI Projects</p>
-      </div>
-
-      <div>
-        <h3 class="text-4xl font-bold text-indigo-600 counter" data-target="15">0</h3>
-        <p class="text-gray-600 mt-2">Open Fields</p>
-      </div>
-
-      <div>
-        <h3 class="text-4xl font-bold text-indigo-600 counter" data-target="10">0</h3>
-        <p class="text-gray-600 mt-2">African Countries</p>
-      </div>
-
-    </div>
-
-    <!-- Areas Section -->
-    <div class="mt-16">
-      <h3 class="text-2xl font-bold mb-6">🌟 Areas You Can Join</h3>
-
-      <div class="grid md:grid-cols-3 gap-6 text-left">
-
-        <ul class="space-y-2">
-          <li>• AI Research & Machine Learning</li>
-          <li>• Data Science & Analytics</li>
-          <li>• Natural Language Processing</li>
-          <li>• Computer Vision</li>
-          <li>• Robotics & Smart Systems</li>
-        </ul>
-
-        <ul class="space-y-2">
-          <li>• Frontend & Backend Development</li>
-          <li>• Mobile App Development</li>
-          <li>• UI/UX Design</li>
-          <li>• Cybersecurity</li>
-          <li>• Cloud & DevOps</li>
-        </ul>
-
-        <ul class="space-y-2">
-          <li>• Health AI</li>
-          <li>• Agriculture Technology</li>
-          <li>• Education Technology</li>
-          <li>• Sports AI</li>
-          <li>• Trading & Broker Systems</li>
-          <li>• Language AI</li>
-          <li>• Marketing & Community Growth</li>
-          <li>• Business Development</li>
-        </ul>
-
-      </div>
-    </div>
-
-    <!-- AI Role Quiz -->
-    <div class="mt-20 bg-indigo-50 p-8 rounded-2xl">
-      <h3 class="text-2xl font-bold mb-4">🤖 Not Sure Where You Fit?</h3>
-      <p class="text-gray-600 mb-6">Answer one question and our AI will suggest your path.</p>
-
-      <select id="quizSelect" class="p-3 border rounded-lg w-full max-w-md mx-auto">
-        <option value="">Select what interests you most</option>
-        <option value="tech">Building systems & coding</option>
-        <option value="research">Solving complex problems</option>
-        <option value="creative">Design & creativity</option>
-        <option value="business">Leadership & growth</option>
-      </select>
-
-      <div id="quizResult" class="mt-6 font-semibold text-indigo-700"></div>
-    </div>
-
-    <!-- Testimonials -->
-    <div class="mt-20">
-      <h3 class="text-2xl font-bold mb-8">💬 Community Voices</h3>
-
-      <div class="grid md:grid-cols-3 gap-6">
-
-        <div class="bg-gray-50 p-6 rounded-xl shadow">
-          <p>"KGL AI gave me my first real AI project experience."</p>
-          <h4 class="mt-4 font-semibold">— Student, Rwanda</h4>
-        </div>
-
-        <div class="bg-gray-50 p-6 rounded-xl shadow">
-          <p>"Working remotely with African innovators changed my career."</p>
-          <h4 class="mt-4 font-semibold">— Developer, Kenya</h4>
-        </div>
-
-        <div class="bg-gray-50 p-6 rounded-xl shadow">
-          <p>"A truly open and supportive AI community."</p>
-          <h4 class="mt-4 font-semibold">— Researcher, Ghana</h4>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="mt-16 text-xl font-bold">
-      🚀 Ready to join? Apply below and become part of the KGL AI movement.
-    </div>
-
+    <div id="quizResult" class="mt-8 p-6 bg-white rounded-xl shadow hidden"></div>
   </div>
 </section>
 
+<!-- MOVING TESTIMONIALS -->
+<section class="py-16 bg-white overflow-hidden">
+  <h2 class="text-3xl font-bold text-center mb-10">Community Voices</h2>
+  <div class="testimonial-track">
+    <div class="bg-gray-100 p-6 rounded-xl shadow min-w-[300px]">
+      "KGL AI gave me my first AI project experience." Mutoni D. — Rwanda
+    </div>
+    <div class="bg-gray-100 p-6 rounded-xl shadow min-w-[300px]">
+      "A true innovation community for Africa." Okello P. — Kenya
+    </div>
+    <div class="bg-gray-100 p-6 rounded-xl shadow min-w-[300px]">
+      "Remote collaboration changed my career." Okonko M. — Ghana
+    </div>
+    <div class="bg-gray-100 p-6 rounded-xl shadow min-w-[300px]">
+      "Best open AI ecosystem in East Africa." Namanya J. — Uganda
+    </div>
+  </div>
+</section>
 
 <!-- APPLICATION FORM -->
-<section class="py-16 bg-white">
-  <div class="max-w-3xl mx-auto p-10 shadow-xl rounded-2xl">
-
-    <h2 class="text-2xl font-bold text-center mb-8">
-      Apply Now
-    </h2>
+<section class="py-20 bg-gray-50">
+  <div class="max-w-3xl mx-auto bg-white p-10 rounded-2xl shadow-xl">
+    <h2 class="text-3xl font-bold text-center mb-8">Apply to Join KGL AI</h2>
 
     <form id="careerForm" class="space-y-6">
+      <input type="text" placeholder="Full Name" required class="w-full p-4 border rounded-xl">
+      <input type="email" placeholder="Email Address" required class="w-full p-4 border rounded-xl">
 
-      <input type="text" placeholder="Full Name" required class="w-full p-3 border rounded-lg">
-      <input type="email" placeholder="Email Address" required class="w-full p-3 border rounded-lg">
-
-      <select required class="w-full p-3 border rounded-lg">
+      <select required class="w-full p-4 border rounded-xl">
         <option value="">Highest Education</option>
+        <option>Primary</option>
+        <option>High school</option>
+        <option>Technical school</option>
+        <option>Diploma</option>
         <option>Bachelor’s</option>
-        <option>Master’s</option>
+        <option>Master</option>
         <option>PhD</option>
         <option>Self-Taught</option>
+        <option>Other</option>
       </select>
 
-      <select required class="w-full p-3 border rounded-lg">
-        <option value="">Area of Interest</option>
-        <option>Sports AI</option>
-        <option>Health AI</option>
-        <option>Agriculture AI</option>
-        <option>Education AI</option>
-        <option>Broker & Trading AI</option>
-        <option>Language AI</option>
-      </select>
-
-      <textarea placeholder="Why should we hire you?" class="w-full p-3 border rounded-lg"></textarea>
+      <textarea placeholder="Tell us about yourself" class="w-full p-4 border rounded-xl"></textarea>
 
       <input type="file" accept=".pdf" class="w-full">
 
-      <button type="submit"
-        class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">
+      <button type="submit" 
+        class="w-full bg-indigo-600 text-white py-4 rounded-xl font-semibold hover:bg-indigo-700 transition">
         Submit Application
       </button>
-
     </form>
-
   </div>
 </section>
 
@@ -394,9 +285,42 @@ body { font-family: 'Inter', sans-serif; }
 </footer>
 
 <script>
+async function askAI() {
+  const topic = document.getElementById("quizSelect").value;
+  const resultBox = document.getElementById("quizResult");
+
+  if (!topic) return;
+
+  resultBox.classList.remove("hidden");
+  resultBox.innerHTML = "Analyzing with AI...";
+
+  try {
+    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer YOUR_OPENAI_API_KEY"
+      },
+      body: JSON.stringify({
+        model: "gpt-4o-mini",
+        messages: [
+          { role: "system", content: "You are an AI career advisor for KGL AI in Africa." },
+          { role: "user", content: `Based on interest in ${topic}, suggest best roles and growth path in KGL AI.` }
+        ]
+      })
+    });
+
+    const data = await response.json();
+    resultBox.innerHTML = data.choices[0].message.content;
+
+  } catch (error) {
+    resultBox.innerHTML = "AI recommendation temporarily unavailable.";
+  }
+}
+
 document.getElementById("careerForm").addEventListener("submit", function(e){
   e.preventDefault();
-  alert("Application submitted. Our AI team will review your CV.");
+  alert("Application submitted successfully. Our AI team will review your CV.");
 });
 </script>
 
