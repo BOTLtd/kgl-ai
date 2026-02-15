@@ -1,161 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Create KGL AI Account</title>
-
-  <link rel="icon" type="image/png" href="image/logo.png">
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-  </style>
-</head>
-
-<body class="bg-gray-50 text-gray-900">
-
-<!-- HEADER -->
-<header class="bg-white shadow">
-  <div class="max-w-7xl mx-auto p-4 flex justify-between items-center">
-    <a href="index.html" class="flex items-center gap-3">
-      <img src="image/logo.png" class="h-10"/>
-      <span class="text-2xl font-bold">KGL AI</span>
-    </a>
-    <nav class="space-x-6">
-      <a href="index.html" class="hover:text-indigo-600">Home</a>
-      <a href="courses.html" class="hover:text-indigo-600">Courses</a>
-      <a href="career.html" class="hover:text-indigo-600">Career</a>
-    </nav>
-  </div>
-</header>
-
-<!-- FORM SECTION -->
-<section class="py-20">
-  <div class="max-w-xl mx-auto bg-white p-10 rounded-2xl shadow-lg">
-
-    <h1 class="text-3xl font-bold text-center mb-8">
-      Sign up for free
-    </h1>
-
-    <form id="signupForm" class="space-y-6">
-
-      <!-- Name -->
-      <div>
-        <label class="block text-sm font-medium mb-1">Name</label>
-        <input type="text" id="name" required
-          class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
-      </div>
-
-      <!-- Email -->
-      <div>
-        <label class="block text-sm font-medium mb-1">Email</label>
-        <input type="email" id="email" required
-          class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
-      </div>
-
-      <!-- Date of Birth -->
-      <div>
-        <label class="block text-sm font-medium mb-2">Date of Birth</label>
-        <div class="grid grid-cols-3 gap-3">
-          <select id="month" class="p-3 border rounded-lg"></select>
-          <select id="day" class="p-3 border rounded-lg"></select>
-          <select id="year" class="p-3 border rounded-lg"></select>
-        </div>
-      </div>
-
-      <!-- Location -->
-      <div>
-        <label class="block text-sm font-medium mb-1">Location</label>
-        <input type="text" id="location" placeholder="City, Country"
-          class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
-      </div>
-
-      <!-- Submit -->
-      <button type="submit"
-        class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">
-        Sign up
-      </button>
-
-    </form>
-
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-white text-center py-6 text-gray-500 text-sm border-t">
-  © 2026 KGL AI · Open · Equal Opportunity · Everyone Welcome
-</footer>
-
-<script>
-  // Populate Date Dropdowns
-  const monthSelect = document.getElementById("month");
-  const daySelect = document.getElementById("day");
-  const yearSelect = document.getElementById("year");
-
-  const months = ["Month","January","February","March","April","May","June","July","August","September","October","November","December"];
-  months.forEach(m => {
-    const option = document.createElement("option");
-    option.text = m;
-    option.value = m;
-    monthSelect.appendChild(option);
-  });
-
-  for(let i=1;i<=31;i++){
-    let option = document.createElement("option");
-    option.text = i;
-    option.value = i;
-    daySelect.appendChild(option);
-  }
-
-  for(let y=new Date().getFullYear(); y>=1950; y--){
-    let option = document.createElement("option");
-    option.text = y;
-    option.value = y;
-    yearSelect.appendChild(option);
-  }
-
-  // Save Data
-  document.getElementById("signupForm").addEventListener("submit", function(e){
-    e.preventDefault();
-
-    const userData = {
-      name: document.getElementById("name").value,
-      email: document.getElementById("email").value,
-      dob: monthSelect.value + " " + daySelect.value + ", " + yearSelect.value,
-      location: document.getElementById("location").value,
-      createdAt: new Date().toISOString()
-    };
-
-    let users = JSON.parse(localStorage.getItem("kglUsers")) || [];
-    users.push(userData);
-    localStorage.setItem("kglUsers", JSON.stringify(users));
-
-    alert("Account Created Successfully!");
-
-    // Redirect to Home
-    window.location.href = "index.html";
-  });
-</script>
-
-</body>
-</html>
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>KGL AI – Create Account</title>
+
+<link rel="icon" type="image/png" href="image/logo.png">
 <script src="https://cdn.tailwindcss.com"></script>
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-/* Moving banner */
+body { font-family: 'Inter', sans-serif; }
+
+/* Moving Banner */
 .top-banner {
   background: linear-gradient(90deg, #4f46e5, #9333ea);
   color: white;
@@ -174,10 +32,9 @@
   100% { transform: translateX(-100%); }
 }
 </style>
-
 </head>
 
-<body class="bg-gray-100">
+<body class="bg-gray-100 text-gray-900">
 
 <!-- MOVING TOP BANNER -->
 <div class="top-banner">
@@ -203,36 +60,34 @@
       <a href="index.html" class="hover:text-indigo-600 transition">Home</a>
       <a href="solutions.html" class="hover:text-indigo-600 transition">Spaces</a>
       <a href="career.html" class="hover:text-indigo-600 transition">Career</a>
-      <a href="signup.html" class="hover:text-indigo-600 transition">Contact</a>
+      <a href="contact.html" class="hover:text-indigo-600 transition">Contact</a>
     </nav>
   </div>
 </header>
 
-<!-- CREATE ACCOUNT SECTION -->
-<div class="min-h-screen flex items-center justify-center py-16">
+<!-- SIGNUP SECTION -->
+<section class="min-h-screen flex items-center justify-center py-16">
 
-  <div class="bg-white w-full max-w-md rounded-xl shadow-xl p-8">
+  <div class="bg-white w-full max-w-md rounded-2xl shadow-xl p-8">
 
-    <div class="text-center mb-6">
-      <h1 class="text-2xl font-bold text-gray-800">Signup for Free</h1>
-      <p class="text-sm text-gray-500 mt-2">Join KGL AI</p>
-    </div>
+    <h1 class="text-3xl font-bold text-center mb-8">
+      Signup for Free
+    </h1>
 
-    <!-- Form -->
-    <form id="signupForm">
+    <form id="signupForm" class="space-y-6">
 
       <!-- Name -->
-      <div class="mb-4">
-        <label class="text-sm font-medium text-gray-600">Name</label>
+      <div>
+        <label class="block text-sm font-medium mb-1">Name</label>
         <input type="text" id="name" required
-          class="w-full mt-1 px-3 py-2 rounded border focus:ring-2 focus:ring-indigo-500" />
+          class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
       </div>
 
       <!-- Email -->
-      <div class="mb-4">
-        <label class="text-sm font-medium text-gray-600">Email</label>
+      <div>
+        <label class="block text-sm font-medium mb-1">Email</label>
         <input type="email" id="email" required
-          class="w-full mt-1 px-3 py-2 rounded border focus:ring-2 focus:ring-indigo-500" />
+          class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
       </div>
 
       <!-- Location -->
@@ -241,47 +96,139 @@
         <input type="text" id="location" placeholder="City, Country"
           class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
       </div>
-      
-      <!-- <div class="mb-4">
-        <label class="text-sm font-medium text-gray-600">Location</label>
-        <select id="location" required
-          class="w-full mt-1 px-3 py-2 rounded border focus:ring-2 focus:ring-indigo-500">
-          <option value="">Select Country</option>
-          <option>Nigeria</option>
-          <option>Kenya</option>
-          <option>South Africa</option>
-          <option>Ghana</option>
-          <option>Rwanda</option>
-          <option>Other</option>
-        </select>
-      </div> -->
 
       <!-- Date of Birth -->
-      <div class="mb-6">
-        <label class="text-sm font-medium text-gray-600 block mb-2">
-          Date of Birth
-        </label>
-        <div class="grid grid-cols-3 gap-2">
-          <select id="month" class="border rounded px-2 py-2"></select>
-          <select id="day" class="border rounded px-2 py-2"></select>
-          <select id="year" class="border rounded px-2 py-2"></select>
+      <div>
+        <label class="block text-sm font-medium mb-2">Date of Birth</label>
+        <div class="grid grid-cols-3 gap-3">
+          <select id="month" class="p-3 border rounded-lg"></select>
+          <select id="day" class="p-3 border rounded-lg"></select>
+          <select id="year" class="p-3 border rounded-lg"></select>
         </div>
       </div>
 
+      <!-- Submit -->
       <button type="submit"
-        class="w-full bg-indigo-600 hover:bg-indigo-700 text-white rounded py-3 font-semibold transition">
+        class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">
         Create KGL AI Account
       </button>
 
     </form>
 
   </div>
+</section>
 
-</div>
+<!-- PRE-FOOTER SECTION -->
+<section class="bg-gray-100 py-16">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12">
 
+    <!-- LEFT SIDE: LINKS + SOCIAL -->
+    <div class="grid sm:grid-cols-2 gap-8">
+
+      <!-- Useful Links -->
+      <div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">Useful Links</h3>
+        <ul class="space-y-3 text-gray-600">
+          <li><a href="index.html" class="hover:text-indigo-600">Home</a></li>
+          <li><a href="solutions.html" class="hover:text-indigo-600">Spaces</a></li>
+          <li><a href="online-courses.html" class="hover:text-indigo-600">Courses</a></li>
+          <li><a href="career.html" class="hover:text-indigo-600">Careers</a></li>
+          <li><a href="terms.html" class="hover:text-indigo-600">Terms & Conditions</a></li>
+        </ul>
+      </div>
+
+      <!-- Other Services -->
+      <div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">Other Services</h3>
+        <ul class="space-y-3 text-gray-600">
+          <li><a href="#" class="hover:text-indigo-600">Healthcare AI</a></li>
+          <li><a href="#" class="hover:text-indigo-600">AI Tools Directory</a></li>
+          <li><a href="#" class="hover:text-indigo-600">Startup Incubation</a></li>
+          <li><a href="#" class="hover:text-indigo-600">Community Programs</a></li>
+          <li><a href="#" class="hover:text-indigo-600">Partnerships</a></li>
+        </ul>
+      </div>
+
+      <!-- Social Media -->
+      <div class="sm:col-span-2 mt-6">
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">Connect With Us</h3>
+      
+        <div class="flex flex-wrap gap-4">
+
+          <a href="https://linkedin.com/company/kglai" target="_blank"
+             class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white transition">
+            <i class="fab fa-linkedin-in"></i> LinkedIn
+          </a>
+          
+          <a href="https://facebook.com/kglai" target="_blank"
+             class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white transition">
+            <i class="fab fa-facebook-f"></i> Facebook
+          </a>
+      
+          <a href="https://twitter.com/kglai" target="_blank"
+             class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white transition">
+            <i class="fab fa-x-twitter"></i> Twitter / X
+          </a>
+      
+          <a href="https://instagram.com/kglai" target="_blank"
+             class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white transition">
+            <i class="fab fa-instagram"></i> Instagram
+          </a>
+      <!-- 
+          <a href="https://github.com/kgl-ai" target="_blank"
+             class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white transition">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+       -->
+          <a href="https://youtube.com/@kglai" target="_blank"
+             class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white transition">
+            <i class="fab fa-youtube"></i> YouTube
+          </a>
+      
+          <a href="https://tiktok.com/@kglai" target="_blank"
+             class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white transition">
+            <i class="fab fa-tiktok"></i> TikTok
+          </a>
+      
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDE: CONTACT / SIGNUP FORM -->
+    <div>
+      <h3 class="text-xl font-semibold text-gray-800 mb-4">Stay Connected</h3>
+      <p class="text-gray-600 mb-6">
+        Subscribe or send us a message to collaborate with KGL AI.
+      </p>
+
+      <form action="#" method="POST" class="space-y-4">
+
+        <input type="text" placeholder="Name"
+          class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none">
+
+        <input type="email" placeholder="Email"
+          class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none">
+
+        <textarea placeholder="Your Message"
+          class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none h-32"></textarea>
+
+        <button type="submit"
+          class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">
+          Send Message
+        </button>
+
+      </form>
+    </div>
+
+  </div>
+</section>
+  
 <!-- FOOTER -->
-<footer class="bg-gray-900 text-gray-400 py-6 text-center">
-  © 2025 KGL AI · Africa’s Open AI Platform
+<footer class="text-center py-10 text-gray-500 text-sm bg-gray-900">
+  © 2026 KGL AI · Product of BOT Ltd · Open · Community Data-Driven ·
+  <a href="terms.html" class="hover:text-gray-700 underline">Terms and Conditions</a> ·
+  <a href="https://www.risa.gov.rw/data-protection-and-privacy-law" class="hover:text-gray-700 underline">Privacy Policy</a>
 </footer>
 
 <script>
@@ -290,42 +237,44 @@ const monthSelect = document.getElementById("month");
 const daySelect = document.getElementById("day");
 const yearSelect = document.getElementById("year");
 
-const months = ["Month","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const months = ["Month","January","February","March","April","May","June","July","August","September","October","November","December"];
 months.forEach(m => {
   const option = document.createElement("option");
   option.text = m;
-  monthSelect.add(option);
+  option.value = m;
+  monthSelect.appendChild(option);
 });
 
-for (let d = 1; d <= 31; d++) {
-  const option = document.createElement("option");
-  option.text = d;
-  daySelect.add(option);
+for(let i=1;i<=31;i++){
+  let option = document.createElement("option");
+  option.text = i;
+  option.value = i;
+  daySelect.appendChild(option);
 }
 
-for (let y = 2024; y >= 1950; y--) {
-  const option = document.createElement("option");
+for(let y=new Date().getFullYear(); y>=1950; y--){
+  let option = document.createElement("option");
   option.text = y;
-  yearSelect.add(option);
+  option.value = y;
+  yearSelect.appendChild(option);
 }
 
-// Save Form Data
-document.getElementById("signupForm").addEventListener("submit", function(e) {
+// Save Data + Redirect
+document.getElementById("signupForm").addEventListener("submit", function(e){
   e.preventDefault();
 
-  const user = {
+  const userData = {
     name: document.getElementById("name").value,
     email: document.getElementById("email").value,
+    dob: monthSelect.value + " " + daySelect.value + ", " + yearSelect.value,
     location: document.getElementById("location").value,
-    dob: monthSelect.value + " " + daySelect.value + ", " + yearSelect.value
+    createdAt: new Date().toISOString()
   };
 
-  // Save to localStorage
-  let users = JSON.parse(localStorage.getItem("kgl_users")) || [];
-  users.push(user);
-  localStorage.setItem("kgl_users", JSON.stringify(users));
+  let users = JSON.parse(localStorage.getItem("kglUsers")) || [];
+  users.push(userData);
+  localStorage.setItem("kglUsers", JSON.stringify(users));
 
-  // Redirect to Home
   window.location.href = "index.html";
 });
 </script>
