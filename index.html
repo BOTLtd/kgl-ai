@@ -243,6 +243,7 @@
     </a>
 
   </div>
+  
 </section>
 <!-- COMMUNITY STATS -->
 <section class="bg-white py-20">
@@ -276,6 +277,41 @@
   <a href="terms.html" class="hover:text-indigo-600 underline">Terms & Conditions</a> ·
   <a href="privacy.html" class="hover:text-indigo-600 underline">Privacy Policy</a>
 </footer>
+
+  <!-- Javascrpt for counting -->
+<script>
+  const counters = document.querySelectorAll('.counter');
+  const speed = 200; // lower = faster
+
+  const startCounting = (entry) => {
+    if (!entry.isIntersecting) return;
+
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = target / speed;
+
+        if (count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(updateCount, 10);
+        } else {
+          counter.innerText = target + "+";
+        }
+      };
+
+      updateCount();
+    });
+
+    observer.disconnect(); // run once
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(startCounting);
+  }, { threshold: 0.5 });
+
+  observer.observe(document.querySelector('#stats'));
+</script>
 
 </body>
 </html>
