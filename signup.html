@@ -37,21 +37,21 @@
   <div class="max-w-xl mx-auto bg-white p-10 rounded-2xl shadow-lg">
 
     <h1 class="text-3xl font-bold text-center mb-8">
-      Create Your KGL AI Account
+      Sign up for free
     </h1>
 
     <form id="signupForm" class="space-y-6">
 
       <!-- Name -->
       <div>
-        <label class="block text-sm font-medium mb-1">Full Name</label>
+        <label class="block text-sm font-medium mb-1">Name</label>
         <input type="text" id="name" required
           class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
       </div>
 
       <!-- Email -->
       <div>
-        <label class="block text-sm font-medium mb-1">Email Address</label>
+        <label class="block text-sm font-medium mb-1">Email</label>
         <input type="email" id="email" required
           class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
       </div>
@@ -76,7 +76,7 @@
       <!-- Submit -->
       <button type="submit"
         class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">
-        Create KGL AI Account
+        Sign up
       </button>
 
     </form>
@@ -138,6 +138,196 @@
     // Redirect to Home
     window.location.href = "index.html";
   });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>KGL AI – Create Account</title>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+/* Moving banner */
+.top-banner {
+  background: linear-gradient(90deg, #4f46e5, #9333ea);
+  color: white;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.banner-content {
+  display: inline-block;
+  padding: 10px 0;
+  animation: scrollBanner 20s linear infinite;
+}
+
+@keyframes scrollBanner {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+</style>
+
+</head>
+
+<body class="bg-gray-100">
+
+<!-- MOVING TOP BANNER -->
+<div class="top-banner">
+  <div class="banner-content">
+    🚀 Join KGL AI Community · 💼 Apply for Internships · 🏥 Try Healthcare AI · 🌍 Africa’s Open AI Platform · 🤖 Explore Smart Spaces
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto p-4 flex justify-between items-center">
+
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="image/logo.png" alt="KGL AI Logo"
+        class="h-10 md:h-12 w-auto object-contain"
+        onerror="this.style.display='none'" />
+      <span class="text-2xl font-extrabold text-gray-800">
+        KGL AI
+      </span>
+    </a>
+
+    <nav class="space-x-6 text-gray-700 font-medium">
+      <a href="index.html" class="hover:text-indigo-600 transition">Home</a>
+      <a href="solutions.html" class="hover:text-indigo-600 transition">Spaces</a>
+      <a href="career.html" class="hover:text-indigo-600 transition">Career</a>
+      <a href="signup.html" class="hover:text-indigo-600 transition">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- CREATE ACCOUNT SECTION -->
+<div class="min-h-screen flex items-center justify-center py-16">
+
+  <div class="bg-white w-full max-w-md rounded-xl shadow-xl p-8">
+
+    <div class="text-center mb-6">
+      <h1 class="text-2xl font-bold text-gray-800">Signup for Free</h1>
+      <p class="text-sm text-gray-500 mt-2">Join KGL AI</p>
+    </div>
+
+    <!-- Form -->
+    <form id="signupForm">
+
+      <!-- Name -->
+      <div class="mb-4">
+        <label class="text-sm font-medium text-gray-600">Name</label>
+        <input type="text" id="name" required
+          class="w-full mt-1 px-3 py-2 rounded border focus:ring-2 focus:ring-indigo-500" />
+      </div>
+
+      <!-- Email -->
+      <div class="mb-4">
+        <label class="text-sm font-medium text-gray-600">Email</label>
+        <input type="email" id="email" required
+          class="w-full mt-1 px-3 py-2 rounded border focus:ring-2 focus:ring-indigo-500" />
+      </div>
+
+      <!-- Location -->
+      <div>
+        <label class="block text-sm font-medium mb-1">Location</label>
+        <input type="text" id="location" placeholder="City, Country"
+          class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
+      </div>
+      
+      <!-- <div class="mb-4">
+        <label class="text-sm font-medium text-gray-600">Location</label>
+        <select id="location" required
+          class="w-full mt-1 px-3 py-2 rounded border focus:ring-2 focus:ring-indigo-500">
+          <option value="">Select Country</option>
+          <option>Nigeria</option>
+          <option>Kenya</option>
+          <option>South Africa</option>
+          <option>Ghana</option>
+          <option>Rwanda</option>
+          <option>Other</option>
+        </select>
+      </div> -->
+
+      <!-- Date of Birth -->
+      <div class="mb-6">
+        <label class="text-sm font-medium text-gray-600 block mb-2">
+          Date of Birth
+        </label>
+        <div class="grid grid-cols-3 gap-2">
+          <select id="month" class="border rounded px-2 py-2"></select>
+          <select id="day" class="border rounded px-2 py-2"></select>
+          <select id="year" class="border rounded px-2 py-2"></select>
+        </div>
+      </div>
+
+      <button type="submit"
+        class="w-full bg-indigo-600 hover:bg-indigo-700 text-white rounded py-3 font-semibold transition">
+        Create KGL AI Account
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-gray-400 py-6 text-center">
+  © 2025 KGL AI · Africa’s Open AI Platform
+</footer>
+
+<script>
+// Populate Date Dropdowns
+const monthSelect = document.getElementById("month");
+const daySelect = document.getElementById("day");
+const yearSelect = document.getElementById("year");
+
+const months = ["Month","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+months.forEach(m => {
+  const option = document.createElement("option");
+  option.text = m;
+  monthSelect.add(option);
+});
+
+for (let d = 1; d <= 31; d++) {
+  const option = document.createElement("option");
+  option.text = d;
+  daySelect.add(option);
+}
+
+for (let y = 2024; y >= 1950; y--) {
+  const option = document.createElement("option");
+  option.text = y;
+  yearSelect.add(option);
+}
+
+// Save Form Data
+document.getElementById("signupForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const user = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    location: document.getElementById("location").value,
+    dob: monthSelect.value + " " + daySelect.value + ", " + yearSelect.value
+  };
+
+  // Save to localStorage
+  let users = JSON.parse(localStorage.getItem("kgl_users")) || [];
+  users.push(user);
+  localStorage.setItem("kgl_users", JSON.stringify(users));
+
+  // Redirect to Home
+  window.location.href = "index.html";
+});
 </script>
 
 </body>
