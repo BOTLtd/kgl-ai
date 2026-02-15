@@ -1,20 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <!-- Basic Meta -->
   <meta charset="UTF-8" />
-  <title>KGL AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KGL AI | Africa’s AI Innovation Hub</title>
+  <meta name="description" content="KGL AI is Africa’s leading AI innovation hub empowering healthcare, developers, startups, and communities through artificial intelligence.">
+  <meta name="keywords" content="KGL AI, Artificial Intelligence, Africa AI, Healthcare AI, AI Platform, Innovation Hub">
+  <meta name="author" content="KGL AI">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="image/logo.png">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Open Graph (For Social Sharing) -->
+  <meta property="og:title" content="KGL AI | Africa’s AI Innovation Hub">
+  <meta property="og:description" content="Empowering innovation through AI tools, healthcare solutions, and community collaboration.">
+  <meta property="og:image" content="image/logo.png">
+  <meta property="og:type" content="website">
+
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
+  <!-- Custom Styles -->
   <style>
-    body { font-family: 'Inter', sans-serif; }
+    body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
 
     /* Moving Top Banner */
     .top-banner {
@@ -36,8 +52,37 @@
       from { transform: translateX(0); }
       to { transform: translateX(-100%); }
     }
+
+    /* Social Media Buttons */
+    .social-link {
+      padding: 10px 18px;
+      border-radius: 9999px;
+      background: #f3f4f6;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+      background: #6366f1;
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    /* Smooth Fade Animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
+
 </head>
+
 
 <body class="bg-gray-50 text-gray-900">
 
@@ -245,32 +290,61 @@
   </div>
   
 </section>
-<!-- COMMUNITY STATS -->
-<section class="bg-white py-20">
-  <div class="max-w-6xl mx-auto text-center">
-    <h2 class="text-4xl font-bold mb-16">Community Impact</h2>
 
-<div id="stats" class="grid md:grid-cols-3 gap-8">
+<!-- COMMUNITY IMPACT SECTION -->
+<section id="community" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-6 text-center">
 
-  <div class="p-10 rounded-2xl shadow-md bg-gray-50 text-center">
-    <p class="text-5xl font-extrabold text-indigo-600 counter" data-target="15">0</p>
-    <p class="mt-4 text-gray-600">Contributors</p>
-  </div>
+    <!-- Title -->
+    <h2 class="text-4xl font-bold text-gray-900">Our Community Impact</h2>
+    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+      KGL AI is building Africa’s leading AI innovation hub — empowering developers,
+      healthcare systems, startups, and communities worldwide.
+    </p>
 
-  <div class="p-10 rounded-2xl shadow-md bg-gray-50 text-center">
-    <p class="text-5xl font-extrabold text-indigo-600 counter" data-target="60">0</p>
-    <p class="mt-4 text-gray-600">Subscribers</p>
-  </div>
-  
-  <div class="p-10 rounded-2xl shadow-md bg-gray-50 text-center">
-    <p class="text-5xl font-extrabold text-indigo-600 counter" data-target="100">0</p>
-    <p class="mt-4 text-gray-600">Daily visitors</p>
-  </div>
+    <!-- Stats -->
+    <div id="stats" class="mt-16 grid md:grid-cols-3 gap-8">
 
-  </div>
-    
+      <div class="p-10 rounded-2xl shadow-md bg-gray-50 text-center">
+        <p class="text-5xl font-extrabold text-indigo-600 counter" data-target="1000">0</p>
+        <p class="mt-4 text-gray-600">Visitors</p>
+      </div>
+
+      <div class="p-10 rounded-2xl shadow-md bg-gray-50 text-center">
+        <p class="text-5xl font-extrabold text-indigo-600 counter" data-target="100">0</p>
+        <p class="mt-4 text-gray-600">Subscribers</p>
+      </div>
+
+      <div class="p-10 rounded-2xl shadow-md bg-gray-50 text-center">
+        <p class="text-5xl font-extrabold text-indigo-600 counter" data-target="25">0</p>
+        <p class="mt-4 text-gray-600">Contributors</p>
+      </div>
+
+    </div>
+
+    <!-- Social Media Links -->
+    <div class="mt-16">
+      <h3 class="text-xl font-semibold text-gray-800">Connect With Us</h3>
+
+      <div class="mt-6 flex flex-wrap justify-center gap-6">
+
+        <a href="https://facebook.com/kglai" target="_blank" class="social-link">Facebook</a>
+        <a href="https://twitter.com/kglai" target="_blank" class="social-link">Twitter / X</a>
+        <a href="https://instagram.com/kglai" target="_blank" class="social-link">Instagram</a>
+        <a href="https://linkedin.com/company/kglai" target="_blank" class="social-link">LinkedIn</a>
+        <a href="https://youtube.com/@kglai" target="_blank" class="social-link">YouTube</a>
+        <a href="https://tiktok.com/@kglai" target="_blank" class="social-link">TikTok</a>
+        <a href="https://github.com/kgl-ai" target="_blank" class="social-link">GitHub</a>
+        <a href="https://wa.me/0000000000" target="_blank" class="social-link">WhatsApp</a>
+        <a href="https://discord.gg/kglai" target="_blank" class="social-link">Discord</a>
+        <a href="https://t.me/kglai" target="_blank" class="social-link">Telegram</a>
+
+      </div>
+    </div>
+
   </div>
 </section>
+
 
 <!-- FOOTER -->
 <footer class="text-center py-12 bg-gray-100 text-gray-600 text-sm">
