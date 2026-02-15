@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>KGL AI Courses by Topic</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .course-card { transition: transform 0.3s; }
+    .course-card:hover { transform: translateY(-5px); }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+<!-- HEADER -->
+<header class="bg-white shadow">
+  <div class="max-w-7xl mx-auto p-4 flex justify-between items-center">
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="image/logo.png" alt="KGL AI Logo" class="h-10 md:h-12 w-auto"/>
+      <span class="text-2xl font-bold text-gray-800">KGL AI</span>
+    </a>
+    <nav class="space-x-4 text-gray-700">
+      <a href="index.html" class="hover:text-indigo-600">Home</a>
+      <a href="solutions.html" class="hover:text-indigo-600">Spaces</a>
+      <a href="courses.html" class="hover:text-indigo-600 font-semibold">Courses</a>
+      <a href="career.html" class="hover:text-indigo-600">Career</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="text-center py-16 bg-white">
+  <h1 class="text-4xl font-bold">Courses by Topic</h1>
+  <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+    Select a topic to explore relevant courses across multiple online platforms.
+  </p>
+</section>
+
+<!-- TOPIC FILTER -->
+<section class="max-w-7xl mx-auto px-4 py-8">
+  <div class="flex flex-wrap justify-center gap-4" id="topics">
+    <!-- Buttons will be added dynamically -->
+  </div>
+</section>
+
+<!-- COURSES GRID -->
+<section class="max-w-7xl mx-auto px-4 py-12">
+  <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="courses-grid">
+    <!-- Course cards will be populated dynamically -->
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="text-center py-10 text-gray-500 text-sm bg-white">
+  © 2026 KGL AI · Open · Community-Driven ·
+  <a href="terms.html" class="hover:text-gray-700 underline">Terms and Conditions</a> ·
+  <a href="https://www.risa.gov.rw/data-protection-and-privacy-law" class="hover:text-gray-700 underline">Privacy Policy</a>
+</footer>
+
+<script>
+  // Example JSON of courses
+  const coursesData = [
+    { title: "Intro to AI", platform: "Coursera", topic: "AI", url: "https://www.coursera.org/learn/ai" },
+    { title: "Machine Learning", platform: "Udemy", topic: "AI", url: "https://www.udemy.com/course/machinelearning" },
+    { title: "Python for Beginners", platform: "edX", topic: "Tech", url: "https://www.edx.org/course/python" },
+    { title: "Digital Marketing Basics", platform: "Skillshare", topic: "Business", url: "https://www.skillshare.com/classes/digital-marketing" },
+    { title: "Healthcare Analytics", platform: "FutureLearn", topic: "Healthcare", url: "https://www.futurelearn.com/courses/healthcare-analytics" },
+    { title: "Creative Photography", platform: "LinkedIn Learning", topic: "Creative", url: "https://www.linkedin.com/learning/creative-photography" }
+  ];
+
+  // Generate unique topics
+  const topicsContainer = document.getElementById('topics');
+  const uniqueTopics = [...new Set(coursesData.map(c => c.topic))];
+
+  uniqueTopics.forEach(topic => {
+    const btn = document.createElement('button');
+    btn.innerText = topic;
+    btn.className = 'px-5 py-2 bg-indigo-100 text-indigo-700 font-medium rounded-full hover:bg-indigo-600 hover:text-white transition';
+    btn.onclick = () => showCourses(topic);
+    topicsContainer.appendChild(btn);
+  });
+
+  // Show courses by topic
+  const coursesGrid = document.getElementById('courses-grid');
+
+  function showCourses(topic) {
+    coursesGrid.innerHTML = '';
+    const filtered = coursesData.filter(c => c.topic === topic);
+    filtered.forEach(course => {
+      const div = document.createElement('a');
+      div.href = course.url;
+      div.target = "_blank";
+      div.className = "course-card bg-white p-6 rounded-xl shadow hover:shadow-lg transition block";
+      div.innerHTML = `
+        <h3 class="font-bold text-lg text-indigo-600">${course.title}</h3>
+        <p class="text-gray-600 mt-2">${course.platform}</p>
+      `;
+      coursesGrid.appendChild(div);
+    });
+  }
+
+  // Optional: show first topic by default
+  if(uniqueTopics.length > 0) showCourses(uniqueTopics[0]);
+</script>
+
+<!-- FOOTER -->
+<footer class="text-center py-10 text-gray-500 text-sm bg-white">
+  © 2026 KGL AI · Product of BOT Ltd · Open · Community-Driven ·
+  <a href="terms.html" class="hover:text-gray-700 underline">Terms and Conditions</a> ·
+  <a href="https://www.risa.gov.rw/data-protection-and-privacy-law" class="hover:text-gray-700 underline">Privacy Policy</a>
+</footer>
+  
+</body>
+</html>
