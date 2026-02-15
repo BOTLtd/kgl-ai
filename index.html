@@ -328,41 +328,6 @@
   </div>
 </section>
 
-  <!-- Javascrpt for counting -->
-<script>
-  const counters = document.querySelectorAll('.counter');
-  const speed = 200; // lower = faster
-
-  const startCounting = (entry) => {
-    if (!entry.isIntersecting) return;
-
-    counters.forEach(counter => {
-      const updateCount = () => {
-        const target = +counter.getAttribute('data-target');
-        const count = +counter.innerText;
-        const increment = target / speed;
-
-        if (count < target) {
-          counter.innerText = Math.ceil(count + increment);
-          setTimeout(updateCount, 10);
-        } else {
-          counter.innerText = target + "+";
-        }
-      };
-
-      updateCount();
-    });
-
-    observer.disconnect(); // run once
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(startCounting);
-  }, { threshold: 0.5 });
-
-  observer.observe(document.querySelector('#stats'));
-</script>
-
 <!-- PRE-FOOTER SECTION -->
 <section class="bg-gray-100 py-16">
   <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12">
@@ -475,6 +440,41 @@
   <a href="terms.html" class="hover:text-gray-700 underline">Terms and Conditions</a> ·
   <a href="https://www.risa.gov.rw/data-protection-and-privacy-law" class="hover:text-gray-700 underline">Privacy Policy</a>
 </footer>
+
+  <!-- Javascrpt for counting -->
+<script>
+  const counters = document.querySelectorAll('.counter');
+  const speed = 200; // lower = faster
+
+  const startCounting = (entry) => {
+    if (!entry.isIntersecting) return;
+
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = target / speed;
+
+        if (count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(updateCount, 10);
+        } else {
+          counter.innerText = target + "+";
+        }
+      };
+
+      updateCount();
+    });
+
+    observer.disconnect(); // run once
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(startCounting);
+  }, { threshold: 0.5 });
+
+  observer.observe(document.querySelector('#stats'));
+</script>
   
 </body>
 </html>
