@@ -1,14 +1,268 @@
-<section class="max-w-4xl mx-auto py-16">
-  <h1 class="text-4xl font-bold mb-6">Join KGL AI</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KGL AI Recruitment Portal</title>
 
-  <p class="mb-6">
-    We collaborate openly.
-  </p>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-  <a
-    href="https://docs.google.com/forms/d/e/1FAIpQLSe_ZMfL_UuMoGhqG5UZ4HGrx_3J78CMeKbTk8X1gNGEfwgWEw/viewform"
-    class="px-6 py-3 bg-indigo-600 text-white rounded"
-  >
-    Apply to a Project
-  </a>
+<style>
+body { font-family: 'Inter', sans-serif; }
+
+.top-banner {
+  background: linear-gradient(90deg, #4f46e5, #9333ea);
+  color: white;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.banner-content {
+  display: inline-block;
+  padding: 10px 0;
+  animation: scrollBanner 20s linear infinite;
+}
+
+@keyframes scrollBanner {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+</style>
+</head>
+
+<body class="bg-gray-100">
+
+<!-- MOVING BANNER -->
+<div class="top-banner">
+  <div class="banner-content">
+    🚀 Remote Global Hiring · 💼 Paid Internships · 🤖 AI-Powered Screening · 🌍 Work From Anywhere
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="bg-white shadow sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto p-4 flex justify-between items-center">
+    <a href="index.html" class="text-2xl font-bold text-gray-800">KGL AI</a>
+    <nav class="space-x-6">
+      <a href="index.html" class="hover:text-indigo-600">Home</a>
+      <a href="solutions.html" class="hover:text-indigo-600">Spaces</a>
+      <a href="career.html" class="text-indigo-600 font-semibold">Career</a>
+      <!-- <a href="contact.html" class="hover:text-indigo-600">Contact</a> -->
+    </nav>
+  </div>
+</header>
+
+<!-- WHY JOIN SECTION -->
+<section class="py-16 bg-white text-center">
+  <h1 class="text-4xl font-extrabold mb-6">Why Join KGL AI?</h1>
+  <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8 mt-8">
+    <div class="p-6 shadow rounded-xl">
+      <h3 class="font-bold text-lg">🌍 Remote First</h3>
+      <p class="text-gray-600 mt-2">Work from anywhere globally.</p>
+    </div>
+    <div class="p-6 shadow rounded-xl">
+      <h3 class="font-bold text-lg">🚀 Innovation Driven</h3>
+      <p class="text-gray-600 mt-2">Build AI products impacting Africa.</p>
+    </div>
+    <div class="p-6 shadow rounded-xl">
+      <h3 class="font-bold text-lg">📈 Career Growth</h3>
+      <p class="text-gray-600 mt-2">Mentorship + real project ownership.</p>
+    </div>
+  </div>
 </section>
+
+<!-- OPEN POSITIONS -->
+<section class="py-16">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold mb-8 text-center">Open Internship Positions</h2>
+
+    <div class="grid md:grid-cols-2 gap-6">
+
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="font-bold text-lg">AI Research Intern</h3>
+        <p class="text-gray-600 mt-2">Focus: NLP & ML Models</p>
+        <p class="mt-2 text-indigo-600 font-semibold">
+          Salary: $300 – $800/month (Remote)
+        </p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="font-bold text-lg">Frontend Developer Intern</h3>
+        <p class="text-gray-600 mt-2">Focus: Web & UI/UX</p>
+        <p class="mt-2 text-indigo-600 font-semibold">
+          Salary: $250 – $700/month (Remote)
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATION FORM -->
+<section class="py-16 bg-white">
+  <div class="max-w-3xl mx-auto p-10 shadow-xl rounded-2xl">
+
+    <h2 class="text-2xl font-bold text-center mb-8">
+      Apply Now
+    </h2>
+
+    <form id="careerForm" class="space-y-6">
+
+      <input type="text" placeholder="Full Name" required class="w-full p-3 border rounded-lg">
+      <input type="email" placeholder="Email Address" required class="w-full p-3 border rounded-lg">
+
+      <select required class="w-full p-3 border rounded-lg">
+        <option value="">Highest Education</option>
+        <option>Bachelor’s</option>
+        <option>Master’s</option>
+        <option>PhD</option>
+        <option>Self-Taught</option>
+      </select>
+
+      <select required class="w-full p-3 border rounded-lg">
+        <option value="">Area of Interest</option>
+        <option>Sports AI</option>
+        <option>Health AI</option>
+        <option>Agriculture AI</option>
+        <option>Education AI</option>
+        <option>Broker & Trading AI</option>
+        <option>Language AI</option>
+      </select>
+
+      <textarea placeholder="Why should we hire you?" class="w-full p-3 border rounded-lg"></textarea>
+
+      <input type="file" accept=".pdf" class="w-full">
+
+      <button type="submit"
+        class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">
+        Submit Application
+      </button>
+
+    </form>
+
+  </div>
+</section>
+
+<!-- PRE-FOOTER SECTION -->
+<section class="bg-gray-100 py-16">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+
+    <!-- LEFT SIDE: LINKS + SOCIAL -->
+    <div class="grid sm:grid-cols-2 gap-8">
+
+      <!-- Useful Links -->
+      <div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">Useful Links</h3>
+        <ul class="space-y-3 text-gray-600">
+          <li><a href="index.html" class="hover:text-indigo-600">Home</a></li>
+          <li><a href="solutions.html" class="hover:text-indigo-600">Spaces</a></li>
+          <li><a href="online-courses.html" class="hover:text-indigo-600">Courses</a></li>
+          <li><a href="career.html" class="hover:text-indigo-600">Careers</a></li>
+          <li><a href="terms.html" class="hover:text-indigo-600">Terms & Conditions</a></li>
+        </ul>
+      </div>
+
+      <!-- Other Services -->
+      <div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">Other Services</h3>
+        <ul class="space-y-3 text-gray-600">
+          <li><a href="#" class="hover:text-indigo-600">Healthcare AI</a></li>
+          <li><a href="#" class="hover:text-indigo-600">AI Tools Directory</a></li>
+          <li><a href="#" class="hover:text-indigo-600">Startup Incubation</a></li>
+          <li><a href="#" class="hover:text-indigo-600">Community Programs</a></li>
+          <li><a href="#" class="hover:text-indigo-600">Partnerships</a></li>
+        </ul>
+      </div>
+
+      <!-- Social Media -->
+      <div class="sm:col-span-2 mt-6">
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">Connect With Us</h3>
+      
+        <div class="flex flex-wrap gap-4">
+
+          <a href="https://linkedin.com/company/kglai" target="_blank"
+             class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white transition">
+            <i class="fab fa-linkedin-in"></i> LinkedIn
+          </a>
+          
+          <a href="https://facebook.com/kglai" target="_blank"
+             class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white transition">
+            <i class="fab fa-facebook-f"></i> Facebook
+          </a>
+      
+          <a href="https://twitter.com/kglai" target="_blank"
+             class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white transition">
+            <i class="fab fa-x-twitter"></i> Twitter / X
+          </a>
+      
+          <a href="https://instagram.com/kglai" target="_blank"
+             class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white transition">
+            <i class="fab fa-instagram"></i> Instagram
+          </a>
+      <!-- 
+          <a href="https://github.com/kgl-ai" target="_blank"
+             class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white transition">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+       -->
+          <a href="https://youtube.com/@kglai" target="_blank"
+             class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white transition">
+            <i class="fab fa-youtube"></i> YouTube
+          </a>
+      
+          <a href="https://tiktok.com/@kglai" target="_blank"
+             class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white transition">
+            <i class="fab fa-tiktok"></i> TikTok
+          </a>
+      
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDE: CONTACT / SIGNUP FORM -->
+    <div>
+      <h3 class="text-xl font-semibold text-gray-800 mb-4">Stay Connected</h3>
+      <p class="text-gray-600 mb-6">
+        Subscribe or send us a message to collaborate with KGL AI.
+      </p>
+
+      <form action="#" method="POST" class="space-y-4">
+
+        <input type="text" placeholder="Name"
+          class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none">
+
+        <input type="email" placeholder="Email"
+          class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none">
+
+        <textarea placeholder="Your Message"
+          class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none h-32"></textarea>
+
+        <button type="submit"
+          class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">
+          Send Message
+        </button>
+
+      </form>
+    </div>
+
+  </div>
+</section>
+  
+<!-- FOOTER -->
+<footer class="text-center py-10 text-gray-500 text-sm bg-gray-900">
+  © 2026 KGL AI · Product of BOT Ltd · Open · Community Data-Driven ·
+  <a href="terms.html" class="hover:text-gray-700 underline">Terms and Conditions</a> ·
+  <a href="https://www.risa.gov.rw/data-protection-and-privacy-law" class="hover:text-gray-700 underline">Privacy Policy</a>
+</footer>
+
+<script>
+document.getElementById("careerForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  alert("Application submitted. Our AI team will review your CV.");
+});
+</script>
+
+</body>
+</html>
