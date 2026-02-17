@@ -120,199 +120,208 @@
   </div>
 </header>
 
-<!-- KGL AI SPACES HERO + AI SEARCH -->
-<section class="relative text-center py-28 bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-500 text-white overflow-hidden">
 
-  <div class="max-w-5xl mx-auto px-4">
+<!-- ================= HERO + SEARCH SECTION ================= -->
+<section class="relative bg-gradient-to-r from-indigo-700 via-purple-700 to-cyan-600 text-white py-28">
+
+  <div class="max-w-6xl mx-auto px-6 text-center">
 
     <!-- Main Heading -->
-    <h1 class="text-5xl md:text-6xl font-extrabold mb-4">
+    <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
       KGL AI Spaces
     </h1>
 
     <!-- Subheading -->
-    <h2 class="text-2xl font-semibold mb-6 opacity-95">
-      🔎 Explore Africa’s AI Innovation Ecosystem
-    </h2>
+    <p class="text-xl md:text-2xl font-medium mb-6 opacity-95">
+      🌍 Africa’s AI Innovation Ecosystem
+    </p>
 
-    <p class="text-lg opacity-90 max-w-2xl mx-auto mb-10">
-      Discover AI-powered tools, research labs, healthcare systems, agriculture innovations,
-      education platforms, and smart solutions built by the KGL AI community across Rwanda and Africa.
+    <p class="text-lg opacity-90 max-w-3xl mx-auto mb-12">
+      Discover AI-powered healthcare, agriculture, education, transport, legal and government solutions 
+      built by innovators across Rwanda and Africa.
     </p>
 
     <!-- Search Box -->
-    <div class="max-w-3xl mx-auto mb-8">
+    <div class="max-w-3xl mx-auto">
       <div class="flex bg-white rounded-2xl overflow-hidden shadow-2xl">
 
         <input 
           type="text" 
           id="spaceQuery"
-          placeholder="Search AI tools, e.g. healthcare diagnosis, crop prediction, smart farming..."
+          placeholder="Search AI tools (e.g. smart farming, medical diagnosis, transport services...)"
           class="flex-1 p-5 text-gray-700 outline-none">
 
         <button onclick="searchSpaces()"
-          class="bg-indigo-700 px-8 font-semibold hover:bg-indigo-800 transition">
-          Search
+          class="bg-indigo-700 text-white px-8 font-semibold hover:bg-indigo-800 transition">
+          🔎 Search
         </button>
 
       </div>
     </div>
 
-     <!-- HEADER -->
-  <div class="text-center mb-12">
-    <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-4">
-      Spaces
-    </h1>
+  </div>
+</section>
 
-    <!-- Moving Stats Line -->
-  <div class="text-lg text-indigo-600 font-semibold mb-8 h-8 overflow-hidden relative">
-    <div id="movingStats" class="absolute w-full animate-fade">
-      🚀 <span id="totalSpaces">0</span> Active AI Spaces · 
+
+
+<!-- ================= SPACES OVERVIEW SECTION ================= -->
+<section class="max-w-7xl mx-auto py-20 px-6">
+
+  <!-- Section Header -->
+  <div class="text-center mb-16">
+    <h2 class="text-4xl font-bold text-gray-900 mb-4">
+      Explore AI Spaces
+    </h2>
+
+    <!-- Live Stats -->
+    <div class="text-indigo-600 font-semibold text-lg">
+      🚀 <span id="totalSpaces">0</span> Active Spaces · 
       👥 <span id="totalContributors">0</span> Contributors Across Africa
     </div>
   </div>
 
-  <!-- SPACES GRID -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+  <!-- Spaces Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
 
-    <!-- RWANDA SPORTS -->
+    <!-- SPORTS -->
     <a href="kglsports.html"
-      class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition border-2 border-green-500 block">
-      <h3 class="text-xl font-bold text-green-600">⚽ Rwanda Sports Analysis</h3>
-      <p class="mt-2 text-gray-600">
+      class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border border-green-200">
+      <h3 class="text-xl font-bold text-green-600">⚽ Rwanda Sports AI</h3>
+      <p class="mt-3 text-gray-600">
         Live scores, match analytics & sports intelligence.
       </p>
-      <span class="inline-block mt-4 text-green-600 font-semibold">
-        Explore Sports Space →
-      </span>
     </a>
 
     <!-- EDUCATION -->
     <a href="https://sites.google.com/view/berbason/home?authuser=4"
-      class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition border-2 border-blue-500 block">
+      class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border border-blue-200">
       <h3 class="text-xl font-bold text-blue-600">🎓 Education AI</h3>
-      <p class="mt-2 text-gray-600">
-        AI tutoring, assessments & learning analytics.
+      <p class="mt-3 text-gray-600">
+        Smart tutoring, AI assessments & learning analytics.
       </p>
-      <span class="inline-block mt-4 text-blue-600 font-semibold">
-        Explore Education Space →
-      </span>
     </a>
 
     <!-- AGRICULTURE -->
     <a href="https://poe.com/KGAgriAI"
-      class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition border-2 border-green-600 block">
+      class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border border-green-300">
       <h3 class="text-xl font-bold text-green-700">🌾 Agriculture AI</h3>
-      <p class="mt-2 text-gray-600">
+      <p class="mt-3 text-gray-600">
         Weather intelligence, crop & soil insights.
       </p>
-      <span class="inline-block mt-4 text-green-700 font-semibold">
-        Ask KGAgriAI →
-      </span>
     </a>
 
     <!-- HEALTHCARE -->
     <a href="https://poe.com/UbuzimaAI"
-      class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition border-2 border-red-500 block">
+      class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border border-red-200">
       <h3 class="text-xl font-bold text-red-600">🏥 Healthcare AI</h3>
-      <p class="mt-2 text-gray-600">
-        Symptom analysis & medical care guidance.
+      <p class="mt-3 text-gray-600">
+        AI-powered symptom analysis & medical guidance.
       </p>
-      <span class="inline-block mt-4 text-red-600 font-semibold">
-        Ask UbuzimaAI →
-      </span>
     </a>
 
     <!-- GOVERNMENT -->
     <a href="https://poe.com/GovServicesAI"
-      class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition border-2 border-purple-500 block">
+      class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border border-purple-200">
       <h3 class="text-xl font-bold text-purple-600">🏛 Government AI</h3>
-      <p class="mt-2 text-gray-600">
-        Digital public services & civic tech solutions.
+      <p class="mt-3 text-gray-600">
+        Digital public services & civic technology.
       </p>
-      <span class="inline-block mt-4 text-purple-600 font-semibold">
-        Ask GovServicesAI →
-      </span>
     </a>
 
     <!-- LEGAL -->
     <a href="https://poe.com/KGLegalAI"
-      class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition border-2 border-yellow-500 block">
+      class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border border-yellow-200">
       <h3 class="text-xl font-bold text-yellow-600">⚖ Legal AI</h3>
-      <p class="mt-2 text-gray-600">
-        Legal research & AI document analysis.
+      <p class="mt-3 text-gray-600">
+        AI legal research & smart document analysis.
       </p>
-      <span class="inline-block mt-4 text-yellow-600 font-semibold">
-        Ask KGLegalAI →
-      </span>
     </a>
 
     <!-- ENGINEERING -->
-    <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition border-2 border-gray-400">
+    <div class="bg-white p-8 rounded-2xl shadow-md border border-gray-200">
       <h3 class="text-xl font-bold text-gray-700">🛠 Engineering AI</h3>
-      <p class="mt-2 text-gray-600">
+      <p class="mt-3 text-gray-600">
         Diagnostics, maintenance & troubleshooting systems.
       </p>
-      <span class="inline-block mt-4 text-gray-700 font-semibold">
-        Coming Soon →
-      </span>
+      <p class="mt-4 text-sm text-gray-400 font-medium">Coming Soon</p>
     </div>
 
     <!-- TRANSPORT -->
     <a href="https://poe.com/KGLTransAI"
-      class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition border-2 border-indigo-500 block">
+      class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border border-indigo-200">
       <h3 class="text-xl font-bold text-indigo-600">🚛 Transport AI</h3>
-      <p class="mt-2 text-gray-600">
-        Smart mobility & transport service assistant.
+      <p class="mt-3 text-gray-600">
+        Smart mobility & transport assistant services.
       </p>
-      <span class="inline-block mt-4 text-indigo-600 font-semibold">
-        Ask KGLTransAI →
-      </span>
     </a>
 
     <!-- BROKER -->
     <a href="https://poe.com/KGBrokerAI"
-      class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition border-2 border-pink-500 block">
+      class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border border-pink-200">
       <h3 class="text-xl font-bold text-pink-600">💼 Broker AI</h3>
-      <p class="mt-2 text-gray-600">
-        AI-powered broker & intermediary services.
+      <p class="mt-3 text-gray-600">
+        AI-powered broker & intermediary solutions.
       </p>
-      <span class="inline-block mt-4 text-pink-600 font-semibold">
-        Ask KGBrokerAI →
-      </span>
     </a>
 
   </div>
-    
+
   <!-- Action Buttons -->
-    <div class="flex flex-wrap justify-center gap-4">
-      <a href="signup.html"
-        class="bg-indigo-600 text-white px-6 py-3 rounded-xl font-semibold shadow hover:bg-indigo-700 transition">
-        ➕ Create New Space
-      </a>
+  <div class="mt-16 text-center flex flex-wrap justify-center gap-6">
+    <a href="signup.html"
+      class="bg-indigo-600 text-white px-8 py-3 rounded-xl font-semibold shadow hover:bg-indigo-700 transition">
+      ➕ Create New Space
+    </a>
 
-      <a href="career.html"
-        class="bg-gray-900 text-white px-6 py-3 rounded-xl font-semibold shadow hover:bg-gray-800 transition">
-        🤝 Become Contributor
-      </a>
-
-      <a href="#"
-        class="bg-gray-200 text-gray-800 px-6 py-3 rounded-xl font-semibold shadow hover:bg-gray-300 transition">
-        🔎 Explore All
-      </a>
-    </div>
-
+    <a href="career.html"
+      class="bg-gray-900 text-white px-8 py-3 rounded-xl font-semibold shadow hover:bg-gray-800 transition">
+      🤝 Become Contributor
+    </a>
   </div>
 
 </section>
 
-<!-- AI RESULTS SECTION -->
-<section class="max-w-6xl mx-auto py-20 px-4">
+
+
+<!-- ================= SEARCH RESULTS ================= -->
+<section class="max-w-6xl mx-auto pb-20 px-6">
   <div id="searchResults" class="grid md:grid-cols-3 gap-8"></div>
 </section>
 
 
-<!-- SCRIPT -->
+
+<!-- ================= COMMUNITY IMPACT ================= -->
+<section class="py-24 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+
+    <h3 class="text-4xl font-bold text-gray-900 mb-16">
+      Community Impact
+    </h3>
+
+    <div class="grid md:grid-cols-3 gap-10">
+
+      <div class="p-10 rounded-2xl shadow bg-white">
+        <p class="text-5xl font-extrabold text-indigo-600 counter" data-target="5">0</p>
+        <p class="mt-4 text-gray-600 font-medium">Contributors</p>
+      </div>
+
+      <div class="p-10 rounded-2xl shadow bg-white">
+        <p class="text-5xl font-extrabold text-indigo-600 counter" data-target="60">0</p>
+        <p class="mt-4 text-gray-600 font-medium">Subscribers</p>
+      </div>
+
+      <div class="p-10 rounded-2xl shadow bg-white">
+        <p class="text-5xl font-extrabold text-indigo-600 counter" data-target="100">0</p>
+        <p class="mt-4 text-gray-600 font-medium">Daily Visitors</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ================= SCRIPT ================= -->
 <script>
 function animateCounter(id, target) {
   let count = 0;
@@ -334,49 +343,24 @@ function animateCounter(id, target) {
 animateCounter("totalSpaces", 9);
 animateCounter("totalContributors", 320);
 
-const stats = document.getElementById("movingStats");
-let direction = 1;
+document.querySelectorAll(".counter").forEach(counter => {
+  const target = +counter.getAttribute("data-target");
+  let count = 0;
+  const increment = target / 100;
 
-setInterval(() => {
-  stats.style.transform = `translateY(${direction * -5}px)`;
-  direction *= -1;
-}, 2000);
+  function update() {
+    if (count < target) {
+      count += increment;
+      counter.innerText = Math.floor(count);
+      requestAnimationFrame(update);
+    } else {
+      counter.innerText = target;
+    }
+  }
+  update();
+});
 </script>
 
-
-<!-- COMMUNITY IMPACT SECTION -->
-<section id="community" class="py-20 bg-white">
-  <div class="max-w-7xl mx-auto px-6 text-center">
-
-    <!-- Title -->
-    <h3 class="text-4xl font-bold text-gray-900">Community Impact</h3>
-    <!-- <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
-      KGL AI is building Africa’s leading AI innovation hub — empowering developers,
-      healthcare systems, startups, and communities worldwide.
-    </p> -->
-
-    <!-- Stats -->
-    <div id="stats" class="mt-16 grid md:grid-cols-3 gap-8">
-      
-      <div class="p-10 rounded-2xl shadow-md bg-gray-50 text-center">
-        <p class="text-5xl font-extrabold text-indigo-600 counter" data-target="5">0</p>
-        <p class="mt-4 text-gray-600">Contributors</p>
-      </div>
-
-      <div class="p-10 rounded-2xl shadow-md bg-gray-50 text-center">
-        <p class="text-5xl font-extrabold text-indigo-600 counter" data-target="60">0</p>
-        <p class="mt-4 text-gray-600">Subscribers</p>
-      </div>
-
-      <div class="p-10 rounded-2xl shadow-md bg-gray-50 text-center">
-        <p class="text-5xl font-extrabold text-indigo-600 counter" data-target="100">0</p>
-        <p class="mt-4 text-gray-600">Daily visitors</p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
 
 <!-- PRE-FOOTER SECTION -->
 <section class="bg-gray-100 py-16">
