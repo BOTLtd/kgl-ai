@@ -148,7 +148,7 @@
         <input 
           type="text" 
           id="spaceQuery"
-          placeholder="Search AI tools (e.g. smart farming, medical diagnosis, transport services...)"
+          placeholder="Search KGL AI tools (e.g. smart farming, medical diagnosis, transport services...)"
           class="flex-1 p-5 text-gray-700 outline-none">
 
         <button onclick="searchSpaces()"
@@ -159,15 +159,22 @@
       </div>
     </div>
 
+   <!-- Action Buttons -->
+   <div class="mt-16 text-center flex flex-wrap justify-center gap-6">
+    <a href="signup.html"
+      class="bg-indigo-600 text-white px-8 py-3 rounded-xl font-semibold shadow hover:bg-indigo-700 transition">
+      ➕ Create New Space
+    </a>
+
+    <a href="career.html"
+      class="bg-gray-900 text-white px-8 py-3 rounded-xl font-semibold shadow hover:bg-gray-800 transition">
+      🤝 Become Contributor
+    </a>
+  </div>
+    
   </div>
   
 </section>
-
-  <!-- ================= SEARCH RESULTS ================= -->
-<section class="max-w-6xl mx-auto pb-20 px-6">
-  <div id="searchResults" class="grid md:grid-cols-3 gap-8"></div>
-</section>
-
 
 <!-- ================= SPACES OVERVIEW SECTION ================= -->
 <section class="max-w-7xl mx-auto py-20 px-6">
@@ -185,28 +192,24 @@
     </div>
   </div>
 
-    <!-- Action Buttons -->
-  <div class="mt-16 text-center flex flex-wrap justify-center gap-6">
-    <a href="signup.html"
-      class="bg-indigo-600 text-white px-8 py-3 rounded-xl font-semibold shadow hover:bg-indigo-700 transition">
-      ➕ Create New Space
-    </a>
-
-    <a href="career.html"
-      class="bg-gray-900 text-white px-8 py-3 rounded-xl font-semibold shadow hover:bg-gray-800 transition">
-      🤝 Become Contributor
-    </a>
-  </div>
-
   <!-- Spaces Grid -->
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
 
-    <!-- SPORTS -->
-    <a href="kglsports.html"
-      class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border border-green-200">
-      <h3 class="text-xl font-bold text-green-600">⚽ Rwanda Sports AI</h3>
+    <!-- ENGINEERING -->
+    <a href="index.html"
+      class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border border-indigo-200">
+      <h3 class="text-xl font-bold text-indigo-600">🛠 Engineering AI</h3>
       <p class="mt-3 text-gray-600">
-        Live scores, match analytics & sports intelligence.
+        Diagnostics, maintenance & troubleshooting systems.
+      </p>
+    </a>
+
+    <!-- HEALTHCARE -->
+    <a href="https://poe.com/UbuzimaAI"
+      class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border border-red-200">
+      <h3 class="text-xl font-bold text-red-600">🏥 Healthcare AI</h3>
+      <p class="mt-3 text-gray-600">
+        AI-powered symptom analysis & medical guidance.
       </p>
     </a>
 
@@ -228,15 +231,6 @@
       </p>
     </a>
 
-    <!-- HEALTHCARE -->
-    <a href="https://poe.com/UbuzimaAI"
-      class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border border-red-200">
-      <h3 class="text-xl font-bold text-red-600">🏥 Healthcare AI</h3>
-      <p class="mt-3 text-gray-600">
-        AI-powered symptom analysis & medical guidance.
-      </p>
-    </a>
-
     <!-- GOVERNMENT -->
     <a href="https://poe.com/GovServicesAI"
       class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border border-purple-200">
@@ -254,15 +248,15 @@
         AI legal research & smart document analysis.
       </p>
     </a>
-
-    <!-- ENGINEERING -->
-    <div class="bg-white p-8 rounded-2xl shadow-md border border-gray-200">
-      <h3 class="text-xl font-bold text-gray-700">🛠 Engineering AI</h3>
+    
+    <!-- SPORTS -->
+    <a href="kglsports.html"
+      class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border border-green-200">
+      <h3 class="text-xl font-bold text-green-600">⚽ Rwanda Sports AI</h3>
       <p class="mt-3 text-gray-600">
-        Diagnostics, maintenance & troubleshooting systems.
+        Live scores, match analytics & sports intelligence.
       </p>
-      <p class="mt-4 text-sm text-gray-400 font-medium">Coming Soon</p>
-    </div>
+    </a>
 
     <!-- TRANSPORT -->
     <a href="https://poe.com/KGLTransAI"
@@ -283,35 +277,46 @@
     </a>
 
   </div>
-
-  <div class="max-w-6xl mx-auto px-6 text-center">
-
-    <h3 class="text-4xl font-bold text-gray-900 mb-16">
-      Community Impact
-    </h3>
-
-    <div class="grid md:grid-cols-3 gap-10">
-
-      <div class="p-10 rounded-2xl shadow bg-white">
-        <p class="text-5xl font-extrabold text-indigo-600 counter" data-target="5">0</p>
-        <p class="mt-4 text-gray-600 font-medium">Contributors</p>
-      </div>
-
-      <div class="p-10 rounded-2xl shadow bg-white">
-        <p class="text-5xl font-extrabold text-indigo-600 counter" data-target="60">0</p>
-        <p class="mt-4 text-gray-600 font-medium">Subscribers</p>
-      </div>
-
-      <div class="p-10 rounded-2xl shadow bg-white">
-        <p class="text-5xl font-extrabold text-indigo-600 counter" data-target="100">0</p>
-        <p class="mt-4 text-gray-600 font-medium">Daily Visitors</p>
-      </div>
-
-    </div>
   </div>
 
 </section>
 
+  <!-- Community Impact Section -->
+<section class="py-20 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <!-- Main Card -->
+    <div class="bg-white rounded-3xl shadow-xl p-12">
+
+      <h3 class="text-4xl font-bold text-gray-900 text-center mb-16">
+        Community Impact
+      </h3>
+
+      <div class="grid md:grid-cols-3 gap-10 text-center">
+
+        <div class="p-8 rounded-2xl bg-gray-50">
+          <p class="text-5xl font-extrabold text-indigo-600 counter" data-target="5">0</p>
+          <p class="mt-4 text-gray-600 font-medium">Contributors</p>
+        </div>
+
+        <div class="p-8 rounded-2xl bg-gray-50">
+          <p class="text-5xl font-extrabold text-indigo-600 counter" data-target="60">0</p>
+          <p class="mt-4 text-gray-600 font-medium">Subscribers</p>
+        </div>
+
+        <div class="p-8 rounded-2xl bg-gray-50">
+          <p class="text-5xl font-extrabold text-indigo-600 counter" data-target="100">0</p>
+          <p class="mt-4 text-gray-600 font-medium">Daily Visitors</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+  
 <!-- ================= SCRIPT ================= -->
 <script>
 function animateCounter(id, target) {
