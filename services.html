@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Meta -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KGL AI | Africa’s AI Innovation Hub</title>
+  <meta name="description" content="KGL AI is Africa’s leading AI innovation hub empowering healthcare, developers, startups, and communities through artificial intelligence.">
+  <meta name="keywords" content="KGL AI, Artificial Intelligence, Africa AI, Healthcare AI, AI Platform, Innovation Hub">
+  <meta name="author" content="KGL AI">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="image/logo.png">
+
+  <!-- Open Graph (For Social Sharing) -->
+  <meta property="og:title" content="KGL AI | Africa’s AI Innovation Hub">
+  <meta property="og:description" content="Empowering innovation through AI tools, healthcare solutions, and community collaboration.">
+  <meta property="og:image" content="image/logo.png">
+  <meta property="og:type" content="website">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Custom Styles -->
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    /* Moving Top Banner */
+    .top-banner {
+      background: linear-gradient(90deg, #4f46e5, #06b6d4);
+      color: white;
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 8px 0;
+      font-weight: 500;
+    }
+
+    .banner-content {
+      display: inline-block;
+      padding-left: 100%;
+      animation: slide 20s linear infinite;
+    }
+
+    @keyframes slide {
+      from { transform: translateX(0); }
+      to { transform: translateX(-100%); }
+    }
+
+    /* Social Media Buttons */
+    .social-link {
+      padding: 10px 18px;
+      border-radius: 9999px;
+      background: #f3f4f6;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+      background: #6366f1;
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    /* Smooth Fade Animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+
+</head>
+
+
+<body class="bg-gray-50 text-gray-900">
+
+<!-- MOVING TOP BANNER -->
+<div class="top-banner">
+  <div class="banner-content">
+    🚀🌍 Discover Africa’s AI Innovation Hub · 🚀 Join KGL AI Community · 🏥 Try AI Tools · 🤖 Explore Smart Spaces · 💼 Apply for remote jobs and Internships · 🌍 Rwanda & Africa’s Open AI Platform 
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto p-4 flex justify-between items-center">
+
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="image/logo.png" alt="KGL AI Logo"
+        class="h-10 md:h-12 w-auto object-contain"
+        onerror="this.style.display='none'" />
+      <span class="text-2xl font-extrabold text-gray-800">
+        KGL AI
+      </span>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="space-x-6 text-gray-700 font-medium">
+      <a href="index.html" class="hover:text-indigo-600 transition">Home</a>
+      <a href="services.html" class="hover:text-indigo-600 transition">Services</a>
+      <a href="solutions.html" class="hover:text-indigo-600 transition">Spaces</a>
+      <a href="career.html" class="hover:text-indigo-600 transition">Career</a>
+      <!-- <a href="contact.html" class="hover:text-indigo-600 transition">Contact</a> -->
+    </nav>
+  </div>
+</header>
+
+  <!-- Services Page -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto text-center mb-12 px-4">
+      <h1 class="text-4xl font-bold mb-4">Our Services</h1>
+      <p class="text-gray-600 max-w-2xl mx-auto mb-6">
+        Welcome to KGL AI! We combine **innovative AI solutions** with **data-driven insights** to help our customers solve real-world challenges.  
+        Our mission is to empower businesses, communities, and enthusiasts through smart technology.
+      </p>
+      
+      <!-- How We Work With Customers -->
+      <div class="bg-white p-6 rounded-xl shadow max-w-3xl mx-auto text-left">
+        <h2 class="text-2xl font-semibold mb-4">How We Work With You</h2>
+        <ul class="list-disc list-inside space-y-2 text-gray-700">
+          <li><strong>Understand Your Needs:</strong> We start by listening carefully to your challenges and goals.</li>
+          <li><strong>Collaborative Approach:</strong> We involve you in every step, from ideation to implementation.</li>
+          <li><strong>Tailored Solutions:</strong> Every AI and data solution is customized to match your unique requirements.</li>
+          <li><strong>Transparent Communication:</strong> You always know the progress, timelines, and results.</li>
+          <li><strong>Continuous Support:</strong> We provide ongoing maintenance, updates, and training as needed.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+      <!-- Service Card 1 -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h2 class="text-xl font-bold mb-2">AI Solutions & Automation</h2>
+        <p>Custom AI tools to automate business processes and improve efficiency.</p>
+      </div>
+
+      <!-- Service Card 2 -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h2 class="text-xl font-bold mb-2">Data Analysis & Insights</h2>
+        <p>Analyze large datasets to uncover trends, patterns, and actionable insights.</p>
+      </div>
+
+      <!-- Service Card 3 -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h2 class="text-xl font-bold mb-2">EV & Battery Analytics</h2>
+        <p>Predictive maintenance and performance analytics for electric vehicles and batteries.</p>
+      </div>
+
+      <!-- Service Card 4 -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h2 class="text-xl font-bold mb-2">Sports Analytics</h2>
+        <p>Analyze player performance and match statistics to make data-driven decisions.</p>
+      </div>
+
+      <!-- Service Card 5 -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h2 class="text-xl font-bold mb-2">Predictive Modeling</h2>
+        <p>Forecast trends and future outcomes using advanced AI and ML models.</p>
+      </div>
+
+      <!-- Service Card 6 -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h2 class="text-xl font-bold mb-2">Custom Web & Dashboard Dev</h2>
+        <p>Build AI-powered dashboards and web apps tailored for your business needs.</p>
+      </div>
+
+      <!-- Service Card 7 -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h2 class="text-xl font-bold mb-2">Community Projects & Collaboration</h2>
+        <p>Join AI projects, collaborate with peers, and innovate together.</p>
+      </div>
+
+      <!-- Service Card 8 -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h2 class="text-xl font-bold mb-2">Machine Learning Models</h2>
+        <p>Design, train, and deploy ML models for diverse business and research use cases.</p>
+      </div>
+
+      <!-- Service Card 9 -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h2 class="text-xl font-bold mb-2">Training & Workshops</h2>
+        <p>Hands-on AI and data science training programs for individuals and teams.</p>
+      </div>
+
+      <!-- Service Card 10 -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h2 class="text-xl font-bold mb-2">AI Consulting</h2>
+        <p>Expert advice on AI strategy, implementation, and process optimization.</p>
+      </div>
+    </div>
+  </section>
+
+ <!-- COMMUNITY IMPACT SECTION -->
+<section id="community" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+
+    <!-- Title -->
+    <h3 class="text-4xl font-bold text-gray-900">Community Impact</h3>
+    <!-- <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+      KGL AI is building Africa’s leading AI innovation hub — empowering developers,
+      healthcare systems, startups, and communities worldwide.
+    </p> -->
+
+    <!-- Stats -->
+    <div id="stats" class="mt-16 grid md:grid-cols-3 gap-8">
+      
+      <div class="p-10 rounded-2xl shadow-md bg-gray-50 text-center">
+        <p class="text-5xl font-extrabold text-indigo-600 counter" data-target="5">0</p>
+        <p class="mt-4 text-gray-600">Contributors</p>
+      </div>
+
+      <div class="p-10 rounded-2xl shadow-md bg-gray-50 text-center">
+        <p class="text-5xl font-extrabold text-indigo-600 counter" data-target="60">0</p>
+        <p class="mt-4 text-gray-600">Subscribers</p>
+      </div>
+
+      <div class="p-10 rounded-2xl shadow-md bg-gray-50 text-center">
+        <p class="text-5xl font-extrabold text-indigo-600 counter" data-target="100">0</p>
+        <p class="mt-4 text-gray-600">Daily visitors</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+  
+<!-- ================= SCRIPT ================= -->
+<script>
+function animateCounter(id, target) {
+  let count = 0;
+  const element = document.getElementById(id);
+  const increment = target / 100;
+
+  function update() {
+    if (count < target) {
+      count += increment;
+      element.innerText = Math.floor(count);
+      requestAnimationFrame(update);
+    } else {
+      element.innerText = target;
+    }
+  }
+  update();
+}
+
+animateCounter("totalSpaces", 9);
+animateCounter("totalContributors", 320);
+
+document.querySelectorAll(".counter").forEach(counter => {
+  const target = +counter.getAttribute("data-target");
+  let count = 0;
+  const increment = target / 100;
+
+  function update() {
+    if (count < target) {
+      count += increment;
+      counter.innerText = Math.floor(count);
+      requestAnimationFrame(update);
+    } else {
+      counter.innerText = target;
+    }
+  }
+  update();
+});
+</script>
+
+
+<!-- PRE-FOOTER SECTION -->
+<section class="bg-gray-100 py-16">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+
+    <!-- LEFT SIDE: LINKS + SOCIAL -->
+    <div class="grid sm:grid-cols-2 gap-8">
+
+      <!-- Useful Links -->
+      <div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">Useful Links</h3>
+        <ul class="space-y-3 text-gray-600">
+          <li><a href="index.html" class="hover:text-indigo-600">Home</a></li>
+          <li><a href="solutions.html" class="hover:text-indigo-600">Spaces</a></li>
+          <li><a href="online-courses.html" class="hover:text-indigo-600">Courses</a></li>
+          <li><a href="career.html" class="hover:text-indigo-600">Careers</a></li>
+          <li><a href="terms.html" class="hover:text-indigo-600">Terms & Conditions</a></li>
+        </ul>
+      </div>
+
+      <!-- Other Services -->
+      <div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">Other Services</h3>
+        <ul class="space-y-3 text-gray-600">
+          <li><a href="#" class="hover:text-indigo-600">Healthcare AI</a></li>
+          <li><a href="#" class="hover:text-indigo-600">AI Tools Directory</a></li>
+          <li><a href="#" class="hover:text-indigo-600">Startup Incubation</a></li>
+          <li><a href="#" class="hover:text-indigo-600">Community Programs</a></li>
+          <li><a href="#" class="hover:text-indigo-600">Partnerships</a></li>
+        </ul>
+      </div>
+
+      <!-- Social Media -->
+      <div class="sm:col-span-2 mt-6">
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">Connect With Us</h3>
+      
+        <div class="flex flex-wrap gap-4">
+
+          <a href="https://linkedin.com/company/kglai" target="_blank"
+             class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white transition">
+            <i class="fab fa-linkedin-in"></i> LinkedIn
+          </a>
+          
+          <a href="https://facebook.com/kglai" target="_blank"
+             class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white transition">
+            <i class="fab fa-facebook-f"></i> Facebook
+          </a>
+      
+          <a href="https://twitter.com/kglai" target="_blank"
+             class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white transition">
+            <i class="fab fa-x-twitter"></i> Twitter / X
+          </a>
+      
+          <a href="https://instagram.com/kglai" target="_blank"
+             class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white transition">
+            <i class="fab fa-instagram"></i> Instagram
+          </a>
+      <!-- 
+          <a href="https://github.com/kgl-ai" target="_blank"
+             class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white transition">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+       -->
+          <a href="https://youtube.com/@kglai" target="_blank"
+             class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white transition">
+            <i class="fab fa-youtube"></i> YouTube
+          </a>
+      
+          <a href="https://tiktok.com/@kglai" target="_blank"
+             class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white transition">
+            <i class="fab fa-tiktok"></i> TikTok
+          </a>
+      
+        </div>
+      </div>
+
+    </div>
+
+   <!-- RIGHT SIDE: CONTACT / SIGNUP FORM -->
+    <div>
+      <h3 class="text-xl font-semibold text-gray-800 mb-4">Partnership form</h3>
+      <p class="text-gray-600 mb-6">
+        Submit the form below to collaborate or partner with KGL AI.
+      </p>
+
+      <form action="#" method="POST" class="space-y-4">
+
+        <input type="text" placeholder="Name"
+          class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none">
+
+        <input type="email" placeholder="Email"
+          class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none">
+
+        <input type="text" placeholder="Position"
+          class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none">
+        
+        <input type="text" placeholder="Company name"
+          class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none">
+
+        <textarea placeholder="Your Message"
+          class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none h-32"></textarea>
+
+        <button type="submit"
+          class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">
+          Send Message
+        </button>
+
+      </form>
+    </div>
+
+  </div>
+</section>
+  
+<!-- FOOTER -->
+<footer class="text-center py-10 text-gray-500 text-sm bg-gray-900">
+  © 2026 KGL AI · Product of BOT Ltd · Open · Community · Data-Driven ·
+  <a href="terms.html" class="hover:text-gray-700 underline">Terms and Conditions</a> ·
+  <a href="https://www.risa.gov.rw/data-protection-and-privacy-law" class="hover:text-gray-700 underline">Privacy Policy</a>
+</footer>
+
+  <!-- Javascrpt for counting -->
+<script>
+  const counters = document.querySelectorAll('.counter');
+  const speed = 200; // lower = faster
+
+  const startCounting = (entry) => {
+    if (!entry.isIntersecting) return;
+
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = target / speed;
+
+        if (count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(updateCount, 10);
+        } else {
+          counter.innerText = target + "+";
+        }
+      };
+
+      updateCount();
+    });
+
+    observer.disconnect(); // run once
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(startCounting);
+  }, { threshold: 0.5 });
+
+  observer.observe(document.querySelector('#stats'));
+</script>
+  
+</body>
+</html>
