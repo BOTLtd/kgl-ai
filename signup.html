@@ -7,7 +7,6 @@
 
 <link rel="icon" type="image/png" href="image/logo.png">
 <script src="https://cdn.tailwindcss.com"></script>
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
@@ -39,29 +38,22 @@ body { font-family: 'Inter', sans-serif; }
 <!-- MOVING TOP BANNER -->
 <div class="top-banner">
   <div class="banner-content">
-    🚀🌍 Discover Africa’s AI Innovation Hub · 🚀 Join KGL AI Community  · 💼 Apply for remote jobs and Internships · 🚀 Remote Global Hiring · 🤖 AI-Powered Screening · 🌍 Rwanda & Africa’s Open AI Community
+    🚀🌍 Discover Africa’s AI Innovation Hub · 🚀 Join KGL AI Community · 💼 Apply for remote jobs and Internships · 🚀 Remote Global Hiring · 🤖 AI-Powered Screening · 🌍 Rwanda & Africa’s Open AI Community
   </div>
 </div>
 
 <!-- HEADER -->
 <header class="bg-white shadow-sm sticky top-0 z-50">
   <div class="max-w-7xl mx-auto p-4 flex justify-between items-center">
-
     <a href="index.html" class="flex items-center gap-3">
-      <img src="image/logo.png" alt="KGL AI Logo"
-        class="h-10 md:h-12 w-auto object-contain"
-        onerror="this.style.display='none'" />
-      <span class="text-2xl font-extrabold text-gray-800">
-        KGL AI
-      </span>
+      <img src="image/logo.png" alt="KGL AI Logo" class="h-10 md:h-12 w-auto object-contain" onerror="this.style.display='none'" />
+      <span class="text-2xl font-extrabold text-gray-800">KGL AI</span>
     </a>
-
     <nav class="space-x-6 text-gray-700 font-medium">
       <a href="index.html" class="hover:text-indigo-600 transition">Home</a>
       <a href="services.html" class="hover:text-indigo-600">Services</a>
       <a href="solutions.html" class="hover:text-indigo-600 transition">Spaces</a>
       <a href="career.html" class="hover:text-indigo-600 transition">Career</a>
-      <!-- <a href="contact.html" class="hover:text-indigo-600 transition">Contact</a> -->
     </nav>
   </div>
 </header>
@@ -70,20 +62,14 @@ body { font-family: 'Inter', sans-serif; }
 <section class="py-20 bg-gradient-to-r from-indigo-600 to-purple-700 text-white text-center">
   <h1 class="text-5xl font-extrabold mb-6">Be part of KGL AI community</h1>
   <p class="max-w-3xl mx-auto text-lg opacity-90">
-  Join KGL AI and become part of Africa’s growing community of innovators building real-world AI solutions across health, 
-  agriculture, education, finance, and beyond. 
-  Sign up for free to collaborate, learn, and contribute to impactful projects shaping the future of Rwanda and Africa.
+    Join KGL AI and become part of Africa’s growing community of innovators building real-world AI solutions across health, agriculture, education, finance, and beyond. Sign up for free to collaborate, learn, and contribute to impactful projects shaping the future of Rwanda and Africa.
   </p>
 </section>
   
 <!-- SIGNUP SECTION -->
 <section class="min-h-screen flex items-center justify-center py-16 bg-gray-50">
-
   <div class="bg-white w-full max-w-md rounded-2xl shadow-xl p-8">
-
-    <h1 class="text-3xl font-bold text-center mb-8">
-      Get Started
-    </h1>
+    <h1 class="text-3xl font-bold text-center mb-8">Get Started</h1>
 
     <form id="signupForm" class="space-y-6">
 
@@ -120,7 +106,6 @@ body { font-family: 'Inter', sans-serif; }
     <p id="successMessage" class="text-green-600 text-center mt-6 hidden">
       ✅ Signup successful! Welcome to KGL AI.
     </p>
-
   </div>
 </section>
 
@@ -266,25 +251,25 @@ body { font-family: 'Inter', sans-serif; }
       return;
     }
 
-    // Insert into Supabase
-    const { data, error } = await supabase
-      .from('signup')  // <-- Replace with your table name
-      .insert([{ name, email, location, created_at: new Date() }]);
+    try {
+      const { data, error } = await supabase
+        .from('signup') // Make sure your table in Supabase is named "signup"
+        .insert([{ name, email, location, created_at: new Date().toISOString() }]);
 
-    if (error) {
-      console.error(error);
-      alert('Error saving your data. Please try again.');
-    } else {
-      // Show success message
+      if (error) throw error;
+
+      // Show success message and reset form
       successMsg.classList.remove('hidden');
-
-      // Clear form
       form.reset();
 
-      // Optionally hide the message after 5 seconds
+      // Hide after 5 seconds
       setTimeout(() => {
         successMsg.classList.add('hidden');
       }, 5000);
+
+    } catch (err) {
+      console.error(err);
+      alert('Error saving your data. Please try again.');
     }
   });
 </script>
