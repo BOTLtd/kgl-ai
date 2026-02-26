@@ -77,7 +77,7 @@ body { font-family: 'Inter', sans-serif; }
 </section>
   
 <!-- SIGNUP SECTION -->
-<section class="min-h-screen flex items-center justify-center py-16">
+<section class="min-h-screen flex items-center justify-center py-16 bg-gray-50">
 
   <div class="bg-white w-full max-w-md rounded-2xl shadow-xl p-8">
 
@@ -108,16 +108,6 @@ body { font-family: 'Inter', sans-serif; }
           class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
       </div>
 
-      <!-- Date of Birth -->
-      <div>
-        <label class="block text-sm font-medium mb-2">Date of Birth</label>
-        <div class="grid grid-cols-3 gap-3">
-          <select id="month" class="p-3 border rounded-lg"></select>
-          <select id="day" class="p-3 border rounded-lg"></select>
-          <select id="year" class="p-3 border rounded-lg"></select>
-        </div>
-      </div>
-
       <!-- Submit -->
       <button type="submit"
         class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">
@@ -125,6 +115,11 @@ body { font-family: 'Inter', sans-serif; }
       </button>
 
     </form>
+
+    <!-- Success Message -->
+    <p id="successMessage" class="text-green-600 text-center mt-6 hidden">
+      ✅ Signup successful! Welcome to KGL AI.
+    </p>
 
   </div>
 </section>
@@ -248,52 +243,50 @@ body { font-family: 'Inter', sans-serif; }
   <a href="https://www.risa.gov.rw/data-protection-and-privacy-law" class="hover:text-gray-700 underline">Privacy Policy</a>
 </footer>
 
+<!-- SUPABASE + FORM SCRIPT -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/supabase.min.js"></script>
 <script>
-// Populate Date Dropdowns
-const monthSelect = document.getElementById("month");
-const daySelect = document.getElementById("day");
-const yearSelect = document.getElementById("year");
+  // Initialize Supabase
+  const supabaseUrl = 'https://vbuffgasrckvlxoilsec.supabase.co';
+  const supabaseKey = 'sb_publishable_RfN-k0VZHztLhO-BFwtwtA_sUwv5rWR';
+  const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
-const months = ["Month","January","February","March","April","May","June","July","August","September","October","November","December"];
-months.forEach(m => {
-  const option = document.createElement("option");
-  option.text = m;
-  option.value = m;
-  monthSelect.appendChild(option);
-});
+  const form = document.getElementById('signupForm');
+  const successMsg = document.getElementById('successMessage');
 
-for(let i=1;i<=31;i++){
-  let option = document.createElement("option");
-  option.text = i;
-  option.value = i;
-  daySelect.appendChild(option);
-}
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-for(let y=new Date().getFullYear(); y>=1950; y--){
-  let option = document.createElement("option");
-  option.text = y;
-  option.value = y;
-  yearSelect.appendChild(option);
-}
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const location = document.getElementById('location').value.trim();
 
-// Save Data + Redirect
-document.getElementById("signupForm").addEventListener("submit", function(e){
-  e.preventDefault();
+    if (!name || !email) {
+      alert('Please fill in all required fields.');
+      return;
+    }
 
-  const userData = {
-    name: document.getElementById("name").value,
-    email: document.getElementById("email").value,
-    dob: monthSelect.value + " " + daySelect.value + ", " + yearSelect.value,
-    location: document.getElementById("location").value,
-    createdAt: new Date().toISOString()
-  };
+    // Insert into Supabase
+    const { data, error } = await supabase
+      .from('signup')  // <-- Replace with your table name
+      .insert([{ name, email, location, created_at: new Date() }]);
 
-  let users = JSON.parse(localStorage.getItem("kglUsers")) || [];
-  users.push(userData);
-  localStorage.setItem("kglUsers", JSON.stringify(users));
+    if (error) {
+      console.error(error);
+      alert('Error saving your data. Please try again.');
+    } else {
+      // Show success message
+      successMsg.classList.remove('hidden');
 
-  window.location.href = "index.html";
-});
+      // Clear form
+      form.reset();
+
+      // Optionally hide the message after 5 seconds
+      setTimeout(() => {
+        successMsg.classList.add('hidden');
+      }, 5000);
+    }
+  });
 </script>
 
 </body>
