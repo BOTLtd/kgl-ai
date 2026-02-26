@@ -228,13 +228,12 @@ body { font-family: 'Inter', sans-serif; }
   <a href="https://www.risa.gov.rw/data-protection-and-privacy-law" class="hover:text-gray-700 underline">Privacy Policy</a>
 </footer>
 
-<!-- SUPABASE + FORM SCRIPT -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/supabase.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-  // Initialize Supabase
   const supabaseUrl = 'https://vbuffgasrckvlxoilsec.supabase.co';
   const supabaseKey = 'sb_publishable_RfN-k0VZHztLhO-BFwtwtA_sUwv5rWR';
-  const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
+  const client = supabase.createClient(supabaseUrl, supabaseKey);
 
   const form = document.getElementById('signupForm');
   const successMsg = document.getElementById('successMessage');
@@ -242,34 +241,20 @@ body { font-family: 'Inter', sans-serif; }
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const location = document.getElementById('location').value.trim();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const location = document.getElementById('location').value;
 
-    if (!name || !email) {
-      alert('Please fill in all required fields.');
-      return;
-    }
+    const { data, error } = await client
+      .from('signup')
+      .insert([{ name, email, location }]);
 
-    try {
-      const { data, error } = await supabase
-        .from('signup') // Make sure your table in Supabase is named "signup"
-        .insert([{ name, email, location, created_at: new Date().toISOString() }]);
-
-      if (error) throw error;
-
-      // Show success message and reset form
+    if (error) {
+      console.error(error);
+      alert('Error: ' + error.message);
+    } else {
       successMsg.classList.remove('hidden');
       form.reset();
-
-      // Hide after 5 seconds
-      setTimeout(() => {
-        successMsg.classList.add('hidden');
-      }, 5000);
-
-    } catch (err) {
-      console.error(err);
-      alert('Error saving your data. Please try again.');
     }
   });
 </script>
