@@ -120,6 +120,158 @@ body { font-family: 'Inter', sans-serif; }
   </div>
 </section>
 
+
+
+  <body class="bg-gray-50">
+
+<!-- CAREERS / APPLICATION -->
+<section class="py-20 bg-gradient-to-br from-indigo-50 to-blue-50">
+  <div class="max-w-5xl mx-auto px-6">
+
+    <!-- HEADER -->
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-slate-900 mb-4">
+        Join KGL AI 🚀
+      </h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Build the future with AI. Whether you're a freelancer, contributor, apprentice, or full-time professional,
+        KGL AI gives you the platform to grow, earn, and innovate.
+      </p>
+    </div>
+
+    <!-- BENEFITS -->
+    <div class="grid md:grid-cols-4 gap-6 mb-12 text-center">
+
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="font-bold text-indigo-600 mb-2">💼 Freelancers</h3>
+        <p class="text-sm text-gray-600">
+          Work remotely, earn per project, and access global AI opportunities.
+        </p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="font-bold text-indigo-600 mb-2">🤝 Contributors</h3>
+        <p class="text-sm text-gray-600">
+          Collaborate on AI projects, research, and innovation challenges.
+        </p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="font-bold text-indigo-600 mb-2">🎓 Apprentices</h3>
+        <p class="text-sm text-gray-600">
+          Learn by doing. Gain real-world AI experience and mentorship.
+        </p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="font-bold text-indigo-600 mb-2">🏢 Employees</h3>
+        <p class="text-sm text-gray-600">
+          Join our core team and build scalable AI systems impacting industries.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- FORM -->
+    <div class="bg-white p-10 rounded-2xl shadow-xl">
+      <h2 class="text-3xl font-bold text-center mb-8">Apply to Join KGL AI</h2>
+      <form id="careerForm" class="space-y-6">
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <input id="full_name" type="text" placeholder="Full Name" required class="input">
+          <input id="email" type="email" placeholder="Email Address" required class="input">
+          <input id="phone" type="text" placeholder="Phone Number" required class="input">
+
+          <select id="education" required class="input">
+            <option value="">Highest Education</option>
+            <option>Primary</option>
+            <option>High school</option>
+            <option>Technical school</option>
+            <option>Diploma</option>
+            <option>Bachelor’s</option>
+            <option>Master</option>
+            <option>PhD</option>
+            <option>Self-Taught</option>
+            <option>Other</option>
+          </select>
+          
+          <select id="role_type" required class="input">
+            <option value="">Apply As</option>
+            <option>Freelancer</option>
+            <option>Contributor</option>
+            <option>Apprentice</option>
+            <option>Full-time Employee</option>
+          </select>
+
+          <!-- <input id="field" type="text" placeholder="Field (AI, Engineering, Business, etc.)" required class="input"> -->
+
+          <select id="field" required class="input">
+            <option value="">Select area of interest</option>
+            <option>AI</option>
+            <option>Engineering</option>
+            <option>Business</option>
+            <option>Health</option>
+            <option>Agriculture</option>
+            <option>Technology</option>
+            <option>Education</option>
+            <option>Transport</option>
+            <option>Laws</option>
+            <option>Language</option>
+            <option>Sports</option>
+            <option>Other</option>
+          </select>
+          
+          <input id="location" type="text" placeholder="Location" required class="input">
+        </div>
+
+        <div>
+          <textarea id="about" placeholder="Tell us about yourself, skills, and experience..."
+            class="input h-32"></textarea>
+        </div>
+
+        <!-- CV Upload -->
+        <div>
+          <label class="font-semibold text-gray-700">Upload CV (PDF)</label>
+          <input id="cv_file" type="file" accept=".pdf" class="w-full mt-2">
+        </div>
+
+        <!-- MESSAGE -->
+        <div id="formMessage" class="text-center font-medium"></div>
+
+        <div class="text-center">
+          <button type="submit"
+            class="bg-indigo-600 text-white px-10 py-3 rounded-xl font-semibold hover:bg-indigo-700 transition">
+            Submit Application 🚀
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<style>
+.input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  outline: none;
+}
+.input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px #c7d2fe;
+}
+</style>
+
+
+
+
+
+
+  
+
 <!-- MOVING TESTIMONIALS -->
 <section class="py-16 bg-white overflow-hidden">
   <h2 class="text-3xl font-bold text-center mb-10">Community Voices</h2>
@@ -139,55 +291,6 @@ body { font-family: 'Inter', sans-serif; }
   </div>
 </section>
 
-<!-- APPLICATION FORM -->
-<section class="py-20 bg-gray-50">
-  <div class="max-w-3xl mx-auto bg-white p-10 rounded-2xl shadow-xl">
-    <h2 class="text-3xl font-bold text-center mb-8">Apply to Join KGL AI</h2>
-
-    <form id="careerForm" class="space-y-6">
-      <input type="text" placeholder="Full Name" required class="w-full p-4 border rounded-xl">
-      <input type="email" placeholder="Email Address" required class="w-full p-4 border rounded-xl">
-      
-      <select required class="w-full p-4 border rounded-xl">
-        <option value="">Area of Interest</option>
-        <option>Engineering</option>
-        <option>Education</option>
-        <option>Healthcare</option>
-        <option>Agriculture</option>
-        <option>Sports</option>
-        <option>Laws</option>
-        <option>Languages</option>
-        <option>Business</option>
-        <option>Transport</option>
-        <option>Broker</option>
-        <option>Disabilities</option>
-        <option>Other</option>
-      </select>
-
-      <select required class="w-full p-4 border rounded-xl">
-        <option value="">Highest Education</option>
-        <option>Primary</option>
-        <option>High school</option>
-        <option>Technical school</option>
-        <option>Diploma</option>
-        <option>Bachelor’s</option>
-        <option>Master</option>
-        <option>PhD</option>
-        <option>Self-Taught</option>
-        <option>Other</option>
-      </select>
-
-      <textarea placeholder="Tell us about yourself" class="w-full p-4 border rounded-xl"></textarea>
-
-      <input type="file" accept=".pdf" class="w-full">
-
-      <button type="submit" 
-        class="w-full bg-indigo-600 text-white py-4 rounded-xl font-semibold hover:bg-indigo-700 transition">
-        Submit Application
-      </button>
-    </form>
-  </div>
-</section>
 
 <!-- PRE-FOOTER SECTION -->
 <section class="bg-gray-100 py-16">
@@ -345,5 +448,64 @@ async function askAI() {
 }
 </script>
 
+<!-- JS script for Superbase connection for career application-->
+<script type="module">
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+
+const supabase = createClient(
+  "https://vbuffgasrckvlxoilsec.supabase.co,
+  "sb_publishable_RfN-k0VZHztLhO-BFwtwtA_sUwv5rWR"
+);
+
+const form = document.getElementById("careerForm");
+const messageDiv = document.getElementById("formMessage");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const file = document.getElementById("cv_file").files[0];
+  let fileUrl = "";
+
+  // Upload CV
+  if (file) {
+    const fileName = `${Date.now()}_${file.name}`;
+
+    const { data: uploadData, error: uploadError } = await supabase.storage
+      .from("cv_uploads")
+      .upload(fileName, file);
+
+    if (uploadError) {
+      messageDiv.innerHTML = "❌ CV upload failed";
+      return;
+    }
+
+    const { data } = supabase.storage
+      .from("cv_uploads")
+      .getPublicUrl(fileName);
+
+    fileUrl = data.publicUrl;
+  }
+
+  // Insert into DB
+  const { error } = await supabase.from("careers").insert([{
+    full_name: document.getElementById("full_name").value,
+    email: document.getElementById("email").value,
+    phone: document.getElementById("phone").value,
+    education: document.getElementById("education").value,
+    role_type: document.getElementById("role_type").value,
+    field: document.getElementById("field").value,
+    location: document.getElementById("location").value,
+    about: document.getElementById("about").value,
+    cv_url: fileUrl
+  }]);
+
+  if (error) {
+    messageDiv.innerHTML = `<span class="text-red-600">❌ ${error.message}</span>`;
+  } else {
+    messageDiv.innerHTML = `<span class="text-green-600">✅ Application submitted successfully!</span>`;
+    form.reset();
+  }
+});
+</script>
 </body>
 </html>
