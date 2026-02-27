@@ -519,7 +519,7 @@ form.addEventListener("submit", async (e) => {
 
     // ✅ INSERT
     const { data: insertedData, error: dbError } = await supabase
-      .from("CF")
+      .from("careers")
       .insert([payload])
       .select();
 
