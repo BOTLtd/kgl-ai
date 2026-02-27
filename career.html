@@ -448,12 +448,13 @@ async function askAI() {
 }
 </script>
 
-<!-- JS script for Superbase connection for career application-->
+
 <script type="module">
 import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
+// ✅ FIXED (you had broken quotes)
 const supabase = createClient(
-  "https://vbuffgasrckvlxoilsec.supabase.co,
+  "https://vbuffgasrckvlxoilsec.supabase.co",
   "sb_publishable_RfN-k0VZHztLhO-BFwtwtA_sUwv5rWR"
 );
 
@@ -463,49 +464,81 @@ const messageDiv = document.getElementById("formMessage");
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const file = document.getElementById("cv_file").files[0];
-  let fileUrl = "";
+  messageDiv.innerHTML = "⏳ Submitting application...";
 
-  // Upload CV
-  if (file) {
-    const fileName = `${Date.now()}_${file.name}`;
+  try {
+    const fileInput = document.getElementById("cv_file");
+    const file = fileInput.files[0];
 
-    const { data: uploadData, error: uploadError } = await supabase.storage
-      .from("cv_uploads")
-      .upload(fileName, file);
+    let fileUrl = "";
 
-    if (uploadError) {
-      messageDiv.innerHTML = "❌ CV upload failed";
+    // ✅ VALIDATION
+    if (!file) {
+      messageDiv.innerHTML = `<span class="text-red-600">❌ Please upload your CV (PDF)</span>`;
       return;
     }
 
-    const { data } = supabase.storage
+    if (file.type !== "application/pdf") {
+      messageDiv.innerHTML = `<span class="text-red-600">❌ Only PDF files allowed</span>`;
+      return;
+    }
+
+    if (file.size > 3 * 1024 * 1024) {
+      messageDiv.innerHTML = `<span class="text-red-600">❌ Max file size is 3MB</span>`;
+      return;
+    }
+
+    // ✅ UPLOAD CV
+    const fileName = `cv_${Date.now()}_${file.name.replace(/\s+/g, "_")}`;
+
+    const { error: uploadError } = await supabase.storage
+      .from("cv_uploads") // ⚠️ make sure this bucket exists
+      .upload(fileName, file);
+
+    if (uploadError) {
+      console.error(uploadError);
+      messageDiv.innerHTML = `<span class="text-red-600">❌ CV upload failed</span>`;
+      return;
+    }
+
+    // ✅ GET PUBLIC URL
+    const { data: publicUrlData } = supabase.storage
       .from("cv_uploads")
       .getPublicUrl(fileName);
 
-    fileUrl = data.publicUrl;
-  }
+    fileUrl = publicUrlData.publicUrl;
 
-  // Insert into DB
-  const { error } = await supabase.from("careers").insert([{
-    full_name: document.getElementById("full_name").value,
-    email: document.getElementById("email").value,
-    phone: document.getElementById("phone").value,
-    education: document.getElementById("education").value,
-    role_type: document.getElementById("role_type").value,
-    field: document.getElementById("field").value,
-    location: document.getElementById("location").value,
-    about: document.getElementById("about").value,
-    cv_url: fileUrl
-  }]);
+    // ✅ INSERT INTO DATABASE
+    const { error: dbError } = await supabase
+      .from("careers")
+      .insert([{
+        full_name: document.getElementById("full_name").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        education: document.getElementById("education").value,
+        role_type: document.getElementById("role_type").value,
+        field: document.getElementById("field").value,
+        location: document.getElementById("location").value,
+        about: document.getElementById("about").value,
+        cv_url: fileUrl
+      }]);
 
-  if (error) {
-    messageDiv.innerHTML = `<span class="text-red-600">❌ ${error.message}</span>`;
-  } else {
+    if (dbError) {
+      console.error(dbError);
+      messageDiv.innerHTML = `<span class="text-red-600">❌ Failed to save application</span>`;
+      return;
+    }
+
+    // ✅ SUCCESS
     messageDiv.innerHTML = `<span class="text-green-600">✅ Application submitted successfully!</span>`;
     form.reset();
+
+  } catch (err) {
+    console.error(err);
+    messageDiv.innerHTML = `<span class="text-red-600">❌ Unexpected error occurred</span>`;
   }
 });
 </script>
+    
 </body>
 </html>
