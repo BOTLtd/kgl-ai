@@ -1,0 +1,21 @@
+<h2>Applications</h2>
+<table id="apps"></table>
+
+<script type="module">
+import { supabase } from "./js/supabase.js";
+
+const table = document.getElementById("apps");
+
+const { data } = await supabase.from("applications").select("*");
+
+data.forEach(app => {
+  table.innerHTML += `
+    <tr>
+      <td>${app.full_name}</td>
+      <td>${app.email}</td>
+      <td>${app.ai_score || "N/A"}</td>
+      <td>${app.status}</td>
+    </tr>
+  `;
+});
+</script>
