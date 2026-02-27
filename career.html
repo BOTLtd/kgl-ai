@@ -448,97 +448,77 @@ async function askAI() {
 }
 </script>
 
+    <!-- SUPERBASE CONNECTION -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-<script type="module">
-import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
-
-// ✅ FIXED (you had broken quotes)
-const supabase = createClient(
+<script>
+const supabase = window.supabase.createClient(
   "https://vbuffgasrckvlxoilsec.supabase.co",
   "sb_publishable_RfN-k0VZHztLhO-BFwtwtA_sUwv5rWR"
 );
 
-const form = document.getElementById("careerForm");
-const messageDiv = document.getElementById("formMessage");
-
-form.addEventListener("submit", async (e) => {
+document.getElementById("careerForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  messageDiv.innerHTML = "⏳ Submitting application...";
+  const inputs = e.target.elements;
+
+  const full_name = inputs[0].value;
+  const email = inputs[1].value;
+  const phone = inputs[2].value;
+  const education = inputs[3].value;
+  const role_type = inputs[4].value;
+  const field = inputs[5].value;
+  const about = inputs[6].value;
+  const file = inputs[7].files[0];
+
+  let cv_url = null;
 
   try {
-    const fileInput = document.getElementById("cv_file");
-    const file = fileInput.files[0];
+    // ✅ Upload CV
+    if (file) {
+      const fileName = Date.now() + "_" + file.name;
 
-    let fileUrl = "";
+      const { data, error } = await supabase.storage
+        .from("cv-bucket")
+        .upload(fileName, file);
 
-    // ✅ VALIDATION
-    if (!file) {
-      messageDiv.innerHTML = `<span class="text-red-600">❌ Please upload your CV (PDF)</span>`;
-      return;
+      if (error) throw error;
+
+      const { data: urlData } = supabase.storage
+        .from("cv-bucket")
+        .getPublicUrl(fileName);
+
+      cv_url = urlData.publicUrl;
     }
 
-    if (file.type !== "application/pdf") {
-      messageDiv.innerHTML = `<span class="text-red-600">❌ Only PDF files allowed</span>`;
-      return;
-    }
+    // ✅ Insert into DB
+    const { error: insertError } = await supabase
+      .from("careers")
+      .insert([
+        {
+          full_name,
+          email,
+          phone,
+          education,
+          role_type,
+          field,
+          about,
+          cv_url
+        }
+      ]);
 
-    if (file.size > 3 * 1024 * 1024) {
-      messageDiv.innerHTML = `<span class="text-red-600">❌ Max file size is 3MB</span>`;
-      return;
-    }
+    if (insertError) throw insertError;
 
-    // ✅ UPLOAD CV
-    const fileName = `cv_${Date.now()}_${file.name.replace(/\s+/g, "_")}`;
-
-    const { error: uploadError } = await supabase.storage
-      .from("cv_uploads") // ⚠️ make sure this bucket exists
-      .upload(fileName, file);
-
-    if (uploadError) {
-      console.error(uploadError);
-      messageDiv.innerHTML = `<span class="text-red-600">❌ CV upload failed</span>`;
-      return;
-    }
-
-    // ✅ GET PUBLIC URL
-    const { data: publicUrlData } = supabase.storage
-      .from("cv_uploads")
-      .getPublicUrl(fileName);
-
-    fileUrl = publicUrlData.publicUrl;
-
-    // ✅ INSERT INTO DATABASE
-    const { error: dbError } = await supabase
-      .from("CF")
-      .insert([{
-        full_name: document.getElementById("full_name").value,
-        email: document.getElementById("email").value,
-        phone: document.getElementById("phone").value,
-        education: document.getElementById("education").value,
-        role_type: document.getElementById("role_type").value,
-        field: document.getElementById("field").value,
-        location: document.getElementById("location").value,
-        about: document.getElementById("about").value,
-        cv_url: fileUrl
-      }]);
-
-    if (dbError) {
-      console.error(dbError);
-      messageDiv.innerHTML = `<span class="text-red-600">❌ Failed to save application</span>`;
-      return;
-    }
-
-    // ✅ SUCCESS
-    messageDiv.innerHTML = `<span class="text-green-600">✅ Application submitted successfully!</span>`;
-    form.reset();
+    alert("✅ Application submitted successfully!");
+    e.target.reset();
 
   } catch (err) {
     console.error(err);
-    messageDiv.innerHTML = `<span class="text-red-600">❌ Unexpected error occurred</span>`;
+    alert("❌ Failed to save application: " + err.message);
   }
 });
 </script>
+
     
 </body>
 </html>
