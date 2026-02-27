@@ -421,8 +421,6 @@
   <a href="https://www.risa.gov.rw/data-protection-and-privacy-law" class="hover:text-gray-700 underline">Privacy Policy</a>
 </footer>
 
-
-<!-- SUPABASE SCRIPT -->
 <script type="module">
 import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
@@ -437,15 +435,14 @@ const messageDiv = document.getElementById("formMessage");
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const services = Array.from(document.getElementById("service_type").selectedOptions)
-    .map(o => o.value)
-    .join(", ");
-
-  const selectedServices = Array.from(document.querySelectorAll('input[name="services"]:checked'))
+  const selectedServices = Array.from(
+    document.querySelectorAll('input[name="services"]:checked')
+  )
     .map(el => el.value)
     .join(", ");
 
-  const urgency = document.querySelector('input[name="urgency"]:checked')?.value || "";
+  const urgency =
+    document.querySelector('input[name="urgency"]:checked')?.value || "";
 
   const data = {
     full_name: document.getElementById("full_name").value,
@@ -454,7 +451,7 @@ form.addEventListener("submit", async (e) => {
     position: document.getElementById("position").value,
     company_name: document.getElementById("company_name").value,
     location: document.getElementById("location").value,
-    service_type: services,
+    service_type: selectedServices, // ✅ FIXED
     project_name: document.getElementById("project_name").value,
     description: document.getElementById("description").value,
     preferred_date: document.getElementById("preferred_date").value,
@@ -463,23 +460,19 @@ form.addEventListener("submit", async (e) => {
     urgency: urgency
   };
 
-  const { error } = await supabase.from("service_requests").insert([data]);
+  const { error } = await supabase
+    .from("service_requests")
+    .insert([data]);
 
   if (error) {
-    messageDiv.innerHTML = `<span class="text-red-600">❌ Failed to submit: ${error.message}</span>`;
+    messageDiv.innerHTML = `<span class="text-red-600">❌ Failed: ${error.message}</span>`;
     console.error(error);
   } else {
-    messageDiv.innerHTML = `<span class="text-green-600">✅ Your request has been submitted successfully!</span>`;
+    messageDiv.innerHTML = `<span class="text-green-600">✅ Submitted successfully!</span>`;
     form.reset();
-
-    // Auto email reply
-    try {
-      await supabase.functions.invoke('send_request_confirmation', { body: { email: data.email, name: data.full_name } });
-    } catch (emailError) {
-      console.error("Email not sent:", emailError);
-    }
   }
 });
 </script>
+  
 </body>
 </html>
