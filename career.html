@@ -230,10 +230,10 @@ body { font-family: 'Inter', sans-serif; }
         </div>
 
         <!-- CV Upload -->
-        <div>
+        <!-- <div>
           <label class="font-semibold text-gray-700">Upload CV (PDF)</label>
           <input id="cv_file" type="file" accept=".pdf" class="w-full mt-2">
-        </div>
+        </div> -->
 
         <!-- MESSAGE -->
         <div id="formMessage" class="text-center font-medium"></div>
@@ -510,7 +510,7 @@ form.addEventListener("submit", async (e) => {
 
     // ✅ INSERT INTO DATABASE
     const { error: dbError } = await supabase
-      .from("careers")
+      .from("CF")
       .insert([{
         full_name: document.getElementById("full_name").value,
         email: document.getElementById("email").value,
@@ -520,7 +520,7 @@ form.addEventListener("submit", async (e) => {
         field: document.getElementById("field").value,
         location: document.getElementById("location").value,
         about: document.getElementById("about").value,
-        cv_url: fileUrl
+        // cv_url: fileUrl
       }]);
 
     if (dbError) {
