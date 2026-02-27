@@ -257,6 +257,51 @@
   </div>
 </section>
 
+  <style>
+.service-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  background: white;
+  font-weight: 500;
+}
+
+.service-box:hover {
+  border-color: #6366f1;
+  background: #eef2ff;
+}
+
+.service-box input {
+  display: none;
+}
+
+/* Checked state */
+.service-box input:checked + span {
+  color: #4f46e5;
+  font-weight: 600;
+}
+
+.service-box input:checked + span::before {
+  content: "✔ ";
+}
+
+/* Highlight selected box */
+.service-box input:checked ~ span,
+.service-box input:checked + span {
+  background: transparent;
+}
+
+.service-box:has(input:checked) {
+  border-color: #4f46e5;
+  background: #eef2ff;
+}
+</style>
+  
 <!-- PRE-FOOTER SECTION -->
 <section class="bg-gray-100 py-16">
   <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12">
@@ -394,6 +439,10 @@ form.addEventListener("submit", async (e) => {
 
   const services = Array.from(document.getElementById("service_type").selectedOptions)
     .map(o => o.value)
+    .join(", ");
+
+  const selectedServices = Array.from(document.querySelectorAll('input[name="services"]:checked'))
+    .map(el => el.value)
     .join(", ");
 
   const urgency = document.querySelector('input[name="urgency"]:checked')?.value || "";
