@@ -1,31 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>KGL AI Courses by Topic</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Basic Meta -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KGL AI | Africa’s AI Innovation Hub</title>
+  <meta name="description" content="KGL AI is Africa’s leading AI innovation hub empowering healthcare, developers, startups, and communities through artificial intelligence.">
+  <meta name="keywords" content="KGL AI, Artificial Intelligence, Africa AI, Healthcare AI, AI Platform, Innovation Hub">
+  <meta name="author" content="KGL AI">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="image/logo.png">
+
+  <!-- Open Graph (For Social Sharing) -->
+  <meta property="og:title" content="KGL AI | Africa’s AI Innovation Hub">
+  <meta property="og:description" content="Empowering innovation through AI tools, healthcare solutions, and community collaboration.">
+  <meta property="og:image" content="image/logo.png">
+  <meta property="og:type" content="website">
+
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Custom Styles -->
   <style>
-    body { font-family: 'Inter', sans-serif; }
-    .course-card { transition: transform 0.3s; }
-    .course-card:hover { transform: translateY(-5px); }
+    body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    /* Moving Top Banner */
+    .top-banner {
+      background: linear-gradient(90deg, #4f46e5, #06b6d4);
+      color: white;
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 8px 0;
+      font-weight: 500;
+    }
+
+    .banner-content {
+      display: inline-block;
+      padding-left: 100%;
+      animation: slide 20s linear infinite;
+    }
+
+    @keyframes slide {
+      from { transform: translateX(0); }
+      to { transform: translateX(-100%); }
+    }
+
+    /* Social Media Buttons */
+    .social-link {
+      padding: 10px 18px;
+      border-radius: 9999px;
+      background: #f3f4f6;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+      background: #6366f1;
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    /* Smooth Fade Animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
+
 </head>
+
+
 <body class="bg-gray-50 text-gray-900">
 
+<!-- MOVING TOP BANNER -->
+<div class="top-banner">
+  <div class="banner-content">
+    🚀🌍 Discover Africa’s AI Innovation Hub · 🚀 Join KGL AI Community · 🏥 Try AI Tools · 🤖 Explore Smart Spaces · 💼 Apply for remote jobs and Internships · 🌍 Rwanda & Africa’s Open AI Platform 
+  </div>
+</div>
+
 <!-- HEADER -->
-<header class="bg-white shadow">
+<header class="bg-white shadow-sm sticky top-0 z-50">
   <div class="max-w-7xl mx-auto p-4 flex justify-between items-center">
+
+    <!-- Logo -->
     <a href="index.html" class="flex items-center gap-3">
-      <img src="image/logo.png" alt="KGL AI Logo" class="h-10 md:h-12 w-auto"/>
-      <span class="text-2xl font-bold text-gray-800">KGL AI</span>
+      <img src="image/logo.png" alt="KGL AI Logo"
+        class="h-10 md:h-12 w-auto object-contain"
+        onerror="this.style.display='none'" />
+      <span class="text-2xl font-extrabold text-gray-800">
+        KGL AI
+      </span>
     </a>
-    <nav class="space-x-4 text-gray-700">
-      <a href="index.html" class="hover:text-indigo-600">Home</a>
-      <a href="solutions.html" class="hover:text-indigo-600">Spaces</a>
-      <a href="courses.html" class="hover:text-indigo-600 font-semibold">Courses</a>
-      <a href="career.html" class="hover:text-indigo-600">Career</a>
+
+    <!-- Navigation -->
+    <nav class="space-x-6 text-gray-700 font-medium">
+      <a href="index.html" class="hover:text-indigo-600 transition">Home</a>
+      <a href="solutions.html" class="hover:text-indigo-600 transition">Spaces</a>
+      <a href="services.html" class="hover:text-indigo-600">Services</a>
+      <a href="career.html" class="hover:text-indigo-600 transition">Career</a>
+      <!-- <a href="contact.html" class="hover:text-indigo-600 transition">Contact</a> -->
     </nav>
   </div>
 </header>
@@ -106,10 +197,11 @@
 </script>
 
 <!-- FOOTER -->
-<footer class="text-center py-10 text-gray-500 text-sm bg-white">
-  © 2026 KGL AI · Product of BOT Ltd · Open · Community-Driven ·
+<footer class="text-center py-10 text-gray-500 text-sm bg-gray-900">
+  © 2026 KGL AI · Product of BOT Ltd · Open · Community Data-Driven ·
   <a href="terms.html" class="hover:text-gray-700 underline">Terms and Conditions</a> ·
-  <a href="https://www.risa.gov.rw/data-protection-and-privacy-law" class="hover:text-gray-700 underline">Privacy Policy</a>
+  <a href="https://www.risa.gov.rw/data-protection-and-privacy-law" class="hover:text-gray-700 underline">Data Protection and Privacy</a>     ·
+  <a href="https://www.minict.gov.rw/ai-policy" class="hover:text-gray-700 underline">Rwanda AI Policy</a>
 </footer>
   
 </body>
