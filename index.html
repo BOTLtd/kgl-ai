@@ -619,7 +619,7 @@ form.addEventListener("submit", async (e) => {
 
   statusText.innerText = "Sending...";
 
-  const { error } = await supabase.from("contacts").insert([
+  const { error } = await supabase.from("contact_messages").insert([
     {
       name,
       email,
