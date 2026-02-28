@@ -504,37 +504,40 @@
 
     </div>
 
-   <!-- RIGHT SIDE: CONTACT / SIGNUP FORM -->
-    <div>
-      <h3 class="text-xl font-semibold text-gray-800 mb-4">Partnership form</h3>
-      <p class="text-gray-600 mb-6">
-        Submit the form below to collaborate or partner with KGL AI.
-      </p>
+ <!-- RIGHT SIDE: CONTACT / SIGNUP FORM -->
+<div>
+  <h3 class="text-xl font-semibold text-gray-800 mb-4">Contact form</h3>
+  <p class="text-gray-600 mb-6">
+    Submit the form below to contact us now.
+  </p>
 
-      <form action="#" method="POST" class="space-y-4">
+  <form id="contactForm" class="space-y-4">
 
-        <input type="text" placeholder="Name"
-          class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none">
+    <input id="name" type="text" placeholder="Name" required
+      class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none">
 
-        <input type="email" placeholder="Email"
-          class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none">
+    <input id="email" type="email" placeholder="Email" required
+      class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none">
 
-        <input type="text" placeholder="Position"
-          class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none">
-        
-        <input type="text" placeholder="Company name"
-          class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none">
+    <input id="position" type="text" placeholder="Position"
+      class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none">
+    
+    <input id="company" type="text" placeholder="Company name"
+      class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none">
 
-        <textarea placeholder="Your Message"
-          class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none h-32"></textarea>
+    <textarea id="message" placeholder="Your Message" required
+      class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none h-32"></textarea>
 
-        <button type="submit"
-          class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">
-          Send Message
-        </button>
+    <!-- MESSAGE OUTPUT -->
+    <div id="formStatus" class="text-center font-medium"></div>
 
-      </form>
-    </div>
+    <button type="submit"
+      class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">
+      Send Message
+    </button>
+
+  </form>
+</div>
 
   </div>
 </section>
@@ -579,6 +582,49 @@
   }, { threshold: 0.5 });
 
   observer.observe(document.querySelector('#stats'));
+</script>
+
+  <!-- SUPABASE CONNECTION -->
+  <script type="module">
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+
+// ✅ YOUR SUPABASE KEYS
+const supabase = createClient(
+  "https://vbuffgasrckvlxoilsec.supabase.co",
+  "sb_publishable_RfN-k0VZHztLhO-BFwtwtA_sUwv5rWR"
+);
+
+const form = document.getElementById("contactForm");
+const statusDiv = document.getElementById("formStatus");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  statusDiv.innerHTML = "⏳ Sending message...";
+
+  try {
+    const { error } = await supabase.from("contact_messages").insert([{
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      position: document.getElementById("position").value,
+      company: document.getElementById("company").value,
+      message: document.getElementById("message").value
+    }]);
+
+    if (error) {
+      console.error(error);
+      statusDiv.innerHTML = `<span class="text-red-600">❌ Failed to send message</span>`;
+      return;
+    }
+
+    statusDiv.innerHTML = `<span class="text-green-600">✅ Message sent successfully!</span>`;
+    form.reset();
+
+  } catch (err) {
+    console.error(err);
+    statusDiv.innerHTML = `<span class="text-red-600">❌ Unexpected error occurred</span>`;
+  }
+});
 </script>
   
 </body>
