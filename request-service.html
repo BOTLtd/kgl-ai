@@ -311,20 +311,27 @@
 
       <!-- Useful Links -->
       <div>
-        <h3 class="text-lg font-semibold text-gray-800 mb-4">Useful Links</h3>
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">Quick Access</h3>
         <ul class="space-y-3 text-gray-600">
           <li><a href="index.html" class="hover:text-indigo-600">About Us</a></li>
           <li><a href="solutions.html" class="hover:text-indigo-600">Spaces</a></li>
-          <li><a href="online-courses.html" class="hover:text-indigo-600">Courses</a></li>
+          <li><a href="servicess.html" class="hover:text-indigo-600">Services</a></li>
           <li><a href="career.html" class="hover:text-indigo-600">Careers</a></li>
+          <li><a href="signup.html" class="hover:text-indigo-600">Sign Up</a></li>
+          <li><a href="career.html" class="hover:text-indigo-600">Apply</a></li>
+          <li><a href="online-courses.html" class="hover:text-indigo-600">Courses</a></li>
           <li><a href="terms.html" class="hover:text-indigo-600">Terms & Conditions</a></li>
+          <li><a href="https://www.risa.gov.rw/data-protection-and-privacy-law" class="hover:text-indigo-600">Data Protection and Privacy</a></li>
+          <li><a href="https://www.minict.gov.rw/ai-policy" class="hover:text-indigo-600">Rwanda AI Policy</a></li>
         </ul>
       </div>
 
       <!-- Other Services -->
       <div>
-        <h3 class="text-lg font-semibold text-gray-800 mb-4">Services</h3>
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">Useful Links</h3>
         <ul class="space-y-3 text-gray-600">
+          <li><a href="https://substack.com/@kglai" class="hover:text-indigo-600">Subscribe to KGL AI</a></li>
+          <li><a href="https://kglai.substack.com/?utm_campaign=profile_chips" class="hover:text-indigo-600">KGL AI Newsletter</a></li>
           <li><a href="#" class="hover:text-indigo-600">Healthcare AI</a></li>
           <li><a href="#" class="hover:text-indigo-600">AI Tools Directory</a></li>
           <li><a href="#" class="hover:text-indigo-600">Startup Incubation</a></li>
@@ -343,74 +350,44 @@
              class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white transition">
             <i class="fab fa-linkedin-in"></i> LinkedIn
           </a>
-          
-          <!-- <a href="https://facebook.com/kglai" target="_blank"
-             class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white transition">
-            <i class="fab fa-facebook-f"></i> Facebook
-          </a> -->
       
           <a href="https://twitter.com/kglai" target="_blank"
              class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white transition">
             <i class="fab fa-x-twitter"></i> Twitter / X
           </a>
-      
-          <!-- <a href="https://instagram.com/kglai" target="_blank"
-             class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white transition">
-            <i class="fab fa-instagram"></i> Instagram
-          </a> -->
-      <!-- 
-          <a href="https://github.com/kgl-ai" target="_blank"
-             class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white transition">
-            <i class="fab fa-github"></i> GitHub
-          </a>
-       -->
+          
           <a href="https://youtube.com/@kglai" target="_blank"
              class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white transition">
             <i class="fab fa-youtube"></i> YouTube
           </a>
-      
-          <!-- <a href="https://tiktok.com/@kglai" target="_blank"
-             class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white transition">
-            <i class="fab fa-tiktok"></i> TikTok
-          </a> -->
       
         </div>
       </div>
 
     </div>
 
-   <!-- RIGHT SIDE: CONTACT / SIGNUP FORM -->
-    <div>
-      <h3 class="text-xl font-semibold text-gray-800 mb-4">Partnership form</h3>
-      <p class="text-gray-600 mb-6">
-        Submit the form below to collaborate or partner with KGL AI.
-      </p>
+ <!-- RIGHT SIDE: CONTACT / SIGNUP FORM -->
+<div>
+  <h3 class="text-xl font-semibold text-gray-800 mb-4">Contact form</h3>
+  <p class="text-gray-600 mb-6">
+    Submit the form below to contact us now.
+  </p>
 
-      <form action="#" method="POST" class="space-y-4">
-
-        <input type="text" placeholder="Name"
-          class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none">
-
-        <input type="email" placeholder="Email"
-          class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none">
-
-        <input type="text" placeholder="Position"
-          class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none">
-        
-        <input type="text" placeholder="Company name"
-          class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none">
-
-        <textarea placeholder="Your Message"
-          class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none h-32"></textarea>
-
-        <button type="submit"
-          class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">
-          Send Message
-        </button>
-
-      </form>
-    </div>
-
+  <!-- Form -->
+  <form id="contact-form" class="space-y-4">
+    <input type="text" id="name" placeholder="Your Name" required class="w-full p-3 border rounded" />
+    <input type="email" id="email" placeholder="Your Email" required class="w-full p-3 border rounded" />
+    <input type="position" id="position" placeholder="Your Position" required class="w-full p-3 border rounded" />
+    <input type="company" id="company" placeholder="Company/Institution" required class="w-full p-3 border rounded" />
+    <textarea id="message" placeholder="Your Message" required class="w-full p-3 border rounded"></textarea>
+  
+    <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded">
+      Send Message
+    </button>
+  
+    <p id="form-status" class="text-sm"></p>
+  </form>
+  
   </div>
 </section>
   
@@ -418,8 +395,10 @@
 <footer class="text-center py-10 text-gray-500 text-sm bg-gray-900">
   © 2026 KGL AI · Product of BOT Ltd · Open · Community Data-Driven ·
   <a href="terms.html" class="hover:text-gray-700 underline">Terms and Conditions</a> ·
-  <a href="https://www.risa.gov.rw/data-protection-and-privacy-law" class="hover:text-gray-700 underline">Privacy Policy</a>
+  <a href="https://www.risa.gov.rw/data-protection-and-privacy-law" class="hover:text-gray-700 underline">Data Protection and Privacy</a>     ·
+  <a href="https://www.minict.gov.rw/ai-policy" class="hover:text-gray-700 underline">Rwanda AI Policy</a>
 </footer>
+
 
 <script type="module">
 import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
@@ -469,6 +448,85 @@ form.addEventListener("submit", async (e) => {
     console.error(error);
   } else {
     messageDiv.innerHTML = `<span class="text-green-600">✅ Submitted successfully!</span>`;
+    form.reset();
+  }
+});
+</script>
+  
+  <!-- Javascrpt for counting -->
+<script>
+  const counters = document.querySelectorAll('.counter');
+  const speed = 200; // lower = faster
+
+  const startCounting = (entry) => {
+    if (!entry.isIntersecting) return;
+
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = target / speed;
+
+        if (count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(updateCount, 10);
+        } else {
+          counter.innerText = target + "+";
+        }
+      };
+
+      updateCount();
+    });
+
+    observer.disconnect(); // run once
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(startCounting);
+  }, { threshold: 0.5 });
+
+  observer.observe(document.querySelector('#stats'));
+</script>
+
+  <!-- SUPABASE CONNECTION -->
+
+<script type="module">
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+
+const supabase = createClient(
+  "https://vbuffgasrckvlxoilsec.supabase.co",
+  "sb_publishable_RfN-k0VZHztLhO-BFwtwtA_sUwv5rWR"
+);
+
+const form = document.getElementById("contact-form");
+const statusText = document.getElementById("form-status");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault(); // 🔥 VERY IMPORTANT
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const position = document.getElementById("position").value;
+  const company = document.getElementById("company").value;
+  const message = document.getElementById("message").value;
+
+  statusText.innerText = "Sending...";
+
+  const { error } = await supabase.from("contact_messages").insert([
+    {
+      name,
+      email,
+      position,
+      company,
+      message
+    }
+  ]);
+
+  if (error) {
+    console.error(error);
+    statusText.innerText = "❌ Failed to send message";
+  } else {
+    statusText.innerText = "✅ Message sent successfully!";
     form.reset();
   }
 });
