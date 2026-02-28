@@ -113,8 +113,8 @@
     <!-- Navigation -->
     <nav class="space-x-6 text-gray-700 font-medium">
       <a href="index.html" class="hover:text-indigo-600 transition">Home</a>
-      <a href="services.html" class="hover:text-indigo-600">Services</a>
       <a href="solutions.html" class="hover:text-indigo-600 transition">Spaces</a>
+      <a href="services.html" class="hover:text-indigo-600">Services</a>
       <a href="career.html" class="hover:text-indigo-600 transition">Career</a>
       <!-- <a href="contact.html" class="hover:text-indigo-600 transition">Contact</a> -->
     </nav>
@@ -542,6 +542,8 @@
 <form id="contact-form" class="space-y-4">
   <input type="text" id="name" placeholder="Your Name" required class="w-full p-3 border rounded" />
   <input type="email" id="email" placeholder="Your Email" required class="w-full p-3 border rounded" />
+  <input type="position" id="position" placeholder="Your Position" required class="w-full p-3 border rounded" />
+  <input type="company" id="company" placeholder="Company/Institution" required class="w-full p-3 border rounded" />
   <textarea id="message" placeholder="Your Message" required class="w-full p-3 border rounded"></textarea>
 
   <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded">
@@ -615,6 +617,8 @@ form.addEventListener("submit", async (e) => {
 
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
+  const position = document.getElementById("position").value;
+  const company = document.getElementById("company").value;
   const message = document.getElementById("message").value;
 
   statusText.innerText = "Sending...";
