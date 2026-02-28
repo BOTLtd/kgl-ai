@@ -118,7 +118,7 @@ body { font-family: 'Inter', sans-serif; }
   <a href="https://www.risa.gov.rw/data-protection-and-privacy-law" class="hover:text-gray-700 underline">Privacy Policy</a>
 </footer>
 
-<!-- SUPABASE CONNECTION  -->
+<!-- SUPABASE CONNECTION -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
   const supabaseUrl = 'https://vbuffgasrckvlxoilsec.supabase.co';
@@ -129,15 +129,6 @@ body { font-family: 'Inter', sans-serif; }
   const form = document.getElementById('signupForm');
   const successMsg = document.getElementById('successMessage');
 
-
-  document.getElementById("successMessage").classList.remove("hidden");
-
-    // redirect after 3-5 seconds
-    setTimeout(() => {
-      window.location.href = "index.html";
-    }, 4000);
-          
-
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -145,7 +136,7 @@ body { font-family: 'Inter', sans-serif; }
     const email = document.getElementById('email').value;
     const location = document.getElementById('location').value;
 
-    const { data, error } = await client
+    const { error } = await client
       .from('signup')
       .insert([{ name, email, location }]);
 
@@ -153,11 +144,19 @@ body { font-family: 'Inter', sans-serif; }
       console.error(error);
       alert('Error: ' + error.message);
     } else {
+      // ✅ Show success message ONLY after success
       successMsg.classList.remove('hidden');
+
+      // ✅ Reset form
       form.reset();
+
+      // ✅ Redirect AFTER success
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 4000);
     }
   });
 </script>
-
+  
 </body>
 </html>
