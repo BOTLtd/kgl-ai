@@ -287,11 +287,7 @@
   <div class="max-w-7xl mx-auto px-6 text-center">
 
     <!-- Title -->
-    <h3 class="text-4xl font-bold text-gray-900">Community Impact</h3>
-    <!-- <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
-      KGL AI is building Africa’s leading AI innovation hub — empowering developers,
-      healthcare systems, startups, and communities worldwide.
-    </p> -->
+    <h3 class="text-4xl font-bold text-gray-900">Stats</h3>
 
     <!-- Stats -->
     <div id="stats" class="mt-16 grid md:grid-cols-3 gap-8">
@@ -311,51 +307,15 @@
         <p class="mt-4 text-gray-600">Daily visitors</p>
       </div>
 
+      <div class="p-10 rounded-2xl shadow-md bg-gray-50 text-center">
+        <p class="text-5xl font-extrabold text-indigo-600 counter" data-target="500">0</p>
+        <p class="mt-4 text-gray-600">Total contributions</p>
+      </div>
+      
     </div>
 
   </div>
 </section>
-
-  
-<!-- ================= SCRIPT ================= -->
-<script>
-function animateCounter(id, target) {
-  let count = 0;
-  const element = document.getElementById(id);
-  const increment = target / 100;
-
-  function update() {
-    if (count < target) {
-      count += increment;
-      element.innerText = Math.floor(count);
-      requestAnimationFrame(update);
-    } else {
-      element.innerText = target;
-    }
-  }
-  update();
-}
-
-animateCounter("totalSpaces", 9);
-animateCounter("totalContributions", 320);
-
-document.querySelectorAll(".counter").forEach(counter => {
-  const target = +counter.getAttribute("data-target");
-  let count = 0;
-  const increment = target / 100;
-
-  function update() {
-    if (count < target) {
-      count += increment;
-      counter.innerText = Math.floor(count);
-      requestAnimationFrame(update);
-    } else {
-      counter.innerText = target;
-    }
-  }
-  update();
-});
-</script>
 
 
 <!-- PRE-FOOTER SECTION -->
@@ -415,6 +375,11 @@ document.querySelectorAll(".counter").forEach(counter => {
           <a href="https://youtube.com/@kglai" target="_blank"
              class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white transition">
             <i class="fab fa-youtube"></i> YouTube
+          </a>
+
+          <a href="https://substack.com/@kglai" target="_blank"
+             class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white transition">
+            <i class="fab fa-substack"></i> Substack
           </a>
       
         </div>
