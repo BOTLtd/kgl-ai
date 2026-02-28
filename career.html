@@ -367,10 +367,13 @@ const supabase = createClient(
   "sb_publishable_RfN-k0VZHztLhO-BFwtwtA_sUwv5rWR"
 );
 
-const form = document.getElementById("careerForm");
+
+
+// ================= CAREER FORM =================
+const careerForm = document.getElementById("careerForm");
 const messageDiv = document.getElementById("formMessage");
 
-form.addEventListener("submit", async (e) => {
+careerForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   messageDiv.innerHTML = "⏳ Submitting application...";
@@ -380,7 +383,6 @@ form.addEventListener("submit", async (e) => {
 
     let fileUrl = null;
 
-    // ✅ OPTIONAL CV (no failure if removed)
     if (file) {
       if (file.type !== "application/pdf") {
         messageDiv.innerHTML = `<span class="text-red-600">❌ Only PDF files allowed</span>`;
@@ -411,7 +413,6 @@ form.addEventListener("submit", async (e) => {
       fileUrl = data.publicUrl;
     }
 
-    // ✅ PREPARE DATA SAFELY
     const payload = {
       full_name: document.getElementById("full_name").value || "",
       email: document.getElementById("email").value || "",
@@ -421,16 +422,12 @@ form.addEventListener("submit", async (e) => {
       field: document.getElementById("field").value || "",
       location: document.getElementById("location").value || "",
       about: document.getElementById("about").value || "",
-      cv_url: fileUrl // can be null safely
+      cv_url: fileUrl
     };
 
-    console.log("📦 DATA TO INSERT:", payload);
-
-    // ✅ INSERT
-    const { data: insertedData, error: dbError } = await supabase
+    const { error: dbError } = await supabase
       .from("careers")
-      .insert([payload])
-      .select();
+      .insert([payload]);
 
     if (dbError) {
       console.error("DB ERROR:", dbError);
@@ -438,11 +435,8 @@ form.addEventListener("submit", async (e) => {
       return;
     }
 
-    console.log("✅ INSERTED:", insertedData);
-
-    // ✅ SUCCESS
-    messageDiv.innerHTML = `<span class="text-green-600">✅ Application submitted successfully! We'll get back to you Soon.</span>`;
-    form.reset();
+    messageDiv.innerHTML = `<span class="text-green-600">✅ Application submitted successfully!</span>`;
+    careerForm.reset();
 
   } catch (err) {
     console.error("UNEXPECTED ERROR:", err);
@@ -450,11 +444,14 @@ form.addEventListener("submit", async (e) => {
   }
 });
 
-const form = document.getElementById("contact-form");
+
+
+// ================= CONTACT FORM =================
+const contactForm = document.getElementById("contact-form");
 const statusText = document.getElementById("form-status");
 
-form.addEventListener("submit", async (e) => {
-  e.preventDefault(); // 🔥 VERY IMPORTANT
+contactForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
 
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
@@ -465,13 +462,7 @@ form.addEventListener("submit", async (e) => {
   statusText.innerText = "Sending...";
 
   const { error } = await supabase.from("contact_messages").insert([
-    {
-      name,
-      email,
-      position,
-      company,
-      message
-    }
+    { name, email, position, company, message }
   ]);
 
   if (error) {
@@ -479,7 +470,7 @@ form.addEventListener("submit", async (e) => {
     statusText.innerText = "❌ Failed to send message";
   } else {
     statusText.innerText = "✅ Message sent successfully!";
-    form.reset();
+    contactForm.reset();
   }
 });
 </script>
