@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Diagnose</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-900 text-white p-6">
+
+<div id="flow"></div>
+
+<script type="module">
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+
+const supabase = createClient(
+  "https://vbuffgasrckvlxoilsec.supabase.co",
+  "sb_publishable_RfN-k0VZHztLhO-BFwtwtA_sUwv5rWR"
+);
+
+const params = new URLSearchParams(window.location.search);
+const symptomId = params.get("symptom");
+
+async function loadFlow(){
+  const { data } = await supabase
+    .from("diagnostics_flow")
+    .select("*")
+    .eq("symptom_id", symptomId);
+
+  const container = document.getElementById("flow");
+
+  data.forEach(step => {
+    const div = document.createElement("div");
+    div.className = "mb-6";
+
+    div.innerHTML = `
+      <p class="text-xl">${step.question}</p>
+      <button class="bg-blue-500 p-2 mt-2"
+        onclick="showResult('${step.possible_cause}', '${step.resolution}')">
+        ${step.answer}
+      </button>
+    `;
+
+    container.appendChild(div);
+  });
+}
+
+window.showResult = (cause, resolution) => {
+  document.body.innerHTML = `
+    <h2 class="text-2xl">⚠️ Cause</h2>
+    <p>${cause}</p>
+
+    <h2 class="text-2xl mt-4">✅ Resolution</h2>
+    <p>${resolution}</p>
+  `;
+};
+
+loadFlow();
+</script>
+
+</body>
+</html>
