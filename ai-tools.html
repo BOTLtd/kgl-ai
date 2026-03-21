@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Solutions Platform</title>
+
+<style>
+body { font-family: Arial; margin: 0; background: #f4f4f4; }
+header { background: #0a2540; color: white; padding: 20px; text-align: center; }
+
+input, select {
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 20px;
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card-content { padding: 15px; }
+
+button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🌍 AI Solutions Marketplace</h1>
+  <input type="text" id="searchInput" placeholder="Search AI solutions...">
+  <select id="categoryFilter">
+    <option value="all">All Categories</option>
+    <option value="health">Health</option>
+    <option value="education">Education</option>
+    <option value="business">Business</option>
+    <option value="agriculture">Agriculture</option>
+    <option value="fintech">Fintech</option>
+    <option value="environment">Environment</option>
+    <option value="creative">Creative</option>
+    <option value="security">Security</option>
+  </select>
+</header>
+
+<main>
+  <div id="cardContainer" class="grid"></div>
+</main>
+
+<script>
+const images = {
+  health: "https://source.unsplash.com/400x300/?health",
+  education: "https://source.unsplash.com/400x300/?education",
+  business: "https://source.unsplash.com/400x300/?business",
+  agriculture: "https://source.unsplash.com/400x300/?farming",
+  fintech: "https://source.unsplash.com/400x300/?finance",
+  environment: "https://source.unsplash.com/400x300/?environment",
+  creative: "https://source.unsplash.com/400x300/?design",
+  security: "https://source.unsplash.com/400x300/?security"
+};
+
+const cards = [
+
+/* HEALTH (15) */
+{title:"AI Symptom Checker",category:"health",problem:"People unsure when to seek care",solution:"AI analyzes symptoms instantly",impact:"Early diagnosis",image:images.health},
+{title:"Telemedicine AI Assistant",category:"health",problem:"Limited doctor access",solution:"AI triage and booking",impact:"Faster healthcare",image:images.health},
+{title:"Mental Health Chatbot",category:"health",problem:"Stress & anxiety",solution:"AI emotional support",impact:"Improved well-being",image:images.health},
+{title:"AI Nutrition Planner",category:"health",problem:"Poor diet planning",solution:"Personalized meal AI",impact:"Better health",image:images.health},
+{title:"Disease Prediction AI",category:"health",problem:"Late diagnosis",solution:"Predict illness risk",impact:"Preventive care",image:images.health},
+{title:"Radiology AI Scanner",category:"health",problem:"Slow scan analysis",solution:"AI image detection",impact:"Faster results",image:images.health},
+{title:"Medication Reminder",category:"health",problem:"Missed doses",solution:"Smart alerts",impact:"Better adherence",image:images.health},
+{title:"AI Fitness Coach",category:"health",problem:"No trainer",solution:"AI workouts",impact:"Improved fitness",image:images.health},
+{title:"Pregnancy AI Guide",category:"health",problem:"Lack of guidance",solution:"Weekly AI tips",impact:"Safer pregnancy",image:images.health},
+{title:"Health Dashboard AI",category:"health",problem:"Data scattered",solution:"Central insights",impact:"Better decisions",image:images.health},
+{title:"Elderly Care AI",category:"health",problem:"Aging support",solution:"AI monitoring",impact:"Safer elderly",image:images.health},
+{title:"Emergency Prediction AI",category:"health",problem:"Unexpected crises",solution:"Predict emergencies",impact:"Quick response",image:images.health},
+{title:"AI Sleep Tracker",category:"health",problem:"Poor sleep",solution:"Sleep analysis",impact:"Better rest",image:images.health},
+{title:"AI Rehab Assistant",category:"health",problem:"Recovery issues",solution:"AI guided therapy",impact:"Faster healing",image:images.health},
+{title:"AI Vaccine Tracker",category:"health",problem:"Missed vaccines",solution:"Reminder AI",impact:"Public health",image:images.health},
+
+/* EDUCATION (15) */
+{title:"AI Homework Helper",category:"education",problem:"Learning difficulties",solution:"Step-by-step answers",impact:"Better grades",image:images.education},
+{title:"AI Tutor Chatbot",category:"education",problem:"No tutors",solution:"24/7 AI tutor",impact:"Continuous learning",image:images.education},
+{title:"Essay Generator AI",category:"education",problem:"Writing struggle",solution:"AI writing support",impact:"Improved writing",image:images.education},
+{title:"Plagiarism Checker",category:"education",problem:"Academic honesty",solution:"AI detection",impact:"Integrity",image:images.education},
+{title:"Language Learning AI",category:"education",problem:"Language barrier",solution:"AI lessons",impact:"Global communication",image:images.education},
+{title:"Exam Prep AI",category:"education",problem:"Poor preparation",solution:"AI quizzes",impact:"Higher scores",image:images.education},
+{title:"Lecture Summarizer",category:"education",problem:"Long lectures",solution:"AI summaries",impact:"Faster revision",image:images.education},
+{title:"Smart Notes Generator",category:"education",problem:"Note-taking difficulty",solution:"Auto notes",impact:"Efficiency",image:images.education},
+{title:"AI Career Advisor",category:"education",problem:"Career confusion",solution:"AI guidance",impact:"Better choices",image:images.education},
+{title:"Skill Gap Analyzer",category:"education",problem:"Unknown gaps",solution:"AI evaluation",impact:"Targeted learning",image:images.education},
+{title:"Coding Tutor AI",category:"education",problem:"Programming difficulty",solution:"AI coding help",impact:"Faster learning",image:images.education},
+{title:"AI Research Assistant",category:"education",problem:"Time-consuming research",solution:"AI insights",impact:"Efficiency",image:images.education},
+{title:"Math Solver AI",category:"education",problem:"Complex math",solution:"AI solving",impact:"Understanding",image:images.education},
+{title:"AI Flashcards",category:"education",problem:"Memorization",solution:"Smart flashcards",impact:"Retention",image:images.education},
+{title:"Student Performance AI",category:"education",problem:"Tracking progress",solution:"AI analytics",impact:"Better outcomes",image:images.education},
+
+/* BUSINESS (15) */
+{title:"AI Sales Predictor",category:"business",problem:"Uncertain revenue",solution:"Predict sales",impact:"Better planning",image:images.business},
+{title:"Customer Support Bot",category:"business",problem:"Slow response",solution:"AI chatbot",impact:"Customer satisfaction",image:images.business},
+{title:"Invoice Generator AI",category:"business",problem:"Manual billing",solution:"Auto invoices",impact:"Efficiency",image:images.business},
+{title:"Fraud Detection AI",category:"business",problem:"Financial fraud",solution:"AI monitoring",impact:"Security",image:images.business},
+{title:"Market Trend Analyzer",category:"business",problem:"Unknown trends",solution:"AI insights",impact:"Competitive edge",image:images.business},
+{title:"HR Recruitment AI",category:"business",problem:"Hiring difficulty",solution:"AI screening",impact:"Better hires",image:images.business},
+{title:"Chatbot Marketing AI",category:"business",problem:"Low engagement",solution:"AI campaigns",impact:"Higher sales",image:images.business},
+{title:"Pricing Optimizer AI",category:"business",problem:"Wrong pricing",solution:"AI pricing",impact:"Max profit",image:images.business},
+{title:"Inventory AI",category:"business",problem:"Stock issues",solution:"AI tracking",impact:"Efficiency",image:images.business},
+{title:"Supply Chain AI",category:"business",problem:"Delays",solution:"AI optimization",impact:"Faster delivery",image:images.business},
+{title:"Business Analytics AI",category:"business",problem:"Data overload",solution:"AI insights",impact:"Better decisions",image:images.business},
+{title:"AI CRM Assistant",category:"business",problem:"Customer tracking",solution:"AI CRM",impact:"Retention",image:images.business},
+{title:"Ad Targeting AI",category:"business",problem:"Low ROI",solution:"AI ads",impact:"Better ROI",image:images.business},
+{title:"Meeting Summarizer",category:"business",problem:"Long meetings",solution:"AI notes",impact:"Efficiency",image:images.business},
+{title:"Email Automation AI",category:"business",problem:"Manual emails",solution:"AI automation",impact:"Productivity",image:images.business},
+
+/* AGRICULTURE (10) */
+{title:"Crop Disease Detector",category:"agriculture",problem:"Plant diseases",solution:"AI detection",impact:"Higher yield",image:images.agriculture},
+{title:"Smart Irrigation AI",category:"agriculture",problem:"Water waste",solution:"AI watering",impact:"Efficiency",image:images.agriculture},
+{title:"Weather Prediction AI",category:"agriculture",problem:"Uncertain weather",solution:"AI forecasts",impact:"Planning",image:images.agriculture},
+{title:"Yield Prediction AI",category:"agriculture",problem:"Unknown output",solution:"AI estimation",impact:"Planning",image:images.agriculture},
+{title:"Livestock Monitoring AI",category:"agriculture",problem:"Animal health",solution:"AI tracking",impact:"Better farming",image:images.agriculture},
+{title:"Soil Analysis AI",category:"agriculture",problem:"Poor soil use",solution:"AI insights",impact:"Better crops",image:images.agriculture},
+{title:"Fertilizer Advisor AI",category:"agriculture",problem:"Wrong usage",solution:"AI guidance",impact:"Efficiency",image:images.agriculture},
+{title:"Farm Automation AI",category:"agriculture",problem:"Manual work",solution:"AI robots",impact:"Productivity",image:images.agriculture},
+{title:"Market Price AI",category:"agriculture",problem:"Price fluctuation",solution:"AI prediction",impact:"Profit",image:images.agriculture},
+{title:"Pest Control AI",category:"agriculture",problem:"Pest damage",solution:"AI detection",impact:"Crop safety",image:images.agriculture},
+
+/* FINTECH (10) */
+{title:"Spending Analyzer AI",category:"fintech",problem:"Overspending",solution:"AI tracking",impact:"Savings",image:images.fintech},
+{title:"Loan Risk AI",category:"fintech",problem:"Bad loans",solution:"AI scoring",impact:"Safer lending",image:images.fintech},
+{title:"Fraud Detection AI",category:"fintech",problem:"Fraud",solution:"AI alerts",impact:"Security",image:images.fintech},
+{title:"Budget Planner AI",category:"fintech",problem:"Poor budgeting",solution:"AI planning",impact:"Control",image:images.fintech},
+{title:"Investment Advisor AI",category:"fintech",problem:"Risky investing",solution:"AI advice",impact:"Better returns",image:images.fintech},
+{title:"Credit Score AI",category:"fintech",problem:"Unknown credit",solution:"AI scoring",impact:"Access loans",image:images.fintech},
+{title:"Expense Tracker AI",category:"fintech",problem:"Tracking difficulty",solution:"AI insights",impact:"Clarity",image:images.fintech},
+{title:"Mobile Money AI",category:"fintech",problem:"Transaction analysis",solution:"AI dashboard",impact:"Insights",image:images.fintech},
+{title:"Fraud Alert AI",category:"fintech",problem:"Unauthorized activity",solution:"AI detection",impact:"Security",image:images.fintech},
+{title:"Savings Goal AI",category:"fintech",problem:"No savings plan",solution:"AI goals",impact:"Financial growth",image:images.fintech},
+
+/* ENVIRONMENT (10) */
+{title:"Carbon Tracker AI",category:"environment",problem:"High emissions",solution:"AI tracking",impact:"Sustainability",image:images.environment},
+{title:"Air Quality AI",category:"environment",problem:"Pollution",solution:"AI monitoring",impact:"Health safety",image:images.environment},
+{title:"Recycling AI",category:"environment",problem:"Waste sorting",solution:"AI sorting",impact:"Cleaner cities",image:images.environment},
+{title:"Wildlife Monitoring AI",category:"environment",problem:"Poaching",solution:"AI tracking",impact:"Conservation",image:images.environment},
+{title:"Energy Optimization AI",category:"environment",problem:"Energy waste",solution:"AI control",impact:"Efficiency",image:images.environment},
+{title:"Water Management AI",category:"environment",problem:"Water waste",solution:"AI insights",impact:"Conservation",image:images.environment},
+{title:"Climate Prediction AI",category:"environment",problem:"Climate change",solution:"AI models",impact:"Preparedness",image:images.environment},
+{title:"Flood Prediction AI",category:"environment",problem:"Flood risks",solution:"AI alerts",impact:"Safety",image:images.environment},
+{title:"Deforestation AI",category:"environment",problem:"Forest loss",solution:"AI monitoring",impact:"Protection",image:images.environment},
+{title:"Waste Management AI",category:"environment",problem:"Urban waste",solution:"AI routing",impact:"Efficiency",image:images.environment},
+
+/* CREATIVE (10) */
+{title:"AI Logo Generator",category:"creative",problem:"Design cost",solution:"AI logos",impact:"Accessibility",image:images.creative},
+{title:"AI Video Creator",category:"creative",problem:"Video production",solution:"AI editing",impact:"Speed",image:images.creative},
+{title:"AI Music Generator",category:"creative",problem:"Music creation",solution:"AI composition",impact:"Creativity",image:images.creative},
+{title:"Image Generator AI",category:"creative",problem:"Design effort",solution:"AI images",impact:"Productivity",image:images.creative},
+{title:"Script Writer AI",category:"creative",problem:"Content writing",solution:"AI scripts",impact:"Efficiency",image:images.creative},
+{title:"Social Media AI",category:"creative",problem:"Content planning",solution:"AI posts",impact:"Engagement",image:images.creative},
+{title:"Branding AI",category:"creative",problem:"Brand identity",solution:"AI branding",impact:"Consistency",image:images.creative},
+{title:"AI Animation Tool",category:"creative",problem:"Animation cost",solution:"AI animation",impact:"Speed",image:images.creative},
+{title:"Photo Editor AI",category:"creative",problem:"Editing difficulty",solution:"AI editing",impact:"Quality",image:images.creative},
+{title:"Voice Generator AI",category:"creative",problem:"Voiceovers",solution:"AI voice",impact:"Content creation",image:images.creative},
+
+/* SECURITY (5) */
+{title:"AI CCTV Monitoring",category:"security",problem:"Manual monitoring",solution:"AI detection",impact:"Security",image:images.security},
+{title:"Face Recognition AI",category:"security",problem:"Identification",solution:"AI recognition",impact:"Safety",image:images.security},
+{title:"Cybersecurity AI",category:"security",problem:"Cyber attacks",solution:"AI defense",impact:"Protection",image:images.security},
+{title:"Password AI",category:"security",problem:"Weak passwords",solution:"AI checker",impact:"Security",image:images.security},
+{title:"Fraud Alert System",category:"security",problem:"Fraud risk",solution:"AI alerts",impact:"Safety",image:images.security}
+
+];
+
+const container = document.getElementById("cardContainer");
+
+function displayCards(data){
+  container.innerHTML="";
+  data.forEach(card=>{
+    container.innerHTML+=`
+      <div class="card">
+        <img src="${card.image}">
+        <div class="card-content">
+          <h3>${card.title}</h3>
+          <p><b>Problem:</b> ${card.problem}</p>
+          <p><b>Solution:</b> ${card.solution}</p>
+          <p><b>Impact:</b> ${card.impact}</p>
+          <button onclick="alert('Coming soon')">Explore</button>
+        </div>
+      </div>`;
+  });
+}
+
+function filterCards(){
+  let search=document.getElementById("searchInput").value.toLowerCase();
+  let category=document.getElementById("categoryFilter").value;
+
+  let filtered=cards.filter(c=>{
+    return (c.title.toLowerCase().includes(search)) &&
+           (category==="all"||c.category===category);
+  });
+
+  displayCards(filtered);
+}
+
+document.getElementById("searchInput").addEventListener("input",filterCards);
+document.getElementById("categoryFilter").addEventListener("change",filterCards);
+
+displayCards(cards);
+</script>
+
+</body>
+</html>
