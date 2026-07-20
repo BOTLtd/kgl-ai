@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Meta -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KGL AI | Africa’s AI Innovation Hub</title>
+  <meta name="description" content="KGL AI is Africa’s leading AI innovation hub empowering healthcare, developers, startups, and communities through artificial intelligence.">
+  <meta name="keywords" content="KGL AI, Artificial Intelligence, Africa AI, Healthcare AI, AI Platform, Innovation Hub">
+  <meta name="author" content="KGL AI">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="image/kgl-ai-logo.png">
+
+  <!-- Open Graph (For Social Sharing) -->
+  <meta property="og:title" content="KGL AI | Africa’s AI Innovation Hub">
+  <meta property="og:description" content="Empowering innovation through AI tools, healthcare solutions, and community collaboration.">
+  <meta property="og:image" content="image/kgl-ai-logo.png">
+  <meta property="og:type" content="website">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Custom Styles -->
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    /* Moving Top Banner */
+    .top-banner {
+      background: linear-gradient(90deg, #4f46e5, #06b6d4);
+      color: white;
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 8px 0;
+      font-weight: 500;
+    }
+
+    .banner-content {
+      display: inline-block;
+      padding-left: 100%;
+      animation: slide 20s linear infinite;
+    }
+
+    @keyframes slide {
+      from { transform: translateX(0); }
+      to { transform: translateX(-100%); }
+    }
+
+    /* Social Media Buttons */
+    .social-link {
+      padding: 10px 18px;
+      border-radius: 9999px;
+      background: #f3f4f6;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+      background: #6366f1;
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    /* Smooth Fade Animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+
+</head>
+
+
+<body class="bg-gray-50 text-gray-900">
+
+<!-- MOVING TOP BANNER -->
+<div class="top-banner">
+  <div class="banner-content">
+    🚀🌍 Discover Africa’s AI Innovation Hub · 🚀 Join KGL AI Community · 🏥 Try AI Tools · 🤖 Explore Smart Spaces · 💼 Apply for remote jobs and Internships · 🌍 Rwanda & Africa’s Open AI Platform 
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto p-4 flex justify-between items-center">
+
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="image/kgl-ai-logo.png" alt="KGL AI Logo"
+        class="h-24 md:h-24 w-auto object-contain"
+        onerror="this.style.display='none'" />
+      <!-- <span class="text-2xl font-extrabold text-gray-800">
+        KGL AI
+      </span> -->
+    </a>
+
+    <!-- Navigation -->
+    <nav class="space-x-6 text-gray-700 font-medium">
+      <a href="index.html" class="hover:text-indigo-600 transition">Home</a>
+      <a href="solutions.html" class="hover:text-indigo-600 transition">Spaces</a>
+      <a href="services.html" class="hover:text-indigo-600">Services</a>
+      <a href="career.html" class="hover:text-indigo-600 transition">Career</a>
+      <!-- <a href="contact.html" class="hover:text-indigo-600 transition">Contact</a> -->
+    </nav>
+  </div>
+</header>
+
+
+<!-- <!-- ================= HERO + SEARCH SECTION ================= -->
+<!-- <section class="relative bg-gradient-to-r from-indigo-700 via-purple-700 to-cyan-600 text-white py-28">
+
+  <div class="max-w-6xl mx-auto px-6 text-center">
+
+    <!-- Main Heading -->
+    <!-- <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
+      KGL AI Spaces
+    </h1> -->
+
+    <!-- Subheading -->
+    <!-- <p class="text-xl md:text-2xl font-medium mb-6 opacity-95">
+      🌍 Africa’s AI Innovation Ecosystem
+    </p>
+
+    <p class="text-lg opacity-90 max-w-3xl mx-auto mb-12">
+      Discover AI-powered healthcare, agriculture, education, transport, legal and government solutions 
+      built by innovators across Rwanda and Africa.
+    </p> -->
+
+    <!-- Search Box -->
+    <!-- <div class="max-w-3xl mx-auto">
+      <div class="flex bg-white rounded-2xl overflow-hidden shadow-2xl">
+
+        <input 
+          type="text" 
+          id="spaceQuery"
+          placeholder="Search KGL AI tools (e.g. smart farming, medical diagnosis, transport services...)"
+          class="flex-1 p-5 text-gray-700 outline-none">
+
+        <button onclick="searchSpaces()"
+          class="bg-indigo-700 text-white px-8 font-semibold hover:bg-indigo-800 transition">
+          🔎 Search
+        </button>
+
+      </div>
+    </div> -->
+
+   <!-- Action Buttons -->
+   <!-- <div class="mt-16 text-center flex flex-wrap justify-center gap-6">
+    <a href="career.html"
+      class="bg-gray-900 text-white px-8 py-3 rounded-xl font-semibold shadow hover:bg-gray-800 transition">
+      🤝 Become Contributor
+    </a>
+  </div>
+    
+  </div>
+  
+</section>  -->
+
+<!-- ================= SPACES OVERVIEW SECTION ================= -->
+<section class="max-w-7xl mx-auto py-20 px-6">
+
+  <!-- Section Header -->
+  <div class="text-center mb-16">
+    <h2 class="text-4xl font-bold text-gray-900 mb-4">
+      KGLAI Spaces
+    </h2>
+
+    <!-- Live Stats -->
+    <!-- <div class="text-indigo-600 font-semibold text-lg">
+      🚀 <span id="totalSpaces">9</span> Active Spaces · 
+      👥 <span id="totalContributors">500+</span> Totol Contributions
+    </div>
+  </div> -->
+
+  <!-- Spaces Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+    <!-- ENGINEERING -->
+    <!-- <a href="troubleshoot-pro.html"  -->
+    <a href="pages/engineering/engineering.html"
+    <a class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border border-indigo-200">
+      <h3 class="text-xl font-bold text-indigo-600">🛠 Engineering</h3>
+      <p class="mt-3 text-gray-600">
+        Diagnostics, maintenance & troubleshooting systems.
+      </p>
+    </a>
+
+    <!-- HEALTHCARE -->
+    <!-- <a href="https://poe.com/UbuzimaAI" -->
+    <a class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border border-red-200">
+      <h3 class="text-xl font-bold text-red-600">🏥 Healthcare</h3>
+      <p class="mt-3 text-gray-600">
+        AI-powered symptom analysis & medical guidance.
+      </p>
+    </a>
+
+    <!-- EDUCATION -->
+    <!-- <a href="https://sites.google.com/view/berbason/home?authuser=4" -->
+    <a class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border border-blue-200">
+      <h3 class="text-xl font-bold text-blue-600">🎓 Education</h3>
+      <p class="mt-3 text-gray-600">
+        Smart tutoring, AI assessments & learning analytics.
+      </p>
+    </a>
+
+    <!-- AGRICULTURE -->
+    <!-- <a href="https://poe.com/KGAgriAI" -->
+    <a class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border border-green-300">
+      <h3 class="text-xl font-bold text-green-700">🌾 Agriculture</h3>
+      <p class="mt-3 text-gray-600">
+        Weather intelligence, crop & soil insights.
+      </p>
+    </a>
+
+    <!-- GOVERNMENT -->
+    <!-- <a href="https://poe.com/GovServicesAI" -->
+    <a class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border border-purple-200">
+      <h3 class="text-xl font-bold text-purple-600">🏛 Government</h3>
+      <p class="mt-3 text-gray-600">
+        Digital public services & civic technology.
+      </p>
+    </a>
+
+    <!-- LEGAL -->
+    <!-- <a href="https://poe.com/KGLegalAI" -->
+    <a class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border border-yellow-200">
+      <h3 class="text-xl font-bold text-yellow-600">⚖ Legal</h3>
+      <p class="mt-3 text-gray-600">
+        AI legal research & smart document analysis.
+      </p>
+    </a>
+    
+    <!-- SPORTS -->
+    <!-- <a href="kglsports.html" -->
+    <a class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border border-green-200">
+      <h3 class="text-xl font-bold text-green-600">⚽ Rwanda Sports</h3>
+      <p class="mt-3 text-gray-600">
+        Live scores, match analytics & sports intelligence.
+      </p>
+    </a>
+
+    <!-- TRANSPORT -->
+    <!-- <a href="https://poe.com/KGLTransAI" -->
+    <a class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border border-indigo-200">
+      <h3 class="text-xl font-bold text-indigo-600">🚛 Transport</h3>
+      <p class="mt-3 text-gray-600">
+        Smart mobility & transport assistant services.
+      </p>
+    </a>
+
+    <!-- BROKER -->
+    <!-- <a href="https://poe.com/KGBrokerAI" -->
+    <a class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border border-pink-200">
+      <h3 class="text-xl font-bold text-pink-600">💼 Broker</h3>
+      <p class="mt-3 text-gray-600">
+        AI-powered broker & intermediary solutions.
+      </p>
+    </a>
+
+  </div>
+  </div>
+
+</section>
+
+
+<!-- ================= HERO + SEARCH SECTION ================= -->
+  
+  <section class="relative bg-gradient-to-r from-indigo-700 via-purple-700 to-cyan-600 text-white py-28">
+
+   <!-- Action Buttons -->
+   <div class="mt-16 text-center flex flex-wrap justify-center gap-6"> 
+    <a href="career.html"
+      class="bg-gray-900 text-white px-8 py-3 rounded-xl font-semibold shadow hover:bg-gray-800 transition">
+      🤝 Become Contributor
+    </a>
+  </div>
+    
+  </div>
+  
+</section> 
+
+
+<!-- PRE-FOOTER SECTION -->
+<section class="bg-gray-100 py-16">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+
+    <!-- LEFT SIDE: LINKS + SOCIAL -->
+    <div class="grid sm:grid-cols-2 gap-8">
+
+      <!-- Useful Links -->
+      <div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">Quick Access</h3>
+        <ul class="space-y-3 text-gray-600">
+          <li><a href="index.html" class="hover:text-indigo-600">About Us</a></li>
+          <li><a href="solutions.html" class="hover:text-indigo-600">Spaces</a></li>
+          <li><a href="servicess.html" class="hover:text-indigo-600">Services</a></li>
+          <li><a href="career.html" class="hover:text-indigo-600">Careers</a></li>
+          <li><a href="signup.html" class="hover:text-indigo-600">Sign Up</a></li>
+          <li><a href="career.html" class="hover:text-indigo-600">Apply</a></li>
+          <li><a href="online-courses.html" class="hover:text-indigo-600">Courses</a></li>
+          <li><a href="terms.html" class="hover:text-indigo-600">Terms & Conditions</a></li>
+          <li><a href="https://www.risa.gov.rw/data-protection-and-privacy-law" class="hover:text-indigo-600">Data Protection and Privacy</a></li>
+          <li><a href="https://www.minict.gov.rw/ai-policy" class="hover:text-indigo-600">Rwanda AI Policy</a></li>
+        </ul>
+      </div>
+
+      <!-- Other Services -->
+      <div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">Useful Links</h3>
+        <ul class="space-y-3 text-gray-600">
+          <li><a href="https://substack.com/@kglai" class="hover:text-indigo-600">Subscribe to KGL AI</a></li>
+          <li><a href="https://kglai.substack.com/?utm_campaign=profile_chips" class="hover:text-indigo-600">KGL AI Newsletter</a></li>
+          <li><a href="#" class="hover:text-indigo-600">Healthcare AI</a></li>
+          <li><a href="#" class="hover:text-indigo-600">AI Tools Directory</a></li>
+          <li><a href="#" class="hover:text-indigo-600">Startup Incubation</a></li>
+          <li><a href="#" class="hover:text-indigo-600">Community Programs</a></li>
+          <li><a href="#" class="hover:text-indigo-600">Partnerships</a></li>
+        </ul>
+      </div>
+
+      <!-- Social Media -->
+      <div class="sm:col-span-2 mt-6">
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">Connect With Us</h3>
+      
+        <div class="flex flex-wrap gap-4">
+
+          <a href="https://linkedin.com/company/kglai" target="_blank"
+             class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white transition">
+            <i class="fab fa-linkedin-in"></i> LinkedIn
+          </a>
+      
+          <a href="https://twitter.com/kglai" target="_blank"
+             class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white transition">
+            <i class="fab fa-x-twitter"></i> Twitter / X
+          </a>
+          
+          <a href="https://youtube.com/@kglai" target="_blank"
+             class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white transition">
+            <i class="fab fa-youtube"></i> YouTube
+          </a>
+
+          <a href="https://substack.com/@kglai" target="_blank"
+             class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white transition">
+            <i class="fab fa-substack"></i> Substack
+          </a>
+      
+        </div>
+      </div>
+
+    </div>
+
+ <!-- RIGHT SIDE: CONTACT / SIGNUP FORM -->
+<div>
+  <h3 class="text-xl font-semibold text-gray-800 mb-4">Contact form</h3>
+  <p class="text-gray-600 mb-6">
+    Submit the form below to contact us now.
+  </p>
+
+  <!-- Form -->
+  <form id="contact-form" class="space-y-4">
+    <input type="text" id="name" placeholder="Your Name" required class="w-full p-3 border rounded" />
+    <input type="email" id="email" placeholder="Your Email" required class="w-full p-3 border rounded" />
+    <input type="position" id="position" placeholder="Your Position" required class="w-full p-3 border rounded" />
+    <input type="company" id="company" placeholder="Company/Institution" required class="w-full p-3 border rounded" />
+    <textarea id="message" placeholder="Your Message" required class="w-full p-3 border rounded"></textarea>
+  
+    <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded">
+      Send Message
+    </button>
+  
+    <p id="form-status" class="text-sm"></p>
+  </form>
+  
+  </div>
+</section>
+  
+<!-- FOOTER -->
+<footer class="text-center py-10 text-gray-500 text-sm bg-gray-900">
+  © 2026 KGL AI · Product of BOT Ltd · Open · Community Data-Driven ·
+  <a href="terms.html" class="hover:text-gray-700 underline">Terms and Conditions</a> ·
+  <a href="https://www.risa.gov.rw/data-protection-and-privacy-law" class="hover:text-gray-700 underline">Data Protection and Privacy</a>     ·
+  <a href="https://www.minict.gov.rw/ai-policy" class="hover:text-gray-700 underline">Rwanda AI Policy</a>
+</footer>
+
+  <!-- Javascrpt for counting -->
+<script>
+  const counters = document.querySelectorAll('.counter');
+  const speed = 200; // lower = faster
+
+  const startCounting = (entry) => {
+    if (!entry.isIntersecting) return;
+
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = target / speed;
+
+        if (count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(updateCount, 10);
+        } else {
+          counter.innerText = target + "+";
+        }
+      };
+
+      updateCount();
+    });
+
+    observer.disconnect(); // run once
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(startCounting);
+  }, { threshold: 0.5 });
+
+  observer.observe(document.querySelector('#stats'));
+</script>
+
+ <!-- SUPABASE CONNECTION -->
+
+<script type="module">
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+
+const supabase = createClient(
+  "https://vbuffgasrckvlxoilsec.supabase.co",
+  "sb_publishable_RfN-k0VZHztLhO-BFwtwtA_sUwv5rWR"
+);
+
+const form = document.getElementById("contact-form");
+const statusText = document.getElementById("form-status");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault(); // 🔥 VERY IMPORTANT
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const position = document.getElementById("position").value;
+  const company = document.getElementById("company").value;
+  const message = document.getElementById("message").value;
+
+  statusText.innerText = "Sending...";
+
+  const { error } = await supabase.from("contact_messages").insert([
+    {
+      name,
+      email,
+      position,
+      company,
+      message
+    }
+  ]);
+
+  if (error) {
+    console.error(error);
+    statusText.innerText = "❌ Failed to send message";
+  } else {
+    statusText.innerText = "✅ Message sent successfully!";
+    form.reset();
+  }
+});
+</script>
+  
+</body>
+</html>
