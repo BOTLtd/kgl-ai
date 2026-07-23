@@ -705,34 +705,52 @@ fileUrl
 
 
 
-const {
+// const {
 
-error:dbError
+// error:dbError
 
-}=await supabase
+// }=await supabase
 
+// .from("careers")
+
+// .insert([payload]);
+
+
+// await fetch(
+//   "https://qircmdvxzseugbuefpuj.supabase.co/functions/v1/resend-email",
+//   {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify({
+//       full_name: payload.full_name,
+//       email: payload.email,
+//       role_type: payload.role_type
+//     })
+//   }
+// );
+
+  
+const {error: dbError}=await supabase
 .from("careers")
-
 .insert([payload]);
 
 
+if(!dbError){
+
 await fetch(
-  "https://qircmdvxzseugbuefpuj.supabase.co/functions/v1/resend-email",
-  {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      full_name: payload.full_name,
-      email: payload.email,
-      role_type: payload.role_type
-    })
-  }
-);
+"https://qircmdvxzseugbuefpuj.supabase.co/functions/v1/resend-email",
+{
+method:"POST",
+headers:{
+"Content-Type":"application/json",
+"Authorization":"Bearer sb_publishable_vmQFmr5VYvdY4m8ndSBK8A_HQFiO4-p"
+},
+body:JSON.stringify(payload)
+});
 
-  
-
+}
 
 if(dbError){
 
