@@ -737,20 +737,20 @@ const {error: dbError}=await supabase
 .insert([payload]);
 
 
-if(!dbError){
+// if(!dbError){
 
-await fetch(
-"https://qircmdvxzseugbuefpuj.supabase.co/functions/v1/resend-email",
-{
-method:"POST",
-headers:{
-"Content-Type":"application/json",
-"Authorization":"Bearer sb_publishable_vmQFmr5VYvdY4m8ndSBK8A_HQFiO4-p"
-},
-body:JSON.stringify(payload)
-});
+// await fetch(
+// "https://qircmdvxzseugbuefpuj.supabase.co/functions/v1/resend-email",
+// {
+// method:"POST",
+// headers:{
+// "Content-Type":"application/json",
+// "Authorization":"Bearer sb_publishable_vmQFmr5VYvdY4m8ndSBK8A_HQFiO4-p"
+// },
+// body:JSON.stringify(payload)
+// });
 
-}
+// }
 
 if(dbError){
 
