@@ -377,109 +377,527 @@ const supabase = createClient(
 
 
 // ================= CAREER FORM =================
+// const careerForm = document.getElementById("careerForm");
+// const messageDiv = document.getElementById("formMessage");
+
+// careerForm.addEventListener("submit", async (e) => {
+//   e.preventDefault();
+
+//   messageDiv.innerHTML = "⏳ Submitting application...";
+
+//   try {
+//     const file = document.getElementById("cv_file").files[0];
+
+//     let fileUrl = null;
+
+//     if (file) {
+//       if (file.type !== "application/pdf") {
+//         messageDiv.innerHTML = `<span class="text-red-600">❌ Only PDF files allowed</span>`;
+//         return;
+//       }
+
+//       if (file.size > 3 * 1024 * 1024) {
+//         messageDiv.innerHTML = `<span class="text-red-600">❌ Max file size is 3MB</span>`;
+//         return;
+//       }
+
+//       const fileName = `cv_${Date.now()}_${file.name.replace(/\s+/g, "_")}`;
+
+//       const { error: uploadError } = await supabase.storage
+//         .from("cv_uploads")
+//         .upload(fileName, file);
+
+//       if (uploadError) {
+//         console.error("UPLOAD ERROR:", uploadError);
+//         messageDiv.innerHTML = `<span class="text-red-600">❌ CV upload failed</span>`;
+//         return;
+//       }
+
+//       const { data } = supabase.storage
+//         .from("cv_uploads")
+//         .getPublicUrl(fileName);
+
+//       fileUrl = data.publicUrl;
+//     }
+
+//     const payload = {
+//       full_name: document.getElementById("full_name").value || "",
+//       email: document.getElementById("email").value || "",
+//       phone: document.getElementById("phone").value || "",
+//       education: document.getElementById("education").value || "",
+//       role_type: document.getElementById("role_type").value || "",
+//       field: document.getElementById("field").value || "",
+//       location: document.getElementById("location").value || "",
+//       about: document.getElementById("about").value || "",
+//       cv_url: fileUrl
+//     };
+
+//     const { error: dbError } = await supabase
+//       .from("careers")
+//       .insert([payload]);
+
+//     if (dbError) {
+//       console.error("DB ERROR:", dbError);
+//       messageDiv.innerHTML = `<span class="text-red-600">❌ ${dbError.message}</span>`;
+//       return;
+//     }
+
+//     messageDiv.innerHTML = `<span class="text-green-600">✅ Application submitted successfully!</span>`;
+//     careerForm.reset();
+
+//   } catch (err) {
+//     console.error("UNEXPECTED ERROR:", err);
+//     messageDiv.innerHTML = `<span class="text-red-600">❌ Unexpected error occurred</span>`;
+//   }
+// });
+
+
+
+// // ================= CONTACT FORM =================
+// const contactForm = document.getElementById("contact-form");
+// const statusText = document.getElementById("form-status");
+
+// contactForm.addEventListener("submit", async (e) => {
+//   e.preventDefault();
+
+//   const name = document.getElementById("name").value;
+//   const email = document.getElementById("email").value;
+//   const position = document.getElementById("position").value;
+//   const company = document.getElementById("company").value;
+//   const message = document.getElementById("message").value;
+
+//   statusText.innerText = "Sending...";
+
+//   const { error } = await supabase.from("contact_messages").insert([
+//     { name, email, position, company, message }
+//   ]);
+
+//   if (error) {
+//     console.error(error);
+//     statusText.innerText = "❌ Failed to send message";
+//   } else {
+//     statusText.innerText = "✅ Message sent successfully!";
+//     contactForm.reset();
+//   }
+// });
+// </script>
+
+
+
+
+
+
+
+  <!-- SUPERBASE CONNECTION -->
+<script type="module">
+
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+
+
+const supabase = createClient(
+  "https://qircmdvxzseugbuefpuj.supabase.co",
+  "sb_publishable_vmQFmr5VYvdY4m8ndSBK8A_HQFiO4-p"
+);
+
+
+
+// ================= CAREER FORM =================
+
 const careerForm = document.getElementById("careerForm");
 const messageDiv = document.getElementById("formMessage");
 
-careerForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
 
-  messageDiv.innerHTML = "⏳ Submitting application...";
+careerForm.addEventListener("submit", async (e)=>{
 
-  try {
-    const file = document.getElementById("cv_file").files[0];
+e.preventDefault();
 
-    let fileUrl = null;
 
-    if (file) {
-      if (file.type !== "application/pdf") {
-        messageDiv.innerHTML = `<span class="text-red-600">❌ Only PDF files allowed</span>`;
-        return;
-      }
+messageDiv.innerHTML =
+"⏳ Submitting application...";
 
-      if (file.size > 3 * 1024 * 1024) {
-        messageDiv.innerHTML = `<span class="text-red-600">❌ Max file size is 3MB</span>`;
-        return;
-      }
 
-      const fileName = `cv_${Date.now()}_${file.name.replace(/\s+/g, "_")}`;
+try{
 
-      const { error: uploadError } = await supabase.storage
-        .from("cv_uploads")
-        .upload(fileName, file);
 
-      if (uploadError) {
-        console.error("UPLOAD ERROR:", uploadError);
-        messageDiv.innerHTML = `<span class="text-red-600">❌ CV upload failed</span>`;
-        return;
-      }
+const file =
+document.getElementById("cv_file").files[0];
 
-      const { data } = supabase.storage
-        .from("cv_uploads")
-        .getPublicUrl(fileName);
 
-      fileUrl = data.publicUrl;
-    }
+let fileUrl = null;
 
-    const payload = {
-      full_name: document.getElementById("full_name").value || "",
-      email: document.getElementById("email").value || "",
-      phone: document.getElementById("phone").value || "",
-      education: document.getElementById("education").value || "",
-      role_type: document.getElementById("role_type").value || "",
-      field: document.getElementById("field").value || "",
-      location: document.getElementById("location").value || "",
-      about: document.getElementById("about").value || "",
-      cv_url: fileUrl
-    };
 
-    const { error: dbError } = await supabase
-      .from("careers")
-      .insert([payload]);
 
-    if (dbError) {
-      console.error("DB ERROR:", dbError);
-      messageDiv.innerHTML = `<span class="text-red-600">❌ ${dbError.message}</span>`;
-      return;
-    }
+// ================= CV UPLOAD =================
 
-    messageDiv.innerHTML = `<span class="text-green-600">✅ Application submitted successfully!</span>`;
-    careerForm.reset();
+if(file){
 
-  } catch (err) {
-    console.error("UNEXPECTED ERROR:", err);
-    messageDiv.innerHTML = `<span class="text-red-600">❌ Unexpected error occurred</span>`;
-  }
+
+if(file.type !== "application/pdf"){
+
+messageDiv.innerHTML =
+`
+<span class="text-red-600">
+❌ Only PDF files allowed
+</span>
+`;
+
+return;
+
+}
+
+
+
+if(file.size > 3 * 1024 * 1024){
+
+
+messageDiv.innerHTML =
+`
+<span class="text-red-600">
+❌ Maximum CV size is 3MB
+</span>
+`;
+
+return;
+
+}
+
+
+
+const fileName =
+
+`cv/${Date.now()}_${file.name.replace(/\s+/g,"_")}`;
+
+
+
+const {
+data:uploadData,
+error:uploadError
+
+}=await supabase.storage
+
+.from("cv_uploads")
+
+.upload(
+
+fileName,
+
+file,
+
+{
+
+cacheControl:"3600",
+
+upsert:false
+
+}
+
+);
+
+
+
+if(uploadError){
+
+
+console.error(
+"CV UPLOAD ERROR:",
+uploadError
+);
+
+
+
+messageDiv.innerHTML =
+
+`
+<span class="text-red-600">
+
+❌ CV upload failed:
+<br>
+${uploadError.message}
+
+</span>
+`;
+
+
+return;
+
+
+}
+
+
+
+// Get public URL
+
+const {
+
+data:urlData
+
+}=supabase.storage
+
+.from("cv_uploads")
+
+.getPublicUrl(fileName);
+
+
+
+fileUrl =
+urlData.publicUrl;
+
+
+
+}
+
+
+
+
+// ================= SAVE APPLICATION =================
+
+
+const payload = {
+
+
+full_name:
+
+document.getElementById("full_name").value || "",
+
+
+email:
+
+document.getElementById("email").value || "",
+
+
+phone:
+
+document.getElementById("phone").value || "",
+
+
+education:
+
+document.getElementById("education").value || "",
+
+
+role_type:
+
+document.getElementById("role_type").value || "",
+
+
+field:
+
+document.getElementById("field").value || "",
+
+
+location:
+
+document.getElementById("location").value || "",
+
+
+about:
+
+document.getElementById("about").value || "",
+
+
+cv_url:
+
+fileUrl
+
+
+
+};
+
+
+
+const {
+
+error:dbError
+
+}=await supabase
+
+.from("careers")
+
+.insert([payload]);
+
+
+
+
+if(dbError){
+
+
+console.error(
+"DATABASE ERROR:",
+dbError
+);
+
+
+
+messageDiv.innerHTML =
+
+`
+<span class="text-red-600">
+
+❌ ${dbError.message}
+
+</span>
+`;
+
+
+return;
+
+
+}
+
+
+
+
+messageDiv.innerHTML =
+
+`
+<span class="text-green-600">
+
+✅ Application submitted successfully!
+
+</span>
+`;
+
+
+
+careerForm.reset();
+
+
+
+}
+
+catch(err){
+
+
+console.error(
+"UNEXPECTED ERROR:",
+err
+);
+
+
+
+messageDiv.innerHTML =
+
+`
+<span class="text-red-600">
+
+❌ ${err.message}
+
+</span>
+`;
+
+}
+
+
 });
+
 
 
 
 // ================= CONTACT FORM =================
-const contactForm = document.getElementById("contact-form");
-const statusText = document.getElementById("form-status");
 
-contactForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
 
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const position = document.getElementById("position").value;
-  const company = document.getElementById("company").value;
-  const message = document.getElementById("message").value;
+const contactForm =
+document.getElementById("contact-form");
 
-  statusText.innerText = "Sending...";
 
-  const { error } = await supabase.from("contact_messages").insert([
-    { name, email, position, company, message }
-  ]);
+const statusText =
+document.getElementById("form-status");
 
-  if (error) {
-    console.error(error);
-    statusText.innerText = "❌ Failed to send message";
-  } else {
-    statusText.innerText = "✅ Message sent successfully!";
-    contactForm.reset();
-  }
+
+
+contactForm.addEventListener("submit", async(e)=>{
+
+
+e.preventDefault();
+
+
+
+const name =
+document.getElementById("name").value;
+
+
+const email =
+document.getElementById("email").value;
+
+
+const position =
+document.getElementById("position").value;
+
+
+const company =
+document.getElementById("company").value;
+
+
+const message =
+document.getElementById("message").value;
+
+
+
+statusText.innerText =
+"Sending...";
+
+
+
+const {
+
+error
+
+}=await supabase
+
+.from("contact_messages")
+
+.insert([
+
+{
+
+name,
+
+email,
+
+position,
+
+company,
+
+message
+
+}
+
+]);
+
+
+
+
+if(error){
+
+
+console.error(
+"CONTACT ERROR:",
+error
+);
+
+
+statusText.innerText =
+"❌ Failed to send message";
+
+
+}
+
+else{
+
+
+statusText.innerText =
+"✅ Message sent successfully!";
+
+
+contactForm.reset();
+
+
+}
+
+
 });
+
+
 </script>
 
 </body>
