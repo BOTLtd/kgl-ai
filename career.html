@@ -716,6 +716,22 @@ error:dbError
 .insert([payload]);
 
 
+await fetch(
+  "https://qircmdvxzseugbuefpuj.supabase.co/functions/v1/send-career-email",
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      full_name: payload.full_name,
+      email: payload.email,
+      role_type: payload.role_type
+    })
+  }
+);
+
+  
 
 
 if(dbError){
