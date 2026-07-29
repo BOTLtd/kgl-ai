@@ -272,25 +272,15 @@ Security
 
 <script>
 
-
-const images={
-
-health:"https://source.unsplash.com/400x300/?health",
-
-education:"https://source.unsplash.com/400x300/?education",
-
-business:"https://source.unsplash.com/400x300/?business",
-
-agriculture:"https://source.unsplash.com/400x300/?farming",
-
-fintech:"https://source.unsplash.com/400x300/?finance",
-
-environment:"https://source.unsplash.com/400x300/?environment",
-
-creative:"https://source.unsplash.com/400x300/?design",
-
-security:"https://source.unsplash.com/400x300/?security"
-
+const images = {
+  health:"https://picsum.photos/600/400?random=1",
+  education:"https://picsum.photos/600/400?random=2",
+  business:"https://picsum.photos/600/400?random=3",
+  agriculture:"https://picsum.photos/600/400?random=4",
+  fintech:"https://picsum.photos/600/400?random=5",
+  environment:"https://picsum.photos/600/400?random=6",
+  creative:"https://picsum.photos/600/400?random=7",
+  security:"https://picsum.photos/600/400?random=8"
 };
 
 
@@ -465,8 +455,8 @@ container.innerHTML+=`
 class="w-full h-44 object-cover">
 
 
-<div class="p-5">
-
+// <div class="p-5">
+<div class="p-5 flex flex-col h-full">
 
 <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm">
 
@@ -507,34 +497,33 @@ ${card.title}
 
 
 
-<div class="space-y-3">
+<div class="mt-auto pt-4">
 
-<div class="grid grid-cols-2 gap-2">
+<div class="flex gap-2">
 
 <button
-class="bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg font-semibold transition">
+type="button"
+class="flex-1 bg-blue-600 hover:bg-blue-700 text-white rounded-lg py-2 font-semibold">
 Free Trial
 </button>
 
-${paidProjects.includes(card.title) ? `
 <a
 href="https://b-pay.vercel.app/"
 target="_blank"
-class="bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg font-semibold text-center flex items-center justify-center transition">
+class="flex-1 bg-green-600 hover:bg-green-700 text-white rounded-lg py-2 text-center font-semibold">
 Buy Now
 </a>
-` : `
-<div></div>
-`}
 
 </div>
 
 <button
-class="w-full border border-gray-300 hover:bg-gray-100 py-2 rounded-lg font-semibold transition">
+type="button"
+class="w-full mt-3 border border-gray-300 rounded-lg py-2 hover:bg-gray-100 font-semibold">
 Explore
 </button>
 
 </div>
+
 
 
 
