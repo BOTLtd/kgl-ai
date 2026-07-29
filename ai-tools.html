@@ -396,9 +396,31 @@ const cards = [
 ];
 
 
+cards.forEach((card,index)=>{
 
+if(!card.price){
+card.price = Math.floor(Math.random()*150)+10;
+}
 
+if(!card.contributor){
+card.contributor = index % 3 === 0 
+? "KGL ADMIN"
+: "Owen";
+}
+
+if(!card.rating){
+card.rating = (4 + Math.random()).toFixed(1);
+}
+
+if(!card.likes){
+card.likes = Math.floor(Math.random()*900)+50;
+}
+
+});
+
+    
 const paidProjects = cards.map(card => card.title);
+
 
 
 
@@ -434,6 +456,39 @@ ${card.category}
 <h2 class="text-xl font-bold mt-3">
 ${card.title}
 </h2>
+
+<div class="mt-3 grid grid-cols-2 gap-2 text-sm">
+
+
+<div class="bg-green-50 text-green-700 px-3 py-2 rounded-lg font-semibold">
+
+💲 $${card.price} USD
+
+</div>
+
+
+<div class="bg-blue-50 text-blue-700 px-3 py-2 rounded-lg">
+
+👤 ${card.contributor}
+
+</div>
+
+
+<div class="bg-yellow-50 text-yellow-700 px-3 py-2 rounded-lg">
+
+⭐ ${card.rating}
+
+</div>
+
+
+<div class="bg-red-50 text-red-700 px-3 py-2 rounded-lg">
+
+❤️ ${card.likes}
+
+</div>
+
+
+</div>
 
 
 <p class="text-sm mt-3">
