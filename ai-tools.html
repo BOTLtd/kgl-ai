@@ -26,7 +26,7 @@ font-family:'Inter',sans-serif;
 
 .card-hover{
 transition:.3s;
-height:100%;
+height:auto;
 }
 
 
@@ -1135,11 +1135,9 @@ Explore
 
 
 
-
 cardContainer.innerHTML += `
 
-
-<div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+<div class="bg-white rounded-xl shadow-md overflow-hidden card-hover flex flex-col">
 
 
 <img
@@ -1154,7 +1152,7 @@ class="w-full h-48 object-cover"
 
 
 
-<div class="p-5 flex flex-col h-full">
+<div class="p-5 flex flex-col flex-grow">
 
 
 <h2 class="text-xl font-bold text-gray-800 mb-2">
@@ -1162,6 +1160,7 @@ class="w-full h-48 object-cover"
 ${card.title}
 
 </h2>
+
 
 
 
@@ -1207,7 +1206,9 @@ ${card.impact}
 
 
 
-<div class="border-t pt-4 mb-4">
+
+
+<div class="border-t pt-4 mb-5">
 
 
 <div class="flex justify-between text-sm text-gray-700">
@@ -1231,6 +1232,8 @@ ${card.impact}
 
 
 
+
+
 <div class="flex justify-between text-sm mt-2">
 
 
@@ -1241,6 +1244,7 @@ ${card.impact}
 </span>
 
 
+
 <span>
 
 ❤️ ${card.likes}
@@ -1248,16 +1252,121 @@ ${card.impact}
 </span>
 
 
-</div>
-
 
 </div>
 
 
 
+</div>
 
 
-${button}
+
+
+
+
+
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+
+
+${
+
+card.status === "launch"
+
+?
+
+
+`
+
+<a
+
+href="${card.website}"
+
+target="_blank"
+
+class="bg-green-600 hover:bg-green-700 text-white text-center px-3 py-3 rounded-lg text-sm font-semibold">
+
+🚀 Launch
+
+</a>
+
+
+
+<button
+
+onclick="alert('Free trial activated. Redirecting to signup...')"
+
+class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-3 rounded-lg text-sm font-semibold">
+
+Free Trial
+
+</button>
+
+
+
+
+<button
+
+onclick="alert('Purchase process started.')"
+
+class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-3 rounded-lg text-sm font-semibold">
+
+Buy
+
+</button>
+
+
+`
+
+:
+
+
+`
+
+<button
+
+onclick="alert('Free trial will be available after launch.')"
+
+class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-3 rounded-lg text-sm font-semibold">
+
+Free Trial
+
+</button>
+
+
+
+
+
+<button
+
+onclick="alert('Purchase will be available after launch.')"
+
+class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-3 rounded-lg text-sm font-semibold">
+
+Buy
+
+</button>
+
+
+
+
+
+<button
+
+onclick="alert('This AI solution is currently under development.')"
+
+class="bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-3 rounded-lg text-sm font-semibold">
+
+Explore
+
+</button>
+
+
+`
+
+}
+
+
+</div>
 
 
 
@@ -1268,8 +1377,6 @@ ${button}
 
 
 `;
-
-
 
 });
 
