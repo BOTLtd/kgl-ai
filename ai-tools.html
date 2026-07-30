@@ -678,8 +678,23 @@ const cards = [
 /* ENERGY MANAGEMENT */
 
 
-{
+<script>
 
+
+const images = {
+
+energy:"https://picsum.photos/600/400?random=9"
+
+};
+
+
+
+
+
+const cards = [
+
+
+{
 title:"Energy Consumption Manager",
 
 category:"energy",
@@ -702,8 +717,50 @@ website:"https://bot-energy.vercel.app/",
 
 image:images.energy
 
-},
+}
 
+
+];
+
+
+
+
+
+// STATIC VALUES
+
+cards.forEach(card=>{
+
+
+if(!card.price){
+
+card.price = 29;
+
+}
+
+
+if(!card.contributor){
+
+card.contributor = "BOT LTD";
+
+}
+
+
+if(!card.rating){
+
+card.rating = "4.8";
+
+}
+
+
+if(!card.likes){
+
+card.likes = 100;
+
+}
+
+
+
+});
 
 
 
