@@ -1040,41 +1040,56 @@ const button = card.status === "launch"
 
 `
 
-<div class="grid grid-cols-3 gap-2 mt-auto">
+<div class="space-y-2 mt-auto">
 
 
-<a href="${card.website}" 
+<div class="grid grid-cols-2 gap-2">
+
+
+<a
+
+href="https://bot-energy.vercel.app/"
+
 target="_blank"
-class="bg-green-600 hover:bg-green-700 text-white text-center px-3 py-2 rounded-lg text-sm">
 
-🚀 Launch
+class="bg-blue-600 hover:bg-blue-700 text-white text-center px-3 py-3 rounded-lg text-sm font-semibold">
+
+Free Trial
 
 </a>
 
 
 
-<button
 
-onclick="alert('Free trial activated. Redirecting to signup...')"
+<a
 
-class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-lg text-sm">
+href="https://b-pay.vercel.app/"
 
-Free Trial
+target="_blank"
 
-</button>
-
-
-
-
-<button
-
-onclick="alert('Purchase process started.')"
-
-class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-2 rounded-lg text-sm">
+class="bg-purple-600 hover:bg-purple-700 text-white text-center px-3 py-3 rounded-lg text-sm font-semibold">
 
 Buy
 
-</button>
+</a>
+
+
+</div>
+
+
+
+
+<a
+
+href="${card.website}"
+
+target="_blank"
+
+class="block bg-green-600 hover:bg-green-700 text-white text-center px-3 py-3 rounded-lg text-sm font-semibold">
+
+🚀 Launch Tool
+
+</a>
 
 
 </div>
@@ -1083,17 +1098,20 @@ Buy
 
 :
 
+
 `
 
-<div class="grid grid-cols-3 gap-2 mt-auto">
+<div class="space-y-2 mt-auto">
 
+
+<div class="grid grid-cols-2 gap-2">
 
 
 <button
 
-onclick="alert('Free trial will be available when this AI tool is launched.')"
+onclick="alert('Free Trial will be available after launch.')"
 
-class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-lg text-sm">
+class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-3 rounded-lg text-sm font-semibold">
 
 Free Trial
 
@@ -1102,15 +1120,19 @@ Free Trial
 
 
 
+
 <button
 
 onclick="alert('Purchase will be available after launch.')"
 
-class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-2 rounded-lg text-sm">
+class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-3 rounded-lg text-sm font-semibold">
 
 Buy
 
 </button>
+
+
+</div>
 
 
 
@@ -1120,12 +1142,11 @@ Buy
 
 onclick="alert('This AI solution is currently under development. Stay tuned!')"
 
-class="bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-2 rounded-lg text-sm">
+class="w-full bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-3 rounded-lg text-sm font-semibold">
 
 Explore
 
 </button>
-
 
 
 </div>
@@ -1138,6 +1159,7 @@ Explore
 cardContainer.innerHTML += `
 
 <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover flex flex-col">
+
 
 
 <img
