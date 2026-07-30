@@ -389,6 +389,16 @@ const images = {
 const cards = [
 
 /* HEALTH (15) */
+{
+  title:"Energy Consumption Manager",
+  category:"energy",
+  problem:"High electricity costs from inefficient usage",
+  solution:"Monitor and optimize energy consumption",
+  impact:"Lower bills and improved energy efficiency",
+  link:"https://bot-energy.vercel.app/",
+  button:"Free Trial",
+  image:images.energy
+}
 {title:"AI Symptom Checker",category:"health",problem:"People unsure when to seek care",solution:"AI analyzes symptoms instantly",impact:"Early diagnosis",image:images.health},
 {title:"Telemedicine AI Assistant",category:"health",problem:"Limited doctor access",solution:"AI triage and booking",impact:"Faster healthcare",image:images.health},
 {title:"Mental Health Chatbot",category:"health",problem:"Stress & anxiety",solution:"AI emotional support",impact:"Improved well-being",image:images.health},
@@ -505,8 +515,9 @@ card.price = Math.floor(Math.random()*150)+10;
 
 if(!card.contributor){
 card.contributor = index % 3 === 0 
-? "KGL ADMIN"
-: "Owen";
+? "KGLAI"
+: "B-TECH LTD"
+: "BOT LTD";
 }
 
 if(!card.rating){
