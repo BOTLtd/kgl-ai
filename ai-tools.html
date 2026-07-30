@@ -35,13 +35,6 @@ transform:translateY(-6px);
 }
 
 
-.card-hover .p-5{
-display:flex;
-flex-direction:column;
-height:100%;
-}
-
-
 #cardContainer{
 
 display:grid;
@@ -62,78 +55,60 @@ gap:24px;
 
 
 
-<!-- HEADER -->
-
 <header class="bg-white shadow-sm sticky top-0 z-50">
 
 
 <div class="max-w-7xl mx-auto p-4 flex justify-between items-center">
 
 
-<!-- Logo -->
-
-<a href="index.html" class="flex items-center gap-3">
-
+<a href="index.html" class="flex items-center">
 
 <img 
 src="image/kgl-ai-logo.png"
 alt="KGL AI Logo"
-class="h-24 md:h-24 w-auto object-contain"
-onerror="this.style.display='none'" />
-
+class="h-20 w-auto object-contain"
+onerror="this.style.display='none'">
 
 </a>
 
 
-
-<!-- Navigation -->
 
 <nav class="space-x-6 text-gray-700 font-medium hidden md:block">
 
-
 <a href="index.html"
-class="hover:text-indigo-600 transition">
-
+class="hover:text-indigo-600">
 Home
-
 </a>
-
 
 
 <a href="ai-tools.html"
-class="hover:text-indigo-600 transition">
-
+class="hover:text-indigo-600">
 Solutions
-
 </a>
-
 
 
 <a href="services.html"
 class="hover:text-indigo-600">
-
 Services
-
 </a>
-
 
 
 <a href="career.html"
-class="hover:text-indigo-600 transition">
-
+class="hover:text-indigo-600">
 Career
-
 </a>
-
 
 
 </nav>
 
 
-
 </div>
 
-<!-- MARKETPLACE HERO -->
+
+</header>
+
+
+
 
 
 <section class="bg-gradient-to-r from-indigo-600 to-cyan-500 text-white py-12">
@@ -157,7 +132,6 @@ Discover digital tools solving healthcare, energy, education, business and commu
 
 
 
-
 <div class="mt-8 flex flex-col md:flex-row justify-center gap-4">
 
 
@@ -172,7 +146,6 @@ placeholder="Search solutions..."
 class="px-5 py-3 rounded-lg text-gray-800 w-full md:w-96"
 
 />
-
 
 
 
@@ -197,13 +170,11 @@ Energy Management
 </option>
 
 
-
 <option value="health">
 
 Health
 
 </option>
-
 
 
 <option value="education">
@@ -213,13 +184,11 @@ Education
 </option>
 
 
-
 <option value="business">
 
 Business
 
 </option>
-
 
 
 <option value="agriculture">
@@ -229,13 +198,11 @@ Agriculture
 </option>
 
 
-
 <option value="fintech">
 
 Fintech
 
 </option>
-
 
 
 <option value="environment">
@@ -245,13 +212,11 @@ Environment
 </option>
 
 
-
 <option value="creative">
 
 Creative
 
 </option>
-
 
 
 <option value="security">
@@ -261,13 +226,10 @@ Security
 </option>
 
 
-
 </select>
 
 
-
 </div>
-
 
 
 </div>
@@ -276,27 +238,25 @@ Security
 </section>
 
 
-
-
-
-<!-- PROJECT CARDS -->
-
-
 <main class="max-w-7xl mx-auto px-6 py-10">
 
 
-<div
-
-id="cardContainer"
-
-class="grid gap-6"
-
-style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
-
-</div>
+<div id="cardContainer"></div>
 
 
 </main>
+
+
+
+
+
+
+
+
+
+
+
+  
 
   <!-- PRE-FOOTER SECTION -->
 
@@ -671,39 +631,25 @@ security:"https://picsum.photos/600/400?random=8"
 
 
 
-const cards = [
-
-
-
-/* ENERGY MANAGEMENT */
-
-
-<script>
-
-
-const images = {
-
-energy:"https://picsum.photos/600/400?random=9"
-
-};
-
-
-
-
+/* AI SOLUTIONS LIST */
 
 const cards = [
 
+
+
+/* ENERGY MANAGEMENT - AVAILABLE TOOL FIRST */
 
 {
+
 title:"Energy Consumption Manager",
 
 category:"energy",
 
-problem:"High electricity costs from inefficient usage",
+problem:"High electricity costs caused by inefficient energy usage.",
 
-solution:"Monitor and optimize energy consumption",
+solution:"Monitor, analyze and optimize electricity consumption using AI insights.",
 
-impact:"Lower bills and improved energy efficiency",
+impact:"Reduce electricity bills and improve energy efficiency.",
 
 price:29,
 
@@ -713,60 +659,19 @@ rating:"4.8",
 
 likes:320,
 
+status:"launch",
+
 website:"https://bot-energy.vercel.app/",
 
 image:images.energy
 
-}
+},
 
-
-];
-
-
-
-
-
-// STATIC VALUES
-
-cards.forEach(card=>{
-
-
-if(!card.price){
-
-card.price = 29;
-
-}
-
-
-if(!card.contributor){
-
-card.contributor = "BOT LTD";
-
-}
-
-
-if(!card.rating){
-
-card.rating = "4.8";
-
-}
-
-
-if(!card.likes){
-
-card.likes = 100;
-
-}
-
-
-
-});
 
 
 
 
 /* HEALTH */
-
 
 {
 
@@ -774,11 +679,11 @@ title:"AI Symptom Checker",
 
 category:"health",
 
-problem:"People unsure when to seek care",
+problem:"People are unsure when they need medical attention.",
 
-solution:"AI analyzes symptoms instantly",
+solution:"AI analyzes symptoms and provides health guidance.",
 
-impact:"Early diagnosis",
+impact:"Improves early healthcare decisions.",
 
 price:49,
 
@@ -788,11 +693,14 @@ rating:"4.6",
 
 likes:240,
 
+status:"explore",
+
 website:"#",
 
 image:images.health
 
 },
+
 
 
 {
@@ -801,11 +709,11 @@ title:"Telemedicine Assistant",
 
 category:"health",
 
-problem:"Limited doctor access",
+problem:"Limited access to healthcare professionals.",
 
-solution:"Digital healthcare support",
+solution:"Digital healthcare support platform.",
 
-impact:"Faster healthcare access",
+impact:"Improves healthcare accessibility.",
 
 price:29,
 
@@ -815,11 +723,14 @@ rating:"4.5",
 
 likes:180,
 
+status:"explore",
+
 website:"#",
 
 image:images.health
 
 },
+
 
 
 {
@@ -828,11 +739,11 @@ title:"Mental Health Support Tool",
 
 category:"health",
 
-problem:"Stress and anxiety management",
+problem:"Stress and wellbeing management challenges.",
 
-solution:"Provides wellbeing guidance",
+solution:"AI-based wellbeing assistance.",
 
-impact:"Improved mental wellness",
+impact:"Supports mental wellness awareness.",
 
 price:19,
 
@@ -842,11 +753,14 @@ rating:"4.4",
 
 likes:150,
 
+status:"explore",
+
 website:"#",
 
 image:images.health
 
 },
+
 
 
 {
@@ -855,11 +769,11 @@ title:"AI Nutrition Planner",
 
 category:"health",
 
-problem:"Poor diet planning",
+problem:"Poor meal and nutrition planning.",
 
-solution:"Personalized nutrition recommendations",
+solution:"Personalized AI nutrition recommendations.",
 
-impact:"Better health decisions",
+impact:"Better food and health decisions.",
 
 price:25,
 
@@ -869,6 +783,8 @@ rating:"4.5",
 
 likes:210,
 
+status:"explore",
+
 website:"#",
 
 image:images.health
@@ -877,4 +793,935 @@ image:images.health
 
 
 
-</header>
+
+
+/* EDUCATION */
+
+{
+
+title:"AI Learning Assistant",
+
+category:"education",
+
+problem:"Students need personalized learning support.",
+
+solution:"AI tutor for education improvement.",
+
+impact:"Better learning outcomes.",
+
+price:39,
+
+contributor:"KGL AI Academy",
+
+rating:"4.7",
+
+likes:300,
+
+status:"explore",
+
+website:"#",
+
+image:images.education
+
+},
+
+
+
+
+
+/* BUSINESS */
+
+{
+
+title:"AI Business Advisor",
+
+category:"business",
+
+problem:"Businesses need faster decision making.",
+
+solution:"AI powered business recommendations.",
+
+impact:"Improved productivity.",
+
+price:59,
+
+contributor:"KGL AI",
+
+rating:"4.6",
+
+likes:260,
+
+status:"explore",
+
+website:"#",
+
+image:images.business
+
+},
+
+
+
+
+
+/* AGRICULTURE */
+
+{
+
+title:"Smart Farming Assistant",
+
+category:"agriculture",
+
+problem:"Farmers lack data-driven insights.",
+
+solution:"AI agriculture recommendations.",
+
+impact:"Improved crop productivity.",
+
+price:35,
+
+contributor:"KGL AI",
+
+rating:"4.5",
+
+likes:170,
+
+status:"explore",
+
+website:"#",
+
+image:images.agriculture
+
+},
+
+
+
+
+
+/* FINTECH */
+
+{
+
+title:"AI Finance Assistant",
+
+category:"fintech",
+
+problem:"Poor financial planning.",
+
+solution:"AI personal finance guidance.",
+
+impact:"Better financial decisions.",
+
+price:45,
+
+contributor:"KGL AI",
+
+rating:"4.6",
+
+likes:220,
+
+status:"explore",
+
+website:"#",
+
+image:images.fintech
+
+},
+
+
+
+
+
+/* ENVIRONMENT */
+
+{
+
+title:"Carbon Footprint Calculator",
+
+category:"environment",
+
+problem:"Organizations lack emission tracking.",
+
+solution:"Calculate and monitor carbon impact.",
+
+impact:"Supports sustainability goals.",
+
+price:20,
+
+contributor:"KGL AI",
+
+rating:"4.4",
+
+likes:140,
+
+status:"explore",
+
+website:"#",
+
+image:images.environment
+
+},
+
+
+
+
+
+/* SECURITY */
+
+{
+
+title:"AI Security Monitor",
+
+category:"security",
+
+problem:"Increasing digital security risks.",
+
+solution:"AI assisted security monitoring.",
+
+impact:"Improved security awareness.",
+
+price:65,
+
+contributor:"KGL AI",
+
+rating:"4.7",
+
+likes:280,
+
+status:"explore",
+
+website:"#",
+
+image:images.security
+
+}
+
+
+
+];
+
+// CARD DISPLAY FUNCTION
+
+const cardContainer = document.getElementById("cardContainer");
+
+
+
+function renderCards(data){
+
+
+cardContainer.innerHTML="";
+
+
+
+if(data.length===0){
+
+cardContainer.innerHTML = `
+
+<div class="col-span-full text-center py-10 text-gray-500">
+
+No solutions found.
+
+</div>
+
+`;
+
+return;
+
+}
+
+
+
+
+data.forEach(card=>{
+
+
+const button = card.status === "launch"
+
+? 
+
+`
+
+<a href="${card.website}" 
+target="_blank"
+class="mt-auto bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg text-center">
+
+🚀 Launch Tool
+
+</a>
+
+`
+
+:
+
+`
+
+<button
+
+class="mt-auto bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded-lg"
+
+onclick="alert('This AI solution is currently under development. Stay tuned!')">
+
+Explore
+
+</button>
+
+`;
+
+
+
+
+
+
+cardContainer.innerHTML += `
+
+
+<div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+
+
+<img
+
+src="${card.image}"
+
+alt="${card.title}"
+
+class="w-full h-48 object-cover"
+
+>
+
+
+
+<div class="p-5 flex flex-col h-full">
+
+
+<h2 class="text-xl font-bold text-gray-800 mb-2">
+
+${card.title}
+
+</h2>
+
+
+
+<span class="inline-block bg-indigo-100 text-indigo-700 text-sm px-3 py-1 rounded-full mb-3">
+
+${card.category}
+
+</span>
+
+
+
+
+<p class="text-gray-600 text-sm mb-3">
+
+<strong>Problem:</strong>
+
+${card.problem}
+
+</p>
+
+
+
+
+<p class="text-gray-600 text-sm mb-3">
+
+<strong>Solution:</strong>
+
+${card.solution}
+
+</p>
+
+
+
+
+<p class="text-gray-600 text-sm mb-4">
+
+<strong>Impact:</strong>
+
+${card.impact}
+
+</p>
+
+
+
+
+<div class="border-t pt-4 mb-4">
+
+
+<div class="flex justify-between text-sm text-gray-700">
+
+
+<span>
+
+💰 <strong>$${card.price}</strong>
+
+</span>
+
+
+<span>
+
+👤 ${card.contributor}
+
+</span>
+
+
+</div>
+
+
+
+<div class="flex justify-between text-sm mt-2">
+
+
+<span>
+
+⭐ ${card.rating}
+
+</span>
+
+
+<span>
+
+❤️ ${card.likes}
+
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+${button}
+
+
+
+</div>
+
+
+</div>
+
+
+`;
+
+
+
+});
+
+
+}
+
+
+
+
+
+// INITIAL DISPLAY
+
+renderCards(cards);
+
+
+
+
+
+
+
+// SEARCH FUNCTION
+
+document.getElementById("searchInput")
+.addEventListener("input",function(){
+
+
+const keyword=this.value.toLowerCase();
+
+
+
+const filtered = cards.filter(card =>
+
+
+card.title.toLowerCase().includes(keyword)
+
+||
+
+card.category.toLowerCase().includes(keyword)
+
+||
+
+card.solution.toLowerCase().includes(keyword)
+
+
+
+);
+
+
+
+renderCards(filtered);
+
+
+
+});
+
+
+
+
+
+
+
+// CATEGORY FILTER
+
+document.getElementById("categoryFilter")
+.addEventListener("change",function(){
+
+
+const category=this.value;
+
+
+
+if(category==="all"){
+
+
+renderCards(cards);
+
+
+}
+
+else{
+
+
+renderCards(
+
+cards.filter(card=>card.category===category)
+
+);
+
+
+}
+
+
+
+});
+
+
+
+</script>
+
+
+<!-- PRE-FOOTER SECTION -->
+
+<section class="bg-gray-100 py-16">
+
+
+<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+
+
+
+<!-- LINKS -->
+
+<div class="grid sm:grid-cols-2 gap-8">
+
+
+<div>
+
+
+<h3 class="text-lg font-semibold text-gray-800 mb-4">
+
+Quick Access
+
+</h3>
+
+
+<ul class="space-y-3 text-gray-600">
+
+
+<li>
+<a href="index.html" class="hover:text-indigo-600">
+About Us
+</a>
+</li>
+
+
+<li>
+<a href="ai-tools.html" class="hover:text-indigo-600">
+Solutions
+</a>
+</li>
+
+
+<li>
+<a href="services.html" class="hover:text-indigo-600">
+Services
+</a>
+</li>
+
+
+<li>
+<a href="career.html" class="hover:text-indigo-600">
+Careers
+</a>
+</li>
+
+
+<li>
+<a href="signup.html" class="hover:text-indigo-600">
+Sign Up
+</a>
+</li>
+
+
+<li>
+<a href="terms.html" class="hover:text-indigo-600">
+Terms & Conditions
+</a>
+</li>
+
+
+</ul>
+
+
+</div>
+
+
+
+
+
+<div>
+
+
+<h3 class="text-lg font-semibold text-gray-800 mb-4">
+
+Useful Links
+
+</h3>
+
+
+<ul class="space-y-3 text-gray-600">
+
+
+<li>
+
+<a href="https://kglai-academy.vercel.app/" 
+target="_blank"
+class="hover:text-indigo-600">
+
+KGL AI Academy
+
+</a>
+
+</li>
+
+
+
+<li>
+
+<a href="https://substack.com/@kglai"
+target="_blank"
+class="hover:text-indigo-600">
+
+KGL AI Newsletter
+
+</a>
+
+</li>
+
+
+
+<li>
+
+<a href="https://www.risa.gov.rw/data-protection-and-privacy-law"
+target="_blank"
+class="hover:text-indigo-600">
+
+Data Protection
+
+</a>
+
+</li>
+
+
+
+<li>
+
+<a href="https://www.minict.gov.rw/ai-policy"
+target="_blank"
+class="hover:text-indigo-600">
+
+Rwanda AI Policy
+
+</a>
+
+</li>
+
+
+</ul>
+
+
+</div>
+
+
+
+
+
+<div class="sm:col-span-2">
+
+
+<h3 class="text-lg font-semibold text-gray-800 mb-4">
+
+Connect With Us
+
+</h3>
+
+
+
+<div class="flex flex-wrap gap-4">
+
+
+<a href="https://linkedin.com/company/kglai"
+target="_blank"
+class="px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white">
+
+LinkedIn
+
+</a>
+
+
+
+<a href="https://twitter.com/kglai"
+target="_blank"
+class="px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white">
+
+Twitter / X
+
+</a>
+
+
+
+<a href="https://youtube.com/@kglai"
+target="_blank"
+class="px-4 py-2 bg-white rounded-full shadow hover:bg-indigo-600 hover:text-white">
+
+YouTube
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- CONTACT FORM -->
+
+
+<div>
+
+
+<h3 class="text-xl font-semibold text-gray-800 mb-4">
+
+Contact Form
+
+</h3>
+
+
+
+<p class="text-gray-600 mb-6">
+
+Submit the form below to contact KGL AI.
+
+</p>
+
+
+
+
+<form id="contact-form" class="space-y-4">
+
+
+
+<input
+
+type="text"
+
+id="name"
+
+placeholder="Your Name"
+
+required
+
+class="w-full p-3 border rounded"
+
+>
+
+
+
+
+<input
+
+type="email"
+
+id="email"
+
+placeholder="Your Email"
+
+required
+
+class="w-full p-3 border rounded"
+
+>
+
+
+
+
+<input
+
+type="text"
+
+id="position"
+
+placeholder="Your Position"
+
+class="w-full p-3 border rounded"
+
+>
+
+
+
+
+<input
+
+type="text"
+
+id="company"
+
+placeholder="Company / Institution"
+
+class="w-full p-3 border rounded"
+
+>
+
+
+
+
+<textarea
+
+id="message"
+
+placeholder="Your Message"
+
+required
+
+class="w-full p-3 border rounded">
+
+</textarea>
+
+
+
+
+
+
+<button
+
+type="submit"
+
+class="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700">
+
+Send Message
+
+</button>
+
+
+
+
+<p id="form-status" class="text-sm"></p>
+
+
+
+</form>
+
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- FOOTER -->
+
+
+<footer class="text-center py-10 text-gray-400 text-sm bg-gray-900">
+
+
+© 2026 KGL AI · Product of BOT Ltd · Open · Community Data-Driven ·
+
+
+<a href="terms.html" 
+class="underline hover:text-white">
+
+Terms and Conditions
+
+</a>
+
+
+</footer>
+
+
+
+
+
+
+
+<!-- CONTACT FORM SCRIPT -->
+
+
+<script>
+
+
+document
+.getElementById("contact-form")
+.addEventListener("submit",function(e){
+
+
+e.preventDefault();
+
+
+
+document.getElementById("form-status").innerHTML =
+
+"Thank you! Your message has been received. We will contact you soon.";
+
+
+
+this.reset();
+
+
+
+});
+
+
+
+</script>
+
+
+
+
+</body>
+
+</html>
