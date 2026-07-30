@@ -1036,17 +1036,48 @@ data.forEach(card=>{
 
 const button = card.status === "launch"
 
-? 
+?
 
 `
 
+<div class="grid grid-cols-3 gap-2 mt-auto">
+
+
 <a href="${card.website}" 
 target="_blank"
-class="mt-auto bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg text-center">
+class="bg-green-600 hover:bg-green-700 text-white text-center px-3 py-2 rounded-lg text-sm">
 
-🚀 Launch Tool
+🚀 Launch
 
 </a>
+
+
+
+<button
+
+onclick="alert('Free trial activated. Redirecting to signup...')"
+
+class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-lg text-sm">
+
+Free Trial
+
+</button>
+
+
+
+
+<button
+
+onclick="alert('Purchase process started.')"
+
+class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-2 rounded-lg text-sm">
+
+Buy
+
+</button>
+
+
+</div>
 
 `
 
@@ -1054,18 +1085,52 @@ class="mt-auto bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg t
 
 `
 
+<div class="grid grid-cols-3 gap-2 mt-auto">
+
+
+
 <button
 
-class="mt-auto bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded-lg"
+onclick="alert('Free trial will be available when this AI tool is launched.')"
 
-onclick="alert('This AI solution is currently under development. Stay tuned!')">
+class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-lg text-sm">
+
+Free Trial
+
+</button>
+
+
+
+
+<button
+
+onclick="alert('Purchase will be available after launch.')"
+
+class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-2 rounded-lg text-sm">
+
+Buy
+
+</button>
+
+
+
+
+
+<button
+
+onclick="alert('This AI solution is currently under development. Stay tuned!')"
+
+class="bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-2 rounded-lg text-sm">
 
 Explore
 
 </button>
 
-`;
 
+
+</div>
+
+`;
 
 
 
