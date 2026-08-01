@@ -714,116 +714,116 @@ image:"image/football-live.png"
 },
 
 
-{
-title:"AI Symptom Checker",
-category:"health",
-problem:"People are unsure when they need medical attention.",
-solution:"AI analyzes symptoms and provides health guidance.",
-impact:"Supports early healthcare decisions.",
-price:49,
-contributor:"KGL AI",
-rating:"4.6",
-likes:240,
-status:"explore",
-website:"#",
-image:"image/health.png"
-},
+// {
+// title:"AI Symptom Checker",
+// category:"health",
+// problem:"People are unsure when they need medical attention.",
+// solution:"AI analyzes symptoms and provides health guidance.",
+// impact:"Supports early healthcare decisions.",
+// price:49,
+// contributor:"KGL AI",
+// rating:"4.6",
+// likes:240,
+// status:"explore",
+// website:"#",
+// image:"image/health.png"
+// },
 
 
-{
-title:"AI Learning Assistant",
-category:"education",
-problem:"Students need personalized learning support.",
-solution:"AI tutor providing customized learning assistance.",
-impact:"Improves learning outcomes.",
-price:39,
-contributor:"KGL AI Academy",
-rating:"4.7",
-likes:300,
-status:"explore",
-website:"#",
-image:"image/education.png"
-},
+// {
+// title:"AI Learning Assistant",
+// category:"education",
+// problem:"Students need personalized learning support.",
+// solution:"AI tutor providing customized learning assistance.",
+// impact:"Improves learning outcomes.",
+// price:39,
+// contributor:"KGL AI Academy",
+// rating:"4.7",
+// likes:300,
+// status:"explore",
+// website:"#",
+// image:"image/education.png"
+// },
 
 
-{
-title:"AI Business Advisor",
-category:"business",
-problem:"Businesses need faster and smarter decision making.",
-solution:"AI powered recommendations for business growth.",
-impact:"Improves productivity and planning.",
-price:59,
-contributor:"KGL AI",
-rating:"4.6",
-likes:260,
-status:"explore",
-website:"#",
-image:"image/business.png"
-},
+// {
+// title:"AI Business Advisor",
+// category:"business",
+// problem:"Businesses need faster and smarter decision making.",
+// solution:"AI powered recommendations for business growth.",
+// impact:"Improves productivity and planning.",
+// price:59,
+// contributor:"KGL AI",
+// rating:"4.6",
+// likes:260,
+// status:"explore",
+// website:"#",
+// image:"image/business.png"
+// },
 
 
-{
-title:"Smart Farming Assistant",
-category:"agriculture",
-problem:"Farmers lack access to data-driven farming insights.",
-solution:"AI recommendations for agriculture optimization.",
-impact:"Improves crop productivity and farming decisions.",
-price:35,
-contributor:"KGL AI",
-rating:"4.5",
-likes:170,
-status:"explore",
-website:"#",
-image:"image/agriculture.png"
-},
+// {
+// title:"Smart Farming Assistant",
+// category:"agriculture",
+// problem:"Farmers lack access to data-driven farming insights.",
+// solution:"AI recommendations for agriculture optimization.",
+// impact:"Improves crop productivity and farming decisions.",
+// price:35,
+// contributor:"KGL AI",
+// rating:"4.5",
+// likes:170,
+// status:"explore",
+// website:"#",
+// image:"image/agriculture.png"
+// },
 
 
-{
-title:"AI Finance Assistant",
-category:"fintech",
-problem:"Poor financial planning affects individuals and businesses.",
-solution:"AI powered financial guidance and recommendations.",
-impact:"Supports better financial decisions.",
-price:45,
-contributor:"KGL AI",
-rating:"4.6",
-likes:220,
-status:"explore",
-website:"#",
-image:"image/fintech.png"
-},
+// {
+// title:"AI Finance Assistant",
+// category:"fintech",
+// problem:"Poor financial planning affects individuals and businesses.",
+// solution:"AI powered financial guidance and recommendations.",
+// impact:"Supports better financial decisions.",
+// price:45,
+// contributor:"KGL AI",
+// rating:"4.6",
+// likes:220,
+// status:"explore",
+// website:"#",
+// image:"image/fintech.png"
+// },
 
 
-{
-title:"Carbon Footprint Calculator",
-category:"environment",
-problem:"Organizations lack tools to measure environmental impact.",
-solution:"Calculate and monitor carbon emissions.",
-impact:"Supports sustainability planning.",
-price:20,
-contributor:"KGL AI",
-rating:"4.4",
-likes:140,
-status:"explore",
-website:"#",
-image:"image/environment.png"
-},
+// {
+// title:"Carbon Footprint Calculator",
+// category:"environment",
+// problem:"Organizations lack tools to measure environmental impact.",
+// solution:"Calculate and monitor carbon emissions.",
+// impact:"Supports sustainability planning.",
+// price:20,
+// contributor:"KGL AI",
+// rating:"4.4",
+// likes:140,
+// status:"explore",
+// website:"#",
+// image:"image/environment.png"
+// },
 
 
-{
-title:"AI Security Monitor",
-category:"security",
-problem:"Organizations face increasing cybersecurity risks.",
-solution:"AI assisted monitoring and security insights.",
-impact:"Improves security awareness and protection.",
-price:65,
-contributor:"KGL AI",
-rating:"4.7",
-likes:280,
-status:"explore",
-website:"#",
-image:"image/security.png"
-}
+// {
+// title:"AI Security Monitor",
+// category:"security",
+// problem:"Organizations face increasing cybersecurity risks.",
+// solution:"AI assisted monitoring and security insights.",
+// impact:"Improves security awareness and protection.",
+// price:65,
+// contributor:"KGL AI",
+// rating:"4.7",
+// likes:280,
+// status:"explore",
+// website:"#",
+// image:"image/security.png"
+// }
 
 
 ];
@@ -864,132 +864,78 @@ return;
 
 data.forEach(card=>{
 
-
 const button = card.status === "launch"
-
 ?
 
 `
-
 <div class="space-y-2 mt-auto">
 
+    <div class="grid grid-cols-2 gap-2">
 
-<div class="grid grid-cols-2 gap-2">
+        <a
+        href="${card.website}"
+        target="_blank"
+        class="bg-blue-600 hover:bg-blue-700 text-white text-center px-3 py-3 rounded-lg text-sm font-semibold">
+        Free Trial
+        </a>
 
+        <a
+        href="https://b-pay.vercel.app/"
+        target="_blank"
+        class="bg-purple-600 hover:bg-purple-700 text-white text-center px-3 py-3 rounded-lg text-sm font-semibold">
+        Buy
+        </a>
 
-<a
+    </div>
 
-href="https://bot-energy.vercel.app/"
-
-target="_blank"
-
-class="bg-blue-600 hover:bg-blue-700 text-white text-center px-3 py-3 rounded-lg text-sm font-semibold">
-
-Free Trial
-
-</a>
-
-
-
-
-<a
-
-href="https://b-pay.vercel.app/"
-
-target="_blank"
-
-class="bg-purple-600 hover:bg-purple-700 text-white text-center px-3 py-3 rounded-lg text-sm font-semibold">
-
-Buy
-
-</a>
-
+    <a
+    href="${card.website}"
+    target="_blank"
+    class="block bg-green-600 hover:bg-green-700 text-white text-center px-3 py-3 rounded-lg text-sm font-semibold">
+    🚀 Launch Tool
+    </a>
 
 </div>
-
-
-
-
-<a
-
-href="${card.website}"
-
-target="_blank"
-
-class="block bg-green-600 hover:bg-green-700 text-white text-center px-3 py-3 rounded-lg text-sm font-semibold">
-
-🚀 Launch Tool
-
-</a>
-
-
-</div>
-
 `
 
 :
 
-
 `
-
 <div class="space-y-2 mt-auto">
 
+    <div class="grid grid-cols-2 gap-2">
 
-<div class="grid grid-cols-2 gap-2">
+        <a
+        href="${card.website}"
+        target="_blank"
+        class="bg-blue-600 hover:bg-blue-700 text-white text-center px-3 py-3 rounded-lg text-sm font-semibold">
+        Free Trial
+        </a>
 
+        <a
+        href="https://b-pay.vercel.app/"
+        target="_blank"
+        class="bg-purple-600 hover:bg-purple-700 text-white text-center px-3 py-3 rounded-lg text-sm font-semibold">
+        Buy
+        </a>
 
-// <button
+    </div>
 
-// onclick="alert('Free Trial will be available after launch.')"
-
-// class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-3 rounded-lg text-sm font-semibold">
-
-// Free Trial
-
-// </button>
-
-<a
-href="${card.website}"
-target="_blank"
-class="bg-blue-600 hover:bg-blue-700 text-white text-center px-3 py-3 rounded-lg text-sm font-semibold">
-
-Free Trial
-
-</a>
-
-
-
-<button
-
-href="https://b-pay.vercel.app/"
-
-class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-3 rounded-lg text-sm font-semibold">
-
-Buy
-
-</button>
-
+    <a
+    href="${card.website}"
+    target="_blank"
+    class="block bg-indigo-600 hover:bg-indigo-700 text-white text-center px-3 py-3 rounded-lg text-sm font-semibold">
+    Explore
+    </a>
 
 </div>
-
-
-
-
-
-<button
-
-onclick="alert('COMING SOON!')"
-
-class="w-full bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-3 rounded-lg text-sm font-semibold">
-
-Explore
-
-</button>
-
-
-</div>
-
 `;
+
+});
+
+
+
+  
 
 
 
