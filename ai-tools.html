@@ -669,6 +669,181 @@ image:images.energy
 
 
 
+const tools = [
+{
+  title: "MoMo Analytics",
+  category: "fintech",
+  problem: "Mobile Money businesses often lack real-time insights into transactions, revenue, customer trends, and agent performance.",
+  solution: "Analyze Mobile Money data with interactive dashboards, AI-powered insights, transaction monitoring, and automated reporting.",
+  impact: "Improve financial decision-making, detect trends, optimize business performance, and increase operational efficiency.",
+  price: 150,
+  contributor: "BOT LTD",
+  rating: "4.9",
+  likes: 215,
+  status: "launch",
+
+  // Launch and Free Trial buttons
+  website: "https://bot-momo.vercel.app/",
+
+  // Product image (place inside /images folder)
+  image: "images/momo-analytics.png"
+}
+
+
+{
+  title: "Bar & Restaurant Analytics",
+  category: "hospitality",
+  problem: "Bars and restaurants often struggle to track sales, inventory, customer trends, and business performance in one place.",
+  solution: "Monitor sales, revenue, inventory, customer insights, and staff performance through AI-powered dashboards and analytics.",
+  impact: "Increase profitability, reduce inventory losses, improve decision-making, and enhance customer satisfaction.",
+  price: 29,
+  contributor: "BOT LTD",
+  rating: "4.9",
+  likes: 198,
+  status: "launch",
+
+  // Launch and Free Trial buttons
+  website: "https://bot-baresto.vercel.app/",
+
+  // Product image (place inside /images folder)
+  image: "images/bar-restaurant-analytics.png"
+}
+
+
+{
+  title: "Bank Statement Analytics",
+  category: "banking",
+  problem: "Banks often struggle to monitor financial performance, customer behavior, loan portfolios, transactions, and operational KPIs in real time.",
+  solution: "Analyze banking data with interactive dashboards, AI-powered insights, financial reporting, customer analytics, loan monitoring, and transaction intelligence.",
+  impact: "Improve strategic decision-making, reduce financial risks, enhance customer experience, and increase operational efficiency.",
+  price: 29,
+  contributor: "BOT LTD",
+  rating: "4.9",
+  likes: 245,
+  status: "launch",
+
+  // Launch and Free Trial buttons
+  website: "https://bot-bank.vercel.app/",
+
+  // Product image (place inside /images folder)
+  image: "images/bank-analytics.png"
+}
+
+{
+  title: "Football Live",
+  category: "sports",
+  problem: "Football fans and analysts need real-time match updates, scores, statistics, and insights without manually searching across multiple platforms.",
+  solution: "Follow live football matches with real-time scores, fixtures, match statistics, team performance insights, and AI-powered football analytics.",
+  impact: "Stay updated with live games, improve match analysis, enhance fan engagement, and make better football decisions using real-time data.",
+  price: 9,
+  contributor: "BOT LTD",
+  rating: "4.9",
+  likes: 350,
+  status: "launch",
+
+  // Launch and Free Trial buttons
+  website: "https://bot-football.vercel.app/",
+
+  // Product image (place inside /images folder)
+  image: "images/football-live.png"
+}
+  
+];
+
+// Render Products
+const productsContainer = document.getElementById("productsContainer");
+
+productsContainer.innerHTML = tools.map(tool => `
+  <div class="product-card">
+
+    <img src="${tool.image}" alt="${tool.title}" class="product-image">
+
+    <span class="category">${tool.category}</span>
+
+    <h3>${tool.title}</h3>
+
+    <p><strong>Problem:</strong> ${tool.problem}</p>
+
+    <p><strong>Solution:</strong> ${tool.solution}</p>
+
+    <p><strong>Impact:</strong> ${tool.impact}</p>
+
+    <div class="product-meta">
+      <span>💲 $${tool.price}</span>
+      <span>⭐ ${tool.rating}</span>
+      <span>❤️ ${tool.likes}</span>
+    </div>
+
+    <p class="contributor">
+      <strong>Contributor:</strong> ${tool.contributor}
+    </p>
+
+    <span class="status ${tool.status}">
+      ${tool.status.toUpperCase()}
+    </span>
+
+    <div class="product-buttons">
+      <a href="${tool.website}" target="_blank" class="launch-btn">
+        Launch
+      </a>
+
+      <a href="${tool.website}" target="_blank" class="trial-btn">
+        Free Trial
+      </a>
+    </div>
+
+  </div>
+`).join("");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
 
 /* HEALTH */
