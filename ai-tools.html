@@ -829,23 +829,19 @@ image:"image/football-live.png"
 ];
 
 
-
 // CARD DISPLAY FUNCTION
 
 const cardContainer = document.getElementById("cardContainer");
 
 
-
 function renderCards(data){
-
 
 cardContainer.innerHTML="";
 
 
-
 if(data.length===0){
 
-cardContainer.innerHTML = `
+cardContainer.innerHTML=`
 
 <div class="col-span-full text-center py-10 text-gray-500">
 
@@ -861,89 +857,108 @@ return;
 
 
 
-
 data.forEach(card=>{
 
-const button = card.status === "launch"
-?
 
-`
-<div class="space-y-2 mt-auto">
+let buttonHTML = "";
 
-    <div class="grid grid-cols-2 gap-2">
 
-        <a
-        href="${card.website}"
-        target="_blank"
-        class="bg-blue-600 hover:bg-blue-700 text-white text-center px-3 py-3 rounded-lg text-sm font-semibold">
-        Free Trial
-        </a>
+if(card.status==="launch"){
 
-        <a
-        href="https://b-pay.vercel.app/"
-        target="_blank"
-        class="bg-purple-600 hover:bg-purple-700 text-white text-center px-3 py-3 rounded-lg text-sm font-semibold">
-        Buy
-        </a>
 
-    </div>
+buttonHTML=`
 
-    <a
-    href="${card.website}"
-    target="_blank"
-    class="block bg-green-600 hover:bg-green-700 text-white text-center px-3 py-3 rounded-lg text-sm font-semibold">
-    🚀 Launch Tool
-    </a>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-2 mt-auto">
 
-</div>
-`
 
-:
+<a
+href="${card.website}"
+target="_blank"
+class="bg-blue-600 hover:bg-blue-700 text-white text-center px-3 py-3 rounded-lg text-sm font-semibold">
 
-`
-<div class="space-y-2 mt-auto">
+Free Trial
 
-    <div class="grid grid-cols-2 gap-2">
+</a>
 
-        <a
-        href="${card.website}"
-        target="_blank"
-        class="bg-blue-600 hover:bg-blue-700 text-white text-center px-3 py-3 rounded-lg text-sm font-semibold">
-        Free Trial
-        </a>
 
-        <a
-        href="https://b-pay.vercel.app/"
-        target="_blank"
-        class="bg-purple-600 hover:bg-purple-700 text-white text-center px-3 py-3 rounded-lg text-sm font-semibold">
-        Buy
-        </a>
 
-    </div>
+<a
+href="https://b-pay.vercel.app/"
+target="_blank"
+class="bg-purple-600 hover:bg-purple-700 text-white text-center px-3 py-3 rounded-lg text-sm font-semibold">
 
-    <a
-    href="${card.website}"
-    target="_blank"
-    class="block bg-indigo-600 hover:bg-indigo-700 text-white text-center px-3 py-3 rounded-lg text-sm font-semibold">
-    Explore
-    </a>
+Buy
+
+</a>
+
+
+
+<a
+href="${card.website}"
+target="_blank"
+class="bg-green-600 hover:bg-green-700 text-white text-center px-3 py-3 rounded-lg text-sm font-semibold">
+
+🚀 Launch
+
+</a>
+
 
 </div>
+
 `;
 
-});
+
+
+}else{
+
+
+buttonHTML=`
+
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-2 mt-auto">
+
+
+<button
+onclick="alert('Free Trial will be available after launch')"
+class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-3 rounded-lg text-sm font-semibold">
+
+Free Trial
+
+</button>
+
+
+<a
+href="https://b-pay.vercel.app/"
+target="_blank"
+class="bg-purple-600 hover:bg-purple-700 text-white text-center px-3 py-3 rounded-lg text-sm font-semibold">
+
+Buy
+
+</a>
 
 
 
-  
+<button
+onclick="alert('COMING SOON!')"
+class="bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-3 rounded-lg text-sm font-semibold">
+
+Explore
+
+</button>
+
+
+</div>
+
+`;
+
+}
 
 
 
 
 cardContainer.innerHTML += `
 
-<div class="bg-white rounded-xl shadow-md overflow-hidden card-hover flex flex-col">
 
+<div class="bg-white rounded-xl shadow-md overflow-hidden card-hover flex flex-col">
 
 
 <img
@@ -952,13 +967,13 @@ src="${card.image}"
 
 alt="${card.title}"
 
-class="w-full h-48 object-cover"
+onerror="this.src='https://picsum.photos/600/400'"
 
->
-
+class="w-full h-48 object-cover">
 
 
 <div class="p-5 flex flex-col flex-grow">
+
 
 
 <h2 class="text-xl font-bold text-gray-800 mb-2">
@@ -1012,17 +1027,15 @@ ${card.impact}
 
 
 
-
-
 <div class="border-t pt-4 mb-5">
 
 
-<div class="flex justify-between text-sm text-gray-700">
+<div class="flex justify-between text-sm">
 
 
 <span>
 
-💰 <strong>$${card.price}</strong>
+💰 $${card.price}
 
 </span>
 
@@ -1038,9 +1051,7 @@ ${card.impact}
 
 
 
-
-
-<div class="flex justify-between text-sm mt-2">
+<div class="flex justify-between mt-2 text-sm">
 
 
 <span>
@@ -1050,7 +1061,6 @@ ${card.impact}
 </span>
 
 
-
 <span>
 
 ❤️ ${card.likes}
@@ -1058,37 +1068,30 @@ ${card.impact}
 </span>
 
 
+</div>
+
 
 </div>
 
 
 
+${buttonHTML}
+
+
 </div>
 
 
+</div>
+
+
+`;
 
 
 
+});
 
 
-<div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
-
-
-data.forEach(card=>{ const button = card.status === "launch" ? <div class="space-y-2 mt-auto"> <div class="grid grid-cols-2 gap-2"> <a href="https://bot-energy.vercel.app/" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white text-center px-3 py-3 rounded-lg text-sm font-semibold"> Free Trial </a> <a href="https://b-pay.vercel.app/" target="_blank" class="bg-purple-600 hover:bg-purple-700 text-white text-center px-3 py-3 rounded-lg text-sm font-semibold"> Buy </a> </div> <a href="${card.website}" target="_blank" class="block bg-green-600 hover:bg-green-700 text-white text-center px-3 py-3 rounded-lg text-sm font-semibold"> 🚀 Launch Tool </a> </div> : <div class="space-y-2 mt-auto"> <div class="grid grid-cols-2 gap-2"> // <button // onclick="alert('Free Trial will be available after launch.')" // class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-3 rounded-lg text-sm font-semibold"> // Free Trial // </button> <a href="${card.website}" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white text-center px-3 py-3 rounded-lg text-sm font-semibold"> Free Trial </a> <button href="https://b-pay.vercel.app/" class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-3 rounded-lg text-sm font-semibold"> Buy </button> </div> <button onclick="alert('COMING SOON!')" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-3 rounded-lg text-sm font-semibold"> Explore </button> </div> ;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 
