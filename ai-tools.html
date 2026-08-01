@@ -633,171 +633,494 @@ security:"https://picsum.photos/600/400?random=8"
 
 /* AI SOLUTIONS LIST */
 
+/* AI SOLUTIONS LIST */
+
 const cards = [
 
-
-
-/* ENERGY MANAGEMENT - AVAILABLE TOOL FIRST */
-
 {
-
 title:"Energy Consumption Manager",
-
 category:"energy",
-
 problem:"High electricity costs caused by inefficient energy usage.",
-
 solution:"Monitor, analyze and optimize electricity consumption using AI insights.",
-
 impact:"Reduce electricity bills and improve energy efficiency.",
-
 price:29,
-
 contributor:"BOT LTD",
-
 rating:"4.8",
-
 likes:320,
-
 status:"launch",
-
 website:"https://bot-energy.vercel.app/",
-
-image:images.energy
-
+image:"image/energy-consumption-manager.png"
 },
 
 
-
-const tools = [
 {
-  title: "MoMo Analytics",
-  category: "fintech",
-  problem: "Mobile Money businesses often lack real-time insights into transactions, revenue, customer trends, and agent performance.",
-  solution: "Analyze Mobile Money data with interactive dashboards, AI-powered insights, transaction monitoring, and automated reporting.",
-  impact: "Improve financial decision-making, detect trends, optimize business performance, and increase operational efficiency.",
-  price: 150,
-  contributor: "BOT LTD",
-  rating: "4.9",
-  likes: 215,
-  status: "launch",
-
-  // Launch and Free Trial buttons
-  website: "https://bot-momo.vercel.app/",
-
-  // Product image (place inside /images folder)
-  image: "images/momo-analytics.png"
-}
+title:"MoMo Analytics",
+category:"fintech",
+problem:"Mobile Money businesses lack real-time insights into transactions, revenue, customer trends, and agent performance.",
+solution:"Analyze Mobile Money data using interactive dashboards, AI insights, transaction monitoring, and automated reporting.",
+impact:"Improve financial decisions, optimize operations, and increase business performance.",
+price:150,
+contributor:"BOT LTD",
+rating:"4.9",
+likes:215,
+status:"launch",
+website:"https://bot-momo.vercel.app/",
+image:"image/momo-analytics.png"
+},
 
 
 {
-  title: "Bar & Restaurant Analytics",
-  category: "hospitality",
-  problem: "Bars and restaurants often struggle to track sales, inventory, customer trends, and business performance in one place.",
-  solution: "Monitor sales, revenue, inventory, customer insights, and staff performance through AI-powered dashboards and analytics.",
-  impact: "Increase profitability, reduce inventory losses, improve decision-making, and enhance customer satisfaction.",
-  price: 29,
-  contributor: "BOT LTD",
-  rating: "4.9",
-  likes: 198,
-  status: "launch",
-
-  // Launch and Free Trial buttons
-  website: "https://bot-baresto.vercel.app/",
-
-  // Product image (place inside /images folder)
-  image: "images/bar-restaurant-analytics.png"
-}
+title:"Bar & Restaurant Analytics",
+category:"business",
+problem:"Restaurants and bars struggle to monitor sales, inventory, customer trends, and daily performance.",
+solution:"Track revenue, inventory, sales trends, customer behavior, and operational KPIs using analytics dashboards.",
+impact:"Increase profitability, reduce losses, and improve business decisions.",
+price:29,
+contributor:"BOT LTD",
+rating:"4.9",
+likes:198,
+status:"launch",
+website:"https://bot-baresto.vercel.app/",
+image:"image/bar-restaurant-analytics.png"
+},
 
 
 {
-  title: "Bank Statement Analytics",
-  category: "banking",
-  problem: "Banks often struggle to monitor financial performance, customer behavior, loan portfolios, transactions, and operational KPIs in real time.",
-  solution: "Analyze banking data with interactive dashboards, AI-powered insights, financial reporting, customer analytics, loan monitoring, and transaction intelligence.",
-  impact: "Improve strategic decision-making, reduce financial risks, enhance customer experience, and increase operational efficiency.",
-  price: 29,
-  contributor: "BOT LTD",
-  rating: "4.9",
-  likes: 245,
-  status: "launch",
+title:"Bank Statement Analytics",
+category:"fintech",
+problem:"Financial institutions need better visibility into transactions, customer behavior, and financial performance.",
+solution:"Analyze banking data with AI dashboards, transaction intelligence, financial reports, and customer insights.",
+impact:"Reduce financial risks, improve customer experience, and support better decisions.",
+price:29,
+contributor:"BOT LTD",
+rating:"4.9",
+likes:245,
+status:"launch",
+website:"https://bot-bank.vercel.app/",
+image:"image/bank-analytics.png"
+},
 
-  // Launch and Free Trial buttons
-  website: "https://bot-bank.vercel.app/",
-
-  // Product image (place inside /images folder)
-  image: "images/bank-analytics.png"
-}
 
 {
-  title: "Football Live",
-  category: "sports",
-  problem: "Football fans and analysts need real-time match updates, scores, statistics, and insights without manually searching across multiple platforms.",
-  solution: "Follow live football matches with real-time scores, fixtures, match statistics, team performance insights, and AI-powered football analytics.",
-  impact: "Stay updated with live games, improve match analysis, enhance fan engagement, and make better football decisions using real-time data.",
-  price: 9,
-  contributor: "BOT LTD",
-  rating: "4.9",
-  likes: 350,
-  status: "launch",
+title:"Football Live",
+category:"sports",
+problem:"Football fans and analysts need real-time scores, fixtures, statistics, and match insights.",
+solution:"Follow live football matches with scores, team statistics, performance analysis, and football intelligence.",
+impact:"Improve fan engagement and provide better football analysis using real-time data.",
+price:9,
+contributor:"BOT LTD",
+rating:"4.9",
+likes:350,
+status:"launch",
+website:"https://bot-football.vercel.app/",
+image:"image/football-live.png"
+},
 
-  // Launch and Free Trial buttons
-  website: "https://bot-football.vercel.app/",
 
-  // Product image (place inside /images folder)
-  image: "images/football-live.png"
+{
+title:"AI Symptom Checker",
+category:"health",
+problem:"People are unsure when they need medical attention.",
+solution:"AI analyzes symptoms and provides health guidance.",
+impact:"Supports early healthcare decisions.",
+price:49,
+contributor:"KGL AI",
+rating:"4.6",
+likes:240,
+status:"explore",
+website:"#",
+image:"image/health.png"
+},
+
+
+{
+title:"AI Learning Assistant",
+category:"education",
+problem:"Students need personalized learning support.",
+solution:"AI tutor providing customized learning assistance.",
+impact:"Improves learning outcomes.",
+price:39,
+contributor:"KGL AI Academy",
+rating:"4.7",
+likes:300,
+status:"explore",
+website:"#",
+image:"image/education.png"
+},
+
+
+{
+title:"AI Business Advisor",
+category:"business",
+problem:"Businesses need faster and smarter decision making.",
+solution:"AI powered recommendations for business growth.",
+impact:"Improves productivity and planning.",
+price:59,
+contributor:"KGL AI",
+rating:"4.6",
+likes:260,
+status:"explore",
+website:"#",
+image:"image/business.png"
+},
+
+
+{
+title:"Smart Farming Assistant",
+category:"agriculture",
+problem:"Farmers lack access to data-driven farming insights.",
+solution:"AI recommendations for agriculture optimization.",
+impact:"Improves crop productivity and farming decisions.",
+price:35,
+contributor:"KGL AI",
+rating:"4.5",
+likes:170,
+status:"explore",
+website:"#",
+image:"image/agriculture.png"
+},
+
+
+{
+title:"AI Finance Assistant",
+category:"fintech",
+problem:"Poor financial planning affects individuals and businesses.",
+solution:"AI powered financial guidance and recommendations.",
+impact:"Supports better financial decisions.",
+price:45,
+contributor:"KGL AI",
+rating:"4.6",
+likes:220,
+status:"explore",
+website:"#",
+image:"image/fintech.png"
+},
+
+
+{
+title:"Carbon Footprint Calculator",
+category:"environment",
+problem:"Organizations lack tools to measure environmental impact.",
+solution:"Calculate and monitor carbon emissions.",
+impact:"Supports sustainability planning.",
+price:20,
+contributor:"KGL AI",
+rating:"4.4",
+likes:140,
+status:"explore",
+website:"#",
+image:"image/environment.png"
+},
+
+
+{
+title:"AI Security Monitor",
+category:"security",
+problem:"Organizations face increasing cybersecurity risks.",
+solution:"AI assisted monitoring and security insights.",
+impact:"Improves security awareness and protection.",
+price:65,
+contributor:"KGL AI",
+rating:"4.7",
+likes:280,
+status:"explore",
+website:"#",
+image:"image/security.png"
 }
-  
+
+
 ];
 
-// Render Products
-const productsContainer = document.getElementById("productsContainer");
 
-productsContainer.innerHTML = tools.map(tool => `
-  <div class="product-card">
 
-    <img src="${tool.image}" alt="${tool.title}" class="product-image">
+// CARD DISPLAY FUNCTION
 
-    <span class="category">${tool.category}</span>
+const cardContainer = document.getElementById("cardContainer");
 
-    <h3>${tool.title}</h3>
 
-    <p><strong>Problem:</strong> ${tool.problem}</p>
 
-    <p><strong>Solution:</strong> ${tool.solution}</p>
+function renderCards(data){
 
-    <p><strong>Impact:</strong> ${tool.impact}</p>
 
-    <div class="product-meta">
-      <span>💲 $${tool.price}</span>
-      <span>⭐ ${tool.rating}</span>
-      <span>❤️ ${tool.likes}</span>
-    </div>
+cardContainer.innerHTML="";
 
-    <p class="contributor">
-      <strong>Contributor:</strong> ${tool.contributor}
-    </p>
 
-    <span class="status ${tool.status}">
-      ${tool.status.toUpperCase()}
-    </span>
 
-    <div class="product-buttons">
-      <a href="${tool.website}" target="_blank" class="launch-btn">
-        Launch
-      </a>
+if(data.length===0){
 
-      <a href="${tool.website}" target="_blank" class="trial-btn">
-        Free Trial
-      </a>
-    </div>
+cardContainer.innerHTML = `
 
-  </div>
-`).join("");
+<div class="col-span-full text-center py-10 text-gray-500">
+
+No solutions found.
+
+</div>
+
+`;
+
+return;
+
+}
 
 
 
 
+data.forEach(card=>{
+
+
+const button = card.status === "launch"
+
+?
+
+`
+
+<div class="space-y-2 mt-auto">
+
+
+<div class="grid grid-cols-2 gap-2">
+
+
+<a
+
+href="https://bot-energy.vercel.app/"
+
+target="_blank"
+
+class="bg-blue-600 hover:bg-blue-700 text-white text-center px-3 py-3 rounded-lg text-sm font-semibold">
+
+Free Trial
+
+</a>
+
+
+
+
+<a
+
+href="https://b-pay.vercel.app/"
+
+target="_blank"
+
+class="bg-purple-600 hover:bg-purple-700 text-white text-center px-3 py-3 rounded-lg text-sm font-semibold">
+
+Buy
+
+</a>
+
+
+</div>
+
+
+
+
+<a
+
+href="${card.website}"
+
+target="_blank"
+
+class="block bg-green-600 hover:bg-green-700 text-white text-center px-3 py-3 rounded-lg text-sm font-semibold">
+
+🚀 Launch Tool
+
+</a>
+
+
+</div>
+
+`
+
+:
+
+
+`
+
+<div class="space-y-2 mt-auto">
+
+
+<div class="grid grid-cols-2 gap-2">
+
+
+// <button
+
+// onclick="alert('Free Trial will be available after launch.')"
+
+// class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-3 rounded-lg text-sm font-semibold">
+
+// Free Trial
+
+// </button>
+
+<a
+href="${card.website}"
+target="_blank"
+class="bg-blue-600 hover:bg-blue-700 text-white text-center px-3 py-3 rounded-lg text-sm font-semibold">
+
+Free Trial
+
+</a>
+
+
+
+<button
+
+onclick="alert('Purchase will be available after launch.')"
+
+class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-3 rounded-lg text-sm font-semibold">
+
+Buy
+
+</button>
+
+
+</div>
+
+
+
+
+
+<button
+
+onclick="alert('This AI solution is currently under development. Stay tuned!')"
+
+class="w-full bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-3 rounded-lg text-sm font-semibold">
+
+Explore
+
+</button>
+
+
+</div>
+
+`;
+
+
+
+
+cardContainer.innerHTML += `
+
+<div class="bg-white rounded-xl shadow-md overflow-hidden card-hover flex flex-col">
+
+
+
+<img
+
+src="${card.image}"
+
+alt="${card.title}"
+
+class="w-full h-48 object-cover"
+
+>
+
+
+
+<div class="p-5 flex flex-col flex-grow">
+
+
+<h2 class="text-xl font-bold text-gray-800 mb-2">
+
+${card.title}
+
+</h2>
+
+
+
+
+<span class="inline-block bg-indigo-100 text-indigo-700 text-sm px-3 py-1 rounded-full mb-3">
+
+${card.category}
+
+</span>
+
+
+
+
+<p class="text-gray-600 text-sm mb-3">
+
+<strong>Problem:</strong>
+
+${card.problem}
+
+</p>
+
+
+
+
+<p class="text-gray-600 text-sm mb-3">
+
+<strong>Solution:</strong>
+
+${card.solution}
+
+</p>
+
+
+
+
+<p class="text-gray-600 text-sm mb-4">
+
+<strong>Impact:</strong>
+
+${card.impact}
+
+</p>
+
+
+
+
+
+
+<div class="border-t pt-4 mb-5">
+
+
+<div class="flex justify-between text-sm text-gray-700">
+
+
+<span>
+
+💰 <strong>$${card.price}</strong>
+
+</span>
+
+
+<span>
+
+👤 ${card.contributor}
+
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="flex justify-between text-sm mt-2">
+
+
+<span>
+
+⭐ ${card.rating}
+
+</span>
+
+
+
+<span>
+
+❤️ ${card.likes}
+
+</span>
+
+
+
+</div>
+
+
+
+</div>
 
 
 
@@ -805,15 +1128,123 @@ productsContainer.innerHTML = tools.map(tool => `
 
 
 
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+
+
+${
+
+card.status === "launch"
+
+?
+
+
+`
+
+<a
+
+href="${card.website}"
+
+target="_blank"
+
+class="bg-green-600 hover:bg-green-700 text-white text-center px-3 py-3 rounded-lg text-sm font-semibold">
+
+🚀 Launch
+
+</a>
+
+
+
+<button
+
+onclick="alert('Free trial activated. Redirecting to signup...')"
+
+class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-3 rounded-lg text-sm font-semibold">
+
+Free Trial
+
+</button>
+
+
+
+
+<button
+
+onclick="alert('Purchase process started.')"
+
+class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-3 rounded-lg text-sm font-semibold">
+
+Buy
+
+</button>
+
+
+`
+
+:
+
+
+`
+
+<button
+
+onclick="alert('Free trial will be available after launch.')"
+
+class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-3 rounded-lg text-sm font-semibold">
+
+Free Trial
+
+</button>
 
 
 
 
 
+<button
+
+onclick="alert('Purchase will be available after launch.')"
+
+class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-3 rounded-lg text-sm font-semibold">
+
+Buy
+
+</button>
 
 
 
 
+
+<button
+
+onclick="alert('This AI solution is currently under development.')"
+
+class="bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-3 rounded-lg text-sm font-semibold">
+
+Explore
+
+</button>
+
+
+`
+
+}
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+`;
+
+});
+
+
+}
 
 
 
